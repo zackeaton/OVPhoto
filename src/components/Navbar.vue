@@ -6,6 +6,8 @@
           <ul class="right hide-on-med-and-down">
             <li v-if="isLoggedIn"><span class="email black-text">{{currentUser}}</span></li>
             <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+            <li v-if="isLoggedIn"><router-link to="/">Clients</router-link></li>
+            <li v-if="isLoggedIn"><router-link to="/">Projects</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/register">Register</router-link></li>
              <li v-if="isLoggedIn"><button v-on:click="logout" class="btn black">Logout</button></li>
