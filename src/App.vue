@@ -10,14 +10,14 @@
 <script>
 import Navbar from './components/Navbar';
 import NewCustomer from './components/NewCustomer';
-import EditCustomer from './components/EditCustomer'
+
 
 export default {
   name: 'app',
   components: {
     Navbar,
-    NewCustomer
-
+    NewCustomer,
+    NewProject
   }
 };
 </script>

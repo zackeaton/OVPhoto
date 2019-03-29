@@ -1,5 +1,5 @@
 <template>
-  <div id="home">
+  <div id="home-customer">
     <ul class="collection with-header">
       <li class="collection-header"><h4>Customers</h4></li>
       <li v-for="customer in customers" v-bind:key="customer.id" class="collection-item">
@@ -9,7 +9,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/new" class="btn-floating btn-large red">
+      <router-link to="/new/customer" class="btn-floating btn-large red">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
