@@ -65,7 +65,7 @@
         </div>
 
         <button type="submit" class="btn">Submit</button>
-        <router-link to="/projects" class="btn grey">Cancel</router-link>
+        <router-link to="/projects" class="btn grey"> Cancel</router-link>
       </form>
     </div>
   </div>
@@ -73,11 +73,11 @@
 
 
 <script>
-import db from "./firebaseInit.js";
+import db from './firebaseInit.js'
 export default {
-  name: "new-project",
+  name: 'new-project',
   data() {
-    return {
+    return{
       project_id: null,
       consult_date: null,
       shoot_date: null,
@@ -88,13 +88,12 @@ export default {
       dept_status: null,
       invoice_status: null,
       notes: null
-    };
+    }
   },
   methods: {
-    saveProject() {
-      db.collection('projects')
-        .add({
-          customer_id: this.customer_id,
+    saveCustomer () {
+      db.collection('projects').add({
+        customer_id: this.customer_id,
           project_id: this.project_id,
           consult_date: this.consult_date,
           shoot_date: this.shoot_date,
@@ -105,10 +104,11 @@ export default {
           dept_status: this.dept_status,
           invoice_status: this.invoice_status,
           notes: this.notes
-        })
-        .then(docRef => this.$router.push('/projects'))
-        .catch(error => console.log(err));
+      })
+      .then(docRef =>
+        this.$router.push('/projects'))
+      .catch(error => console.log(err))
     }
   }
-};
+}
 </script>

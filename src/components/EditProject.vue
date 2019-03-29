@@ -134,7 +134,7 @@ export default {
           });
         });
     },
-    updateproject() {
+    updateProject() {
       db.collection("projects")
         .where("project_id", "==", this.$route.params.project_id)
         .get()
