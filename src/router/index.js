@@ -1,9 +1,14 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 import Home from '@/components/Home';
+import HomeCustomer from '@/components/HomeCustomer';
 import ViewCustomer from '@/components/ViewCustomer';
 import NewCustomer from '@/components/NewCustomer';
 import EditCustomer from '@/components/EditCustomer';
+import HomeProject from '@/components/HomeProject';
+import ViewProject from '@/components/ViewProject';
+import NewProject from '@/components/NewProject';
+import EditProject from '@/components/EditProject';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
 import firebase from 'firebase';
@@ -16,6 +21,22 @@ let router = new Router({
       path: '/',
       name: 'Home',
       component: Home,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/home-customer',
+      name: 'home-customer',
+      component: HomeCustomer,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/home-project',
+      name: 'home-project',
+      component: HomeProject,
       meta: {
         requiresAuth: true
       }
@@ -37,7 +58,31 @@ let router = new Router({
       }
     },
     {
-      path: '/new',
+      path: '/new-project',
+      name: 'new-project',
+      component: NewProject,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/:project_id',
+      name: 'view-project',
+      component: ViewProject,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/edit/:project_id',
+      name: 'edit-project',
+      component: EditProject,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/new-customer',
       name: 'new-customer',
       component: NewCustomer,
       meta: {
@@ -46,7 +91,7 @@ let router = new Router({
     },
     {
       path: '/edit/:customer_id',
-      name: 'edit-Customer',
+      name: 'edit-customer',
       component: EditCustomer,
       meta: {
         requiresAuth: true
