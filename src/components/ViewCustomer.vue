@@ -11,7 +11,7 @@
       <li class="collection-item">Are they a returning customer: {{returning_customer}}</li>
 
       </ul>
-      <router-link to="/" class="btn grey">Back</router-link>
+      <router-link to="/customer" class="btn grey">Back</router-link>
       <button @click="deleteCustomer" class="btn red">Delete</button>
 
           <div class="fixed-action-btn">
@@ -84,7 +84,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           doc.ref.delete();
-          this.$router.push('/')
+          this.$router.push('/home-customer')
         })
         })
       }

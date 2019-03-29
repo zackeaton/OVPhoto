@@ -7,7 +7,8 @@
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
       <li class="collection-item">Shoot Type: {{shoot_type}}</li>
       <li class="collection-item">Location: {{shoot_location}}</li>
-      <li class="collection-item">Shoot Cost: {{shoot_cost}}</li>
+      <li class="collection-item">Invoice Cost: {{invoice_cost}}</li>
+      <li class="collection-item">Deposit Cost: {{dept_cost}}</li>
       <li class="collection-item">Deposite Status: {{dept_status}}</li>
       <li class="collection-item">Invoice Status: {{invoice_status}}</li>
       <li class="collection-item">Notes: {{notes}}</li>
@@ -38,7 +39,8 @@ export default {
       shoot_date: null,
       shoot_type: null,
       shoot_location: null,
-      shoot_cost: null,
+      invoice_cost: null,
+      dept_cost: null,
       dept_status: null,
       invoice_status: null,
       notes: null
@@ -55,7 +57,8 @@ export default {
           vm.shoot_date = doc.data().shoot_date
           vm.shoot_type = doc.data().shoot_type
           vm.shoot_location = doc.data().shoot_location
-          vm.shoot_cost = doc.data().shoot_cost
+          vm.invoice_cost = doc.data().invoice_cost
+          vm.dept_cost = doc.data().dept_cost
           vm.dept_status = doc.data().dept_status
           vm.invoice_status = doc.data().invoice_status
           vm.notes = doc.data().notes
@@ -78,7 +81,8 @@ export default {
           this.shoot_date = doc.data().shoot_date
           this.shoot_type = doc.data().shoot_type
           this.shoot_location = doc.data().shoot_location
-          this.shoot_cost = doc.data().shoot_cost
+          this.invoice_cost = doc.data().invoice_cost
+          this.dept_cost = doc.data().dept_cost
           this.dept_status = doc.data().dept_status
           this.invoice_status = doc.data().invoice_status
           this.notes = doc.data().notes

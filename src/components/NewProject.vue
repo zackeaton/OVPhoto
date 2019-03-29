@@ -35,9 +35,15 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_cost" required>
-            <label>Shoot Cost</label>
+            <input type="text" v-model="invoice_cost" required>
+            <label>Invoice Cost</label>
           </div>
+           <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="dept_cost" required>
+            <label>Deposit Cost</label>
+          </div>
+        </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
@@ -77,7 +83,8 @@ export default {
       shoot_date: null,
       shoot_type: null,
       shoot_location: null,
-      shoot_cost: null,
+      invoice_cost: null,
+      dept_cost: null,
       dept_status: null,
       invoice_status: null,
       notes: null
@@ -86,15 +93,17 @@ export default {
   methods: {
     saveProject () {
       db.collection('projects').add({
-        project_id: this.project_id,
-        consult_date: this.consult_date,
-        shoot_date: this.shoot_date,
-        shoot_type: this.shoot_type,
-        shoot_location: this.shoot_location,
-        shoot_cost: this.shoot_cost,
-        dept_status: this.dept_status,
-        invoice_status: this.invoice_status,
-        notes: this.notes
+        customer_id: this.customer_id,
+            project_id: this.project_id,
+            consult_date: this.consult_date,
+            shoot_date: this.shoot_date,
+            shoot_type: this.shoot_type,
+            shoot_location: this.shoot_location,
+            invoice_cost: this.invoice_cost,
+            dept_cost: this.dept_cost,
+            dept_status: this.dept_status,
+            invoice_status: this.invoice_status,
+            notes: this.notes
       })
       .then(docRef =>
         this.$router.push('/home-project'))

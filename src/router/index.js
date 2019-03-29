@@ -26,7 +26,7 @@ let router = new Router({
       }
     },
     {
-      path: '/home-customer',
+      path: '/customer',
       name: 'home-customer',
       component: HomeCustomer,
       meta: {
@@ -34,7 +34,7 @@ let router = new Router({
       }
     },
     {
-      path: '/home-project',
+      path: '/project',
       name: 'home-project',
       component: HomeProject,
       meta: {
@@ -66,7 +66,7 @@ let router = new Router({
       }
     },
     {
-      path: 'home-project/:project_id',
+      path: '/project/view/:project_id',
       name: 'view-project',
       component: ViewProject,
       meta: {
@@ -74,7 +74,7 @@ let router = new Router({
       }
     },
     {
-      path: 'home-project/edit/:project_id',
+      path: '/project/edit/:project_id',
       name: 'edit-project',
       component: EditProject,
       meta: {
@@ -90,7 +90,7 @@ let router = new Router({
       }
     },
     {
-      path: 'home-customer/edit/:customer_id',
+      path: '/customer/edit/:customer_id',
       name: 'edit-customer',
       component: EditCustomer,
       meta: {
@@ -98,7 +98,7 @@ let router = new Router({
       }
     },
     {
-      path: 'home-customer/:customer_id',
+      path: '/customer/view/:customer_id',
       name: 'view-customer',
       component: ViewCustomer,
       meta: {

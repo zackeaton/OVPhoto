@@ -35,9 +35,15 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_cost" required>
-            <label>Shoot Cost</label>
+            <input type="text" v-model="invoice_cost" required>
+            <label>Invoice Cost</label>
           </div>
+           <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="dept_cost" required>
+            <label>Deposit Cost</label>
+          </div>
+        </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
@@ -78,7 +84,8 @@ export default {
       shoot_date: null,
       shoot_type: null,
       shoot_location: null,
-      shoot_cost: null,
+      invoice_cost: null,
+      dept_cost: null,
       dept_status: null,
       invoice_status: null,
       notes: null
@@ -95,7 +102,8 @@ export default {
           vm.shoot_date = doc.data().shoot_date
           vm.shoot_type = doc.data().shoot_type
           vm.shoot_location = doc.data().shoot_location
-          vm.shoot_cost = doc.data().shoot_cost
+          vm.invoice_cost = doc.data().invoice_cost
+          vm.dept_cost = doc.data().dept_cost
           vm.dept_status = doc.data().dept_status
           vm.invoice_status = doc.data().invoice_status
           vm.notes = doc.data().notes
@@ -118,7 +126,8 @@ export default {
           this.shoot_date = doc.data().shoot_date
           this.shoot_type = doc.data().shoot_type
           this.shoot_location = doc.data().shoot_location
-          this.shoot_cost = doc.data().shoot_cost
+          this.invoice_cost = doc.data().invoice_cost
+          this.dept_cost = doc.data().dept_cost
           this.dept_status = doc.data().dept_status
           this.invoice_status = doc.data().invoice_status
           this.notes = doc.data().notes
@@ -138,7 +147,8 @@ export default {
             shoot_date: this.shoot_date,
             shoot_type: this.shoot_type,
             shoot_location: this.shoot_location,
-            shoot_cost: this.shoot_cost,
+            invoice_cost: this.invoice_cost,
+            dept_cost: this.dept_cost,
             dept_status: this.dept_status,
             invoice_status: this.invoice_status,
             notes: this.notes
