@@ -66,7 +66,7 @@ let router = new Router({
       }
     },
     {
-      path: '/:project_id',
+      path: 'home-project/:project_id',
       name: 'view-project',
       component: ViewProject,
       meta: {
@@ -98,7 +98,7 @@ let router = new Router({
       }
     },
     {
-      path: '/:customer_id',
+      path: 'home-customer/:customer_id',
       name: 'view-customer',
       component: ViewCustomer,
       meta: {

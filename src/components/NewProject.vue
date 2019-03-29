@@ -84,9 +84,8 @@ export default {
     }
   },
   methods: {
-    saveCustomer () {
+    saveProject () {
       db.collection('projects').add({
-        customer_id: this.customer_id,
         project_id: this.project_id,
         consult_date: this.consult_date,
         shoot_date: this.shoot_date,
@@ -98,7 +97,7 @@ export default {
         notes: this.notes
       })
       .then(docRef =>
-        this.$router.push('/'))
+        this.$router.push('/home-project'))
       .catch(error => console.log(err))
     }
   }

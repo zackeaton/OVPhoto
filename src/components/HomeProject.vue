@@ -3,7 +3,7 @@
     <ul class="collection with-header">
       <li class="collection-header"><h4>Project</h4></li>
       <li v-for="project in projects" v-bind:key="project.id" class="collection-item">
-        <div class="chip">{{project.project_id}}</div>
+        <div class="chip">{{project.id}}</div>
        {{project.consult_date}} {{project.shoot_date}}
          <router-link class="secondary-content" v-bind:to="{ name: 'view-project', params: { project_id: project.project_id }}"><i class="fa fa-angle-double-down"></i></router-link>
       </li>
