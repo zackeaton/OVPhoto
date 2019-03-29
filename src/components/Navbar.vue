@@ -5,8 +5,8 @@
           <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
           <ul class="right hide-on-med-and-down">
             <li v-if="isLoggedIn"><span class="email black-text">{{currentUser}}</span></li>
-            <li v-if="isLoggedIn"><router-link to="/helloworld">Dashboard</router-link></li>
-            <li v-if="isLoggedIn"><router-link to="/">Clients</router-link></li>
+            <li v-if="isLoggedIn"><router-link to="/">Dashboard</router-link></li>
+            <li v-if="isLoggedIn"><router-link to="/home">Clients</router-link></li>
             <li v-if="isLoggedIn"><router-link to="/homeproject">Projects</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/login">Login</router-link></li>
             <li v-if="!isLoggedIn"><router-link to="/register">Register</router-link></li>
