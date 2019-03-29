@@ -1,7 +1,7 @@
 <template>
   <div id="view-project">
     <ul class="collection with-header">
-      <li class="collection-header"><h4>Project # {{project.id}}</h4></li>
+      <li class="collection-header"><h4>Project # {{project_id}}</h4></li>
       <li class="collection-item">project ID: {{project_id}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
@@ -14,10 +14,10 @@
       <li class="collection-item">Notes: {{notes}}</li>
 
       </ul>
-      <router-link to="/home-project" class="btn grey">Back</router-link>
+       <router-link to="/" class="btn grey">Back</router-link>
       <button @click="deleteProject" class="btn red">Delete</button>
 
-          <div class="fixed-action-btn">
+           <div class="fixed-action-btn">
       <router-link v-bind:to="{name: 'edit-project', params: {project_id: project_id}}" class="btn-floating btn-large red">
       <i class="fa fa-pencil-alt"></i>
       </router-link>
@@ -97,7 +97,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           doc.ref.delete();
-          this.$router.push('/home-project')
+          this.$router.push('/projects')
         })
         })
       }

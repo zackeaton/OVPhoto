@@ -47,7 +47,7 @@
         </div>
 
         <button type="submit" class="btn">Submit</button>
-        <router-link to="/customer" class="btn grey"> Cancel</router-link>
+        <router-link to="/customers" class="btn grey"> Cancel</router-link>
       </form>
       </div>
   </div>
@@ -81,7 +81,7 @@ export default {
         returning_customer: this.returning_customer
       })
       .then(docRef =>
-        this.$router.push('/'))
+        this.$router.push('/customers'))
       .catch(error => console.log(err))
     }
   }

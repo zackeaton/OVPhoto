@@ -1,5 +1,5 @@
 <template>
-  <div id="home-project">
+  <div id="projects">
     <ul class="collection with-header">
       <li class="collection-header"><h4>Projects</h4></li>
       <li v-for="project in projects" v-bind:key="project.id" class="collection-item">
@@ -19,7 +19,7 @@
 <script>
 import db from './firebaseInit.js'
 export default {
-  name: 'home-project',
+  name: 'projects',
   data() {
     return {
       projects: []
