@@ -58,7 +58,7 @@ let router = new Router({
       }
     },
     {
-      path: '/new-project',
+      path: '/new/project',
       name: 'new-project',
       component: NewProject,
       meta: {
@@ -82,7 +82,7 @@ let router = new Router({
       }
     },
     {
-      path: '/new-customer',
+      path: '/new/customer',
       name: 'new-customer',
       component: NewCustomer,
       meta: {
