@@ -1,7 +1,7 @@
 <template>
   <div id="home-project">
     <ul class="collection with-header">
-      <li class="collection-header"><h4>Project</h4></li>
+      <li class="collection-header"><h4>Projects</h4></li>
       <li v-for="project in projects" v-bind:key="project.id" class="collection-item">
         <div class="chip">{{project.id}}</div>
        {{project.consult_date}} {{project.shoot_date}}

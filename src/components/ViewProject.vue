@@ -13,8 +13,8 @@
       <li class="collection-item">Notes: {{notes}}</li>
 
       </ul>
-      <router-link to="/" class="btn grey">Back</router-link>
-      <button @click="deleteproject" class="btn red">Delete</button>
+      <router-link to="/home-project" class="btn grey">Back</router-link>
+      <button @click="deleteProject" class="btn red">Delete</button>
 
           <div class="fixed-action-btn">
       <router-link v-bind:to="{name: 'edit-project', params: {project_id: project_id}}" class="btn-floating btn-large red">
@@ -93,7 +93,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           doc.ref.delete();
-          this.$router.push('/')
+          this.$router.push('/home-project')
         })
         })
       }
