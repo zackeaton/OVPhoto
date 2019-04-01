@@ -37,89 +37,93 @@
           <div class="input-field col s 12">
             <input type="text" v-model="returning_customer" required>
           </div>
-      </div>
+        </div>
 
-
-  <button type="submit" class="btn">Submit</button>
-        <router-link to="/customers" class="btn grey"> Cancel</router-link>
+        <button type="submit" class="btn">Submit</button>
+        <router-link to="/customers" class="btn grey">Cancel</router-link>
       </form>
-      </div>
+    </div>
   </div>
 </template>
 
 
 <script>
-import db from './firebaseInit.js'
+import db from "./firebaseInit.js";
 export default {
-  name: 'edit-customer',
+  name: "edit-customer",
   data() {
-    return{
-       customer_id: null,
+    return {
+      customer_id: null,
       first_name: null,
       last_name: null,
       phone: null,
       email: null,
       social: null,
       returning_customer: null
-    }
+    };
   },
-  beforeRouteEnter (to, from, next) {
-    db.collection('customers').where('customer_id', '==', to.params.customer_id)
-    .get()
-    .then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-        next(vm => {
-          vm.customer_id = doc.data().customer_id
-          vm.first_name = doc.data().first_name
-          vm.last_name = doc.data().last_name
-          vm.phone = doc.data().phone
-          vm.email = doc.data().email
-          vm.social = doc.data().social
-          vm.returning_customer = doc.data().returning_customer
-        })
-      })
-    })
+  beforeRouteEnter(to, from, next) {
+    db.collection("customers")
+      .where("customer_id", "==", to.params.customer_id)
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          next(vm => {
+            vm.customer_id = doc.data().customer_id;
+            vm.first_name = doc.data().first_name;
+            vm.last_name = doc.data().last_name;
+            vm.phone = doc.data().phone;
+            vm.email = doc.data().email;
+            vm.social = doc.data().social;
+            vm.returning_customer = doc.data().returning_customer;
+          });
+        });
+      });
   },
   watch: {
-    '$route': 'fetchData'
+    $route: "fetchData"
   },
   methods: {
-    fetchData () {
-      db.collection('customers').where
-      ('customer_id', '==', this.$route.params.customer_id)
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          this.customer_id = doc.data().customer_id
-          this.first_name = doc.data().first_name
-          this.last_name = doc.data().last_name
-          this.phone = doc.data().phone
-          this.social = doc.data().social
-          this.returning_customer = doc.data().returning_customer
-        })
-      })
+    fetchData() {
+      db.collection("customers")
+        .where("customer_id", "==", this.$route.params.customer_id)
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            this.customer_id = doc.data().customer_id;
+            this.first_name = doc.data().first_name;
+            this.last_name = doc.data().last_name;
+            this.phone = doc.data().phone;
+            this.social = doc.data().social;
+            this.returning_customer = doc.data().returning_customer;
+          });
+        });
     },
-    updateCustomer () {
-       db.collection('customers').where
-      ('customer_id', '==', this.$route.params.customer_id)
-      .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          doc.ref.update({
-            customer_id: this.customer_id,
-            first_name: this.first_name,
-            last_name: this.last_name,
-            phone: this.phone,
-            email: this.email,
-            social: this.social,
-            returning_customer: this.returning_customer
-          })
-          .then(() => {
-            this.$router.push({name: 'view-customer', params: {customer_id: this.customer_id}})
-          })
-        })
-      })
+    updateCustomer() {
+      db.collection("customers")
+        .where("customer_id", "==", this.$route.params.customer_id)
+        .get()
+        .then(querySnapshot => {
+          querySnapshot.forEach(doc => {
+            doc.ref
+              .update({
+                customer_id: this.customer_id,
+                first_name: this.first_name,
+                last_name: this.last_name,
+                phone: this.phone,
+                email: this.email,
+                social: this.social,
+                returning_customer: this.returning_customer
+              })
+              .then(() => {
+                this.$router.push({
+                  name: "view-customer",
+                  params: { customer_id: this.customer_id }
+                });
+              });
+          });
+        });
     }
   }
-}
+};
 </script>

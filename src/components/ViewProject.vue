@@ -20,7 +20,7 @@
 
     <div class="fixed-action-btn">
       <router-link
-        v-bind:to="{name: 'edit-projects', params: {project_id: project_id}}"
+        v-bind:to="{name: 'edit-project', params: {project_id: project_id}}"
         class="btn-floating btn-large red"
       >
         <i class="fa fa-pencil-alt"></i>
@@ -93,7 +93,7 @@ export default {
           });
         });
     },
-    deleteproject() {
+    deleteProject() {
       if (confirm("Are you sure?")) {
         db.collection("projects")
           .where("project_id", "==", this.$route.params.project_id)

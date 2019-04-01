@@ -22,13 +22,15 @@
               </div>
               <div class="input-field">
                 <i class="material-icons prefix">
-                <i class="fa fa-envelope"></i></i>
+                  <i class="fa fa-envelope"></i>
+                </i>
                 <input type="email" id="email" v-model="email">
                 <label for="email">Email Address</label>
               </div>
               <div class="input-field">
                 <i class="material-icons prefix">
-                <i class="fa fa-key"></i></i>
+                  <i class="fa fa-key"></i>
+                </i>
                 <input type="password" id="password" v-model="password">
                 <label for="password">Password</label>
               </div>
