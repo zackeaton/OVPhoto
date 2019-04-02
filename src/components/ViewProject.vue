@@ -13,7 +13,7 @@
       <li class="collection-item">Invoice Status: {{invoice_status}}</li>
       <li class="collection-item">Notes: {{notes}}</li>
     </ul>
-    <router-link to="/projects" class="btn grey">Back</router-link>
+    <router-link to="/project" class="btn grey">Back</router-link>
     <button @click="deleteProject" class="btn red">Delete</button>
 
     <div class="fixed-action-btn">
