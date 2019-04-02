@@ -33,7 +33,7 @@
                 <label for="password">Password</label>
               </div>
               <button
-                v-on:click="register"
+                v-on:click="validate"
                 class="btn btn-large btn-extended grey lighten-4 black-text"
               >Register</button>
             </form>
@@ -58,8 +58,12 @@ export default {
     };
   },
   methods: {
-    register: function(e) {
-      firebase
+    validate: function(email) {
+    var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+    if (re.test(this.email)) {
+        if (this.email.indexOf('@ovphotography.co', this.email.length - '@ovphotography.co'.length) !== -1) {
+            alert('Submission was successful.');
+            firebase
         .auth()
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
@@ -73,7 +77,16 @@ export default {
           }
         );
       e.preventDefault();
+        } else {
+            alert('Email must be a OVPhotography e-mail address (your.name@ovphotography.co).');
+        }
+    } else {
+        alert('Not a valid e-mail address.');
     }
-  }
+    } ,
+    register: function(e) {
+      
+    }
+  } 
 };
 </script>
