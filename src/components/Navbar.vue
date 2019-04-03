@@ -26,7 +26,7 @@
             <button v-on:click="logout" class="btn black">Logout</button>
           </li>
         </ul>
-
+        
         <ul class="side-nav hide-on-large-only" id="mobile-demo">
           <li v-if="isLoggedIn">
             <router-link to="/">
@@ -60,6 +60,7 @@
             <button v-on:click="logout" class="btn black">Log Out</button>
           </li>
         </ul>
+
       </div>
     </div>
   </nav>
