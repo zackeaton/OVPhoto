@@ -4,7 +4,7 @@
       <div class="row">
         <div class="col s12 m8 offset-m2">
           <div class="login card-panel grey lighten-4 black-text center">
-            <h3>Register</h3>
+            <h3>Register <i class="fa fa-user-plus"></i></h3>
             <form action="index.html">
               <div class="input-field">
                 <i class="material-icons prefix">

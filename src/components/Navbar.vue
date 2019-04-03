@@ -8,6 +8,27 @@
             <span class="email black-text">{{currentUser}}</span>
           </li>
           <li v-if="isLoggedIn">
+            <router-link to="/">Dashboard</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/customers">Customers</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/projects">Projects</router-link>
+          </li>
+          <li v-if="!isLoggedIn">
+            <router-link to="/login">Login</router-link>
+          </li>
+          <li v-if="!isLoggedIn">
+            <router-link to="/register">Register</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <button v-on:click="logout" class="btn black">Logout</button>
+          </li>
+        </ul>
+
+        <ul class="side-nav hide-on-large-only" id="mobile-demo">
+          <li v-if="isLoggedIn">
             <router-link to="/">
               <i class="fa fa-chart-line"></i>
             </router-link>
@@ -24,48 +45,21 @@
           </li>
           <li v-if="!isLoggedIn">
             <router-link to="/login">
-              Login
               <i class="fa fa-sign-in-alt"></i>
             </router-link>
           </li>
           <li v-if="!isLoggedIn">
             <router-link to="/register">
-              Register
-              <i class="fa fa-home"></i>
+              <i class="fa fa-user-plus"></i>
             </router-link>
           </li>
-          <li v-if="isLoggedIn">
-            <button v-on:click="logout" class="btn black">Logout</button>
-          </li>
-        </ul>
-        <div>
-        <ul class="side-nav hide-on-large-only" id="mobile-demo">
-          <li v-if="isLoggedIn">
-            <router-link to="/">
-              <i class="fa fa-home"></i>
-            </router-link>
-          </li>
-          <li v-if="isLoggedIn">
-            <router-link to="/customers">
-              <i class="fa fa-users"></i>
-            </router-link>
-          </li>
-          <li v-if="isLoggedIn">
-            <router-link to="/projects">
-              <i class="fa fa-images"></i>
-            </router-link>
-          </li>
-          <li v-if="!isLoggedIn">
-            <router-link to="/login">Login</router-link>
-          </li>
-          <li v-if="!isLoggedIn">
-            <router-link to="/register">Register</router-link>
+          <li>
+            <a href="/" class="divider"></a>
           </li>
           <li v-if="isLoggedIn">
             <button v-on:click="logout" class="btn black">Log Out</button>
           </li>
         </ul>
-        </div>
       </div>
     </div>
   </nav>
@@ -106,3 +100,4 @@ export default {
   padding-right: 10px;
 }
 </style>
+
