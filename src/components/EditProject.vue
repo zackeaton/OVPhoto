@@ -5,7 +5,7 @@
       <form @submit.prevent="updateProject" class="col s12">
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="project_id" required>
+            <input disabled type="text" v-model="project_id" required>
             <label>Project ID#</label>
           </div>
         </div>
@@ -142,7 +142,6 @@ export default {
           querySnapshot.forEach(doc => {
             doc.ref
               .update({
-                customer_id: this.customer_id,
                 project_id: this.project_id,
                 consult_date: this.consult_date,
                 shoot_date: this.shoot_date,
