@@ -59,7 +59,7 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="notes" required>
+            <input type="text" v-model="notes">
             <label>Notes</label>
           </div>
         </div>   
