@@ -11,13 +11,13 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="consult_date" required>
+            <input type="date" class='datepicker' v-model="consult_date" required>
             <label>Consult Date</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_date" required>
+            <input type="date" class='datepicker' v-model="shoot_date" required>
             <label>Shoot Date</label>
           </div>
         </div>
