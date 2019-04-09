@@ -9,7 +9,7 @@
             <label>Project ID#</label>
           </div>
         </div>
-       <div class="row">
+        <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="consult_date" required>
             <label>Consult Date</label>
@@ -38,12 +38,12 @@
             <input type="text" v-model="invoice_cost" required>
             <label>Invoice Cost</label>
           </div>
-           <div class="row">
+        </div>
+        <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_cost" required>
             <label>Deposit Cost</label>
           </div>
-        </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
@@ -65,19 +65,19 @@
         </div>
 
         <button type="submit" class="btn">Submit</button>
-        <router-link to="/project" class="btn grey"> Cancel</router-link>
+        <router-link to="/projects" class="btn grey">Cancel</router-link>
       </form>
-      </div>
+    </div>
   </div>
 </template>
 
 
 <script>
-import db from './firebaseInit.js'
+import db from "./firebaseInit.js";
 export default {
-  name: 'new-project',
+  name: "new-project",
   data() {
-    return{
+    return {
       project_id: null,
       consult_date: null,
       shoot_date: null,
@@ -88,27 +88,26 @@ export default {
       dept_status: null,
       invoice_status: null,
       notes: null
-    }
+    };
   },
   methods: {
-    saveProject () {
-      db.collection('projects').add({
-        customer_id: this.customer_id,
-            project_id: this.project_id,
-            consult_date: this.consult_date,
-            shoot_date: this.shoot_date,
-            shoot_type: this.shoot_type,
-            shoot_location: this.shoot_location,
-            invoice_cost: this.invoice_cost,
-            dept_cost: this.dept_cost,
-            dept_status: this.dept_status,
-            invoice_status: this.invoice_status,
-            notes: this.notes
-      })
-      .then(docRef =>
-        this.$router.push('/home-project'))
-      .catch(error => console.log(err))
+    saveProject() {
+      db.collection("projects")
+        .add({
+          project_id: this.project_id,
+          consult_date: this.consult_date,
+          shoot_date: this.shoot_date,
+          shoot_type: this.shoot_type,
+          shoot_location: this.shoot_location,
+          invoice_cost: this.invoice_cost,
+          dept_cost: this.dept_cost,
+          dept_status: this.dept_status,
+          invoice_status: this.invoice_status,
+          notes: this.notes
+        })
+        .then(docRef => this.$router.push("/projects"))
+        .catch(error => console.log(err));
     }
   }
-}
+};
 </script>

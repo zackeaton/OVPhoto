@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import NewCustomer from './components/NewCustomer';
 import NewProject from './components/NewProject';
 
+
 export default {
   name: 'app',
   components: {

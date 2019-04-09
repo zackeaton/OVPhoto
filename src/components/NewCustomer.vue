@@ -47,19 +47,19 @@
         </div>
 
         <button type="submit" class="btn">Submit</button>
-        <router-link to="/customer" class="btn grey"> Cancel</router-link>
+        <router-link to="/customers" class="btn grey">Cancel</router-link>
       </form>
-      </div>
+    </div>
   </div>
 </template>
 
 
 <script>
-import db from './firebaseInit.js'
+import db from "./firebaseInit.js";
 export default {
-  name: 'new-customer',
+  name: "new-customer",
   data() {
-    return{
+    return {
       customer_id: null,
       first_name: null,
       last_name: null,
@@ -67,23 +67,23 @@ export default {
       email: null,
       social: null,
       returning_customer: null
-    }
+    };
   },
   methods: {
-    saveCustomer () {
-      db.collection('customers').add({
-        customer_id: this.customer_id,
-        first_name: this.first_name,
-        last_name: this.last_name,
-        phone: this.phone,
-        email: this.email,
-        social: this.social,
-        returning_customer: this.returning_customer
-      })
-      .then(docRef =>
-        this.$router.push('/'))
-      .catch(error => console.log(err))
+    saveCustomer() {
+      db.collection("customers")
+        .add({
+          customer_id: this.customer_id,
+          first_name: this.first_name,
+          last_name: this.last_name,
+          phone: this.phone,
+          email: this.email,
+          social: this.social,
+          returning_customer: this.returning_customer
+        })
+        .then(docRef => this.$router.push("/customers"))
+        .catch(error => console.log(err));
     }
   }
-}
+};
 </script>
