@@ -60,7 +60,6 @@
             <button v-on:click="logout" class="btn black">Log Out</button>
           </li>
         </ul>
-
       </div>
     </div>
   </nav>
