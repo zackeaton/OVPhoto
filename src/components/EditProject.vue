@@ -11,13 +11,13 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="consult_date" required>
+            <input type="date" v-model="consult_date" class='datepicker' required>
             <label>Consult Date</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_date" required>
+            <input type="date" class='datepicker' v-model="shoot_date" required>
             <label>Shoot Date</label>
           </div>
         </div>
@@ -62,8 +62,7 @@
             <input type="text" v-model="notes" required>
             <label>Notes</label>
           </div>
-        </div>
-
+        </div>   
         <button type="submit" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
       </form>
