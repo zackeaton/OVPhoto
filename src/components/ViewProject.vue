@@ -39,6 +39,7 @@ export default {
   data() {
     return {
       project_id: null,
+      project_name: null,
       consult_date: null,
       shoot_date: null,
       shoot_type: null,
@@ -59,6 +60,7 @@ export default {
         querySnapshot.forEach(doc => {
           next(vm => {
             vm.project_id = doc.data().project_id;
+            vm.project_name = doc.data().project_name
             vm.consult_date = doc.data().consult_date;
             vm.shoot_date = doc.data().shoot_date;
             vm.shoot_type = doc.data().shoot_type;
@@ -84,6 +86,7 @@ export default {
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             this.project_id = doc.data().project_id;
+            this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
             this.shoot_date = doc.data().shoot_date;
             this.shoot_type = doc.data().shoot_type;
