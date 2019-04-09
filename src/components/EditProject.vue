@@ -11,6 +11,12 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            <input type="text" v-model="project_name" required>
+            <label>Project Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
             <input type="date" v-model="consult_date" class='datepicker' required>
             <label>Consult Date</label>
           </div>
@@ -86,7 +92,8 @@ export default {
       dept_cost: null,
       dept_status: null,
       invoice_status: null,
-      notes: null
+      notes: null,
+      project_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -106,6 +113,7 @@ export default {
             vm.dept_status = doc.data().dept_status;
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
+            vm.project_name = doc.data().project_name;
           });
         });
       });
@@ -130,6 +138,7 @@ export default {
             this.dept_status = doc.data().dept_status;
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
+            this.project_name = doc.data().project_name;
           });
         });
     },

@@ -5,6 +5,7 @@
         <h4>Project # {{project_id}}</h4>
       </li>
       <li class="collection-item">project ID: {{project_id}}</li>
+      <li class='collection-item'>Project Name: {{project_name}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
       <li class="collection-item">Shoot Type: {{shoot_type}}</li>
@@ -46,7 +47,8 @@ export default {
       dept_cost: null,
       dept_status: null,
       invoice_status: null,
-      notes: null
+      notes: null,
+      project_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -66,6 +68,7 @@ export default {
             vm.dept_status = doc.data().dept_status;
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
+            vm.project_name = doc.data().project_name;
           });
         });
       });
@@ -90,6 +93,7 @@ export default {
             this.dept_status = doc.data().dept_status;
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
+            this.project_name = doc.data().project_name;
           });
         });
     },

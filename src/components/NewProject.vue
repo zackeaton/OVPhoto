@@ -11,6 +11,12 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            <input type="text" v-model="project_name" required>
+            <label>Project Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
             <input type="date" class='datepicker' v-model="consult_date" required>
             <label>Consult Date</label>
           </div>
@@ -59,7 +65,7 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="notes" required>
+            <input type="text" v-model="notes">
             <label>Notes</label>
           </div>
         </div>
@@ -87,7 +93,8 @@ export default {
       dept_cost: null,
       dept_status: null,
       invoice_status: null,
-      notes: null
+      notes: null,
+      project_name: null
     };
   },
   methods: {
@@ -103,7 +110,8 @@ export default {
           dept_cost: this.dept_cost,
           dept_status: this.dept_status,
           invoice_status: this.invoice_status,
-          notes: this.notes
+          notes: this.notes,
+          project_name: this.project_name
         })
         .then(docRef => this.$router.push("/projects"))
         .catch(error => console.log(err));
