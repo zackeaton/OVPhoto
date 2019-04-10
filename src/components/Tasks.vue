@@ -1,5 +1,5 @@
 <template>
-  <div id="dashboard">
+  <div id="tasks">
     <ul class="collection with-header">
       <li class="collection-header">
         <h4>Customers of OV Photography</h4>
@@ -7,6 +7,8 @@
       <li v-for="customer in customers" v-bind:key="customer.id" class="collection-item">
         <div class="chip">{{customer.customer_id}}</div>
 
+        {{customer.first_name}}
+        {{customer.first_name}}
         {{customer.first_name}}
         {{customer.last_name}}
         <router-link
@@ -29,7 +31,7 @@
 <script>
 import db from "./firebaseInit.js";
 export default {
-  name: "dashboard",
+  name: "tasks",
   data() {
     return {
       customers: []

@@ -1,6 +1,6 @@
  <template>
   <nav>
-    <div class="nav-wrapper green">
+    <div class="nav-wrapper">
       <div class="container">
         <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
         <ul class="right hide-on-med-and-down">
@@ -9,6 +9,9 @@
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/">Dashboard</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/tasks">Tasks</router-link>
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/customers">Customers</router-link>
