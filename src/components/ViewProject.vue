@@ -18,7 +18,9 @@
     </ul>
     <router-link to="/projects" class="btn grey">Back</router-link>
     <button @click="deleteProject" class="btn red">Delete</button>
-
+    <router-link v-bind:to="{name: 'price-project', params: {project_id: project_id}}">
+        <button class='btn red'>Price Project</button>
+      </router-link>
 
     <div class="fixed-action-btn">
       <router-link
