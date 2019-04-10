@@ -34,9 +34,33 @@
 
         
 
-        <button type="calcuate" class="btn">Calcuate Totals</button>
+        <button v-on:click='calcTotal' class="btn">Calcuate Totals</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
       </form>
     </div>
   </div>
 </template>
+
+<script>
+import db from "./firebaseInit.js";
+export default {
+  name: "price-project",
+  data() {
+    return {
+      project_id: null,
+      project_name: null,
+      invoice_cost: null,
+      dept_cost: null,
+      dept_status: null,
+      project_name: null,
+      main_hourly: null,
+      shoot_hours: null,
+      edit_hours: null,
+    };
+  },
+  methods: {
+      calcTotal: function (event) {
+          alert('Test');
+      }
+  }
+};
