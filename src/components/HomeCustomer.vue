@@ -11,7 +11,7 @@
           class="secondary-content"
           v-bind:to="{ name: 'view-customer', params: { customer_id: customer.customer_id }}"
         >
-          <i class="fa fa-angle-double-down"></i>
+          <i class="fa fa-folder-open"></i>
         </router-link>
       </li>
     </ul>
