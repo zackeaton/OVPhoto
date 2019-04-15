@@ -69,6 +69,7 @@
 
    <tr>
       <td colspan="4">
+        <router-link to="/projects" class="btn grey">Back</router-link>
         <button class="btn" @click="addRow">Add row</button>
         <button class="btn red" @click="delRow">Delete row</button>
       </td>
