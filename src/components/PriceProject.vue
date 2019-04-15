@@ -10,7 +10,9 @@
             </td>
 
             <td>
-              Invoice #: 123<br> Created: January 1, 2015<br> Due: February 1, 2015
+              Invoice #: 123<br> 
+              Created: <input type="date" id='dates' v-model="invoice_created_date" class='right-align col s2' required>
+              <br> Due: <input type="date" id='dates' v-model="invoice_due_date" class='right-align col s2' required>
             </td>
           </tr>
         </table>
@@ -55,7 +57,7 @@
 
     <tr class="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
-      <td><input type="number"  v-model="item.price" /></td>
+      <td><input type="number" v-model="item.price" /></td>
       <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
        onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="item.quantity" /></td>
       <td>${{ item.price * item.quantity}}</td>
