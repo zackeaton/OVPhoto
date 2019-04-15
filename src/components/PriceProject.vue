@@ -50,18 +50,18 @@
       <td>Price</td>
     </tr>
 
-    <!--<tr class="item" v-for="item in items">
+    <tr class="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td>$<input type="number" v-model="item.price" /></td>
       <td><input type="number" v-model="item.quantity" /></td>
       <td>${{ item.price * item.quantity}}</td>
-    </tr> -->
-
-    <tr v-for="item in items">
-      <td>{{item.price}}</td>
     </tr>
 
-    <tr>
+    <!--<ul>
+      <li :key='item.id' v-for='item in items'>{{item.price}}</li>
+    </ul> -->
+
+   <tr>
       <td colspan="4">
         <button class="btn-add-row" @click="addRow">Add row</button>
       </td>
@@ -80,6 +80,7 @@
 import db from "./firebaseInit.js";
 export default {
   name: "price-project",
+  el: 'ex1',
   data() {
     return {
       items: [
@@ -108,3 +109,4 @@ export default {
     }
   } */
 };
+</script>
