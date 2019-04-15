@@ -68,7 +68,7 @@
    <tr>
       <td colspan="4">
         <button class="btn" @click="addRow">Add row</button>
-        <button class="btn red" @click="addRow">Delete row</button>
+        <button class="btn red" @click="delRow">Delete row</button>
       </td>
     </tr>
 
@@ -106,7 +106,10 @@ export default {
   methods: {
       addRow() {
       this.items.push({ description: "", quantity: 1, price: 0 });
-    }
+    },
+      delRow() {
+        this.items.splice(-1,1);
+      }
   },
  filters: {
     currency(value) {
