@@ -66,7 +66,8 @@
 
    <tr>
       <td colspan="4">
-        <button class="btn-add-row" @click="addRow">Add row</button>
+        <button class="btn" @click="addRow">Add row</button>
+        <button class="btn red" @click="addRow">Delete row</button>
       </td>
     </tr>
 
