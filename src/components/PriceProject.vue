@@ -55,8 +55,9 @@
 
     <tr class="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
-      <td><input type="number" min='0' pattern="^\d*(\.\d{0,2})?$" step='.01' v-model="item.price" /></td>
-      <td><input type="number" v-model="item.quantity" /></td>
+      <td><input type="number"  v-model="item.price" /></td>
+      <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
+       onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="item.quantity" /></td>
       <td>${{ item.price * item.quantity}}</td>
     </tr>
 
