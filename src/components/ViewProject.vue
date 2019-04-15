@@ -5,6 +5,7 @@
         <h4>Project # {{project_id}}</h4>
       </li>
       <li class="collection-item">project ID: {{project_id}}</li>
+      <li class='collection-item'>Project Name: {{project_name}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
       <li class="collection-item">Shoot Type: {{shoot_type}}</li>
@@ -17,6 +18,9 @@
     </ul>
     <router-link to="/projects" class="btn grey">Back</router-link>
     <button @click="deleteProject" class="btn red">Delete</button>
+    <router-link v-bind:to="{name: 'price-project', params: {project_id: project_id}}">
+        <button class='btn red'>Price Project</button>
+      </router-link>
 
     <div class="fixed-action-btn">
       <router-link
@@ -38,6 +42,7 @@ export default {
   data() {
     return {
       project_id: null,
+      project_name: null,
       consult_date: null,
       shoot_date: null,
       shoot_type: null,
@@ -46,7 +51,8 @@ export default {
       dept_cost: null,
       dept_status: null,
       invoice_status: null,
-      notes: null
+      notes: null,
+      project_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -57,6 +63,7 @@ export default {
         querySnapshot.forEach(doc => {
           next(vm => {
             vm.project_id = doc.data().project_id;
+            vm.project_name = doc.data().project_name
             vm.consult_date = doc.data().consult_date;
             vm.shoot_date = doc.data().shoot_date;
             vm.shoot_type = doc.data().shoot_type;
@@ -66,6 +73,7 @@ export default {
             vm.dept_status = doc.data().dept_status;
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
+            vm.project_name = doc.data().project_name;
           });
         });
       });
@@ -81,6 +89,7 @@ export default {
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             this.project_id = doc.data().project_id;
+            this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
             this.shoot_date = doc.data().shoot_date;
             this.shoot_type = doc.data().shoot_type;
@@ -90,6 +99,7 @@ export default {
             this.dept_status = doc.data().dept_status;
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
+            this.project_name = doc.data().project_name;
           });
         });
     },

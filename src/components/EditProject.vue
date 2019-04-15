@@ -11,13 +11,19 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="consult_date" required>
+            <input type="text" v-model="project_name" required>
+            <label>Project Name</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="date" v-model="consult_date" class='datepicker' required>
             <label>Consult Date</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_date" required>
+            <input type="date" class='datepicker' v-model="shoot_date" required>
             <label>Shoot Date</label>
           </div>
         </div>
@@ -59,11 +65,10 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="notes" required>
+            <input type="text" v-model="notes">
             <label>Notes</label>
           </div>
-        </div>
-
+        </div>   
         <button type="submit" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
       </form>
@@ -79,6 +84,7 @@ export default {
   data() {
     return {
       project_id: null,
+      project_name: null,
       consult_date: null,
       shoot_date: null,
       shoot_type: null,
@@ -87,7 +93,8 @@ export default {
       dept_cost: null,
       dept_status: null,
       invoice_status: null,
-      notes: null
+      notes: null,
+      project_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -98,6 +105,7 @@ export default {
         querySnapshot.forEach(doc => {
           next(vm => {
             vm.project_id = doc.data().project_id;
+            vm.project_name = doc.data().project_name;
             vm.consult_date = doc.data().consult_date;
             vm.shoot_date = doc.data().shoot_date;
             vm.shoot_type = doc.data().shoot_type;
@@ -107,6 +115,7 @@ export default {
             vm.dept_status = doc.data().dept_status;
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
+            vm.project_name = doc.data().project_name;
           });
         });
       });
@@ -122,6 +131,7 @@ export default {
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             this.project_id = doc.data().project_id;
+            this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
             this.shoot_date = doc.data().shoot_date;
             this.shoot_type = doc.data().shoot_type;
@@ -131,6 +141,7 @@ export default {
             this.dept_status = doc.data().dept_status;
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
+            this.project_name = doc.data().project_name;
           });
         });
     },
@@ -143,6 +154,7 @@ export default {
             doc.ref
               .update({
                 project_id: this.project_id,
+                project_name: this.project_name,
                 consult_date: this.consult_date,
                 shoot_date: this.shoot_date,
                 shoot_type: this.shoot_type,

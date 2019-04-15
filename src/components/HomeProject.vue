@@ -6,12 +6,12 @@
       </li>
       <li v-for="project in projects" v-bind:key="project.id" class="collection-item">
         <div class="chip">{{project.id}}</div>
-        {{project.consult_date}} {{project.shoot_date}}
+        {{project.project_name}}
         <router-link
           class="secondary-content"
           v-bind:to="{ name: 'view-project', params: { project_id: project.project_id }}"
         >
-          <i class="fa fa-angle-double-down"></i>
+          <i class="fa fa-folder-open"></i>
         </router-link>
       </li>
     </ul>
@@ -41,6 +41,7 @@ export default {
           const data = {
             id: doc.id,
             project_id: doc.data().project_id,
+            project_name: doc.data().project_name,
             consult_date: doc.data().consult_date,
             shoot_date: doc.data().shoot_date,
             shoot_type: doc.data().shoot_type,

@@ -12,6 +12,7 @@ import EditProject from '@/components/EditProject';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
 import firebase from 'firebase';
+import PriceProject from '@/components/PriceProject'
 
 Vue.use(Router);
 
@@ -104,7 +105,15 @@ let router = new Router({
       meta: {
         requiresAuth: true
       }
-    }
+    },
+    {
+      path: '/projects/price/:project_id',
+      name: 'price-project',
+      component: PriceProject,
+      meta: {
+        requiresAuth: true
+      }
+    },
   ]
 });
 
