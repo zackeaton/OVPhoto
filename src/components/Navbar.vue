@@ -16,6 +16,9 @@
           <li v-if="isLoggedIn">
             <router-link to="/projects">Projects</router-link>
           </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/todos">Todos</router-link>
+          </li>
           <li v-if="!isLoggedIn">
             <router-link to="/login">Login</router-link>
           </li>

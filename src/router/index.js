@@ -11,6 +11,7 @@ import NewProject from '@/components/NewProject';
 import EditProject from '@/components/EditProject';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
+import Todos from '@/components/Todos';
 import firebase from 'firebase';
 import PriceProject from '@/components/PriceProject'
 
@@ -22,6 +23,14 @@ let router = new Router({
       path: '/',
       name: 'Home',
       component: Home,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/todos',
+      name: 'todos',
+      component: Todos,
       meta: {
         requiresAuth: true
       }
