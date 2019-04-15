@@ -50,11 +50,15 @@
       <td>Price</td>
     </tr>
 
-    <tr class="item" v-for="item in items">
+    <!--<tr class="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td>$<input type="number" v-model="item.price" /></td>
       <td><input type="number" v-model="item.quantity" /></td>
-      <td>${{ item.price * item.quantity | currency }}</td>
+      <td>${{ item.price * item.quantity}}</td>
+    </tr> -->
+
+    <tr v-for="item in items">
+      <td>{{item.price}}</td>
     </tr>
 
     <tr>
@@ -65,7 +69,7 @@
 
     <tr class="total">
       <td colspan="3"></td>
-      <td>Total: ${{ total | currency }}</td>
+      <td>Total: ${{ total }}</td>
     </tr>
   </table>
 </div>
@@ -78,20 +82,29 @@ export default {
   name: "price-project",
   data() {
     return {
-      project_id: null,
-      project_name: null,
-      invoice_cost: null,
-      dept_cost: null,
-      dept_status: null,
-      project_name: null,
-      main_hourly: null,
-      shoot_hours: null,
-      edit_hours: null,
+      items: [
+      { description: "Website design", quantity: 1, price: 300 },
+      { description: "Website design", quantity: 1, price: 75 },
+      { description: "Website design", quantity: 1, price: 10 }
+    ]
     };
   },
+   computed: {
+    total() {
+      return this.items.reduce(
+        (acc, item) => acc + item.price * item.quantity,
+        0
+      );
+    }
+  },
   methods: {
-      calcTotal: function (event) {
-          alert('Test');
-      }
-  }
+      addRow() {
+      this.items.push({ description: "", quantity: 1, price: 0 });
+    }
+  },
+ /* filters: {
+    currency(value) {
+      return value.toFixed(2);
+    }
+  } */
 };
