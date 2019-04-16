@@ -55,7 +55,7 @@
       </tr>
     </thead>
 
-    <tr class="item" v-for="item in items">
+    <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
       <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
