@@ -27,7 +27,7 @@
             </td>
 
             <td>
-              Acme Corp.<br> John Doe<br> john@example.com
+              First Name Last Name<br> Project #: 123<br> first@example.com
             </td>
           </tr>
         </table>
@@ -36,7 +36,7 @@
 
     <tr class="heading">
       <td colspan="3">Payment Method</td>
-      <td>Check #</td>
+      <td>Payment Method</td>
     </tr>
 
     <tr class="details">
@@ -88,7 +88,7 @@
 import db from "./firebaseInit.js";
 export default {
   name: "price-project",
-  //el: 'ex1',
+  //el: 'example1',
   data() {
     return {
       items: [
@@ -214,7 +214,7 @@ export default {
   }
 }
 
-/** RTL **/
+/** RTL Stuff **/
 .rtl {
   direction: rtl;
   font-family: Tahoma, "Helvetica Neue", "Helvetica", Helvetica, Arial,
