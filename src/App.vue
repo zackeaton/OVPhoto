@@ -11,14 +11,15 @@
 import Navbar from './components/Navbar';
 import NewCustomer from './components/NewCustomer';
 import NewProject from './components/NewProject';
-
+import Todos from './components/Todos';
 
 export default {
   name: 'app',
   components: {
     Navbar,
     NewCustomer,
-    NewProject
+    NewProject,
+    Todos
   }
 };
 </script>

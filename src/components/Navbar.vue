@@ -1,6 +1,6 @@
  <template>
   <nav>
-    <div class="nav-wrapper green">
+    <div class="nav-wrapper">
       <div class="container">
         <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
         <ul class="right hide-on-med-and-down">
