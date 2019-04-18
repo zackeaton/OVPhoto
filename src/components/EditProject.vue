@@ -6,67 +6,67 @@
         <div class="row">
           <div class="input-field col s 12">
             <input disabled type="text" v-model="project_id" required>
-            <label>Project ID#</label>
+            <label class="active">Project ID#</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="project_name" required>
-            <label>Project Name</label>
+            <label class="active">Project Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="date" v-model="consult_date" class='datepicker' required>
-            <label>Consult Date</label>
+            <label class="active">Consult Date</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="date" class='datepicker' v-model="shoot_date" required>
-            <label>Shoot Date</label>
+            <label class="active">Shoot Date</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_type" required>
-            <label>Shoot Type</label>
+            <label class="active">Shoot Type</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_location" required>
-            <label>Shoot Location</label>
+            <label class="active">Shoot Location</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_cost" required>
-            <label>Invoice Cost</label>
+            <label class="active">Invoice Cost</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_cost" required>
-            <label>Deposit Cost</label>
+            <label class="active">Deposit Cost</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_status" required>
-            <label>Deposit Status</label>
+            <label class="active">Deposit Status</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_status" required>
-            <label>Invoice Status</label>
+            <label class="active">Invoice Status</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="notes">
-            <label>Notes</label>
+            <label class="active">Notes</label>
           </div>
         </div>   
         <button type="submit" class="btn">Submit</button>

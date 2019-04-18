@@ -6,43 +6,43 @@
         <div class="row">
           <div class="input-field col s 12">
           <input disabled type="text" v-model="customer_id" required>
-          <label>Customer ID</label>
+          <label class="active">Customer ID</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="first_name" required>
-          <label>First Name</label>
+          <label class="active">First Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="last_name" required>
-          <label>Last Name</label>
+          <label class="active">Last Name</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="phone" required>
-          <label>Phone</label>
+          <label class="active">Phone</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="email" required>
-          <label>Email</label>
+          <label class="active">Email</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="social" required>
-          <label>Social</label>
+          <label class="active">Social</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="returning_customer" required>
-          <label>Returning Customer</label>
+          <label class="active">Returning Customer</label>
           </div>
         </div>
 
