@@ -12,6 +12,7 @@ import Navbar from './components/Navbar';
 import NewCustomer from './components/NewCustomer';
 import NewProject from './components/NewProject';
 import Todos from './components/Todos';
+import NewInvoice from './components/NewInvoice';
 
 export default {
   name: 'app',
@@ -19,6 +20,7 @@ export default {
     Navbar,
     NewCustomer,
     NewProject,
+    NewInvoice,
     Todos
   }
 };

@@ -13,7 +13,13 @@ import Login from '@/components/Login';
 import Register from '@/components/Register';
 import Todos from '@/components/Todos';
 import firebase from 'firebase';
-import PriceProject from '@/components/PriceProject'
+import PriceProject from '@/components/PriceProject';
+import HomeInvoice from '@/components/HomeInvoice';
+import NewInvoice from '@/components/NewInvoice';
+import ViewInvoice from '@/components/ViewInvoice';
+import EditInvoice from '@/components/EditInvoice';
+
+
 
 Vue.use(Router);
 
@@ -31,6 +37,38 @@ let router = new Router({
       path: '/todos',
       name: 'todos',
       component: Todos,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/invoices',
+      name: 'home-invoice',
+      component: HomeInvoice,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/new/invoice',
+      name: 'new-invoice',
+      component: NewInvoice,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/invoices/edit/:invoice_id',
+      name: 'edit-invoice',
+      component: EditInvoice,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/invoices/view/:invoice_id',
+      name: 'view-invoice',
+      component: ViewInvoice,
       meta: {
         requiresAuth: true
       }

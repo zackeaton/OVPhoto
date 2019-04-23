@@ -11,6 +11,9 @@
             <router-link to="/">Dashboard</router-link>
           </li>
           <li v-if="isLoggedIn">
+            <router-link to="/invoices">Invoices</router-link>
+          </li>
+          <li v-if="isLoggedIn">
             <router-link to="/customers">Customers</router-link>
           </li>
           <li v-if="isLoggedIn">
