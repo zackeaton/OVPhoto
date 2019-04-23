@@ -1,6 +1,6 @@
  <template>
   <nav>
-    <div class="nav-wrapper" id='noprint'>
+    <div class="nav-wrapper">
       <div class="container">
         <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
         <ul class="right hide-on-med-and-down">
@@ -98,11 +98,6 @@ export default {
 <style scoped>
 .email {
   padding-right: 10px;
-}
-@media print{
-  .noprint {
-    visibility: hidden;
-  }
 }
 </style>
 

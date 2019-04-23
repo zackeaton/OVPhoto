@@ -1,6 +1,6 @@
 <template>
-    <div id='invoice-box' class="invoice-box">
-  <table id='invoice' cellpadding="0" cellspacing="0">
+    <div class="invoice-box">
+  <table cellpadding="0" cellspacing="0">
     <tr class="top">
       <td colspan="4">
         <table>
@@ -34,7 +34,7 @@
       </td>
     </tr>
 
-    <!--<tr class="heading">
+    <tr class="heading">
       <td colspan="3">Payment Method</td>
       <td>Payment Method</td>
     </tr>
@@ -42,12 +42,12 @@
     <tr class="details">
       <td colspan="3">Check</td>
       <td>1000</td>
-    </tr> -->
+    </tr>
   </table>
 
-  <table id='content'>
+  <table>
     <thead>
-      <tr class='heading'>
+      <tr>
       <td>Item</td>
       <td>Unit Cost</td>
       <td>Quantity</td>
@@ -72,7 +72,6 @@
         <router-link to="/projects" class="btn grey">Back</router-link>
         <button class="btn" @click="addRow">Add row</button>
         <button class="btn red" @click="delRow">Delete row</button>
-        <button class='btn' @click='genPDF'>Print Invoice</button>
       </td>
     </tr>
 
@@ -113,45 +112,6 @@ export default {
     },
       delRow() {
         this.items.splice(-1,1);
-      },
-      genPDF() {
-        window.print();
-        //Using JSPDF & HTML2Canvas
-
-        //html2canvas(document.body).then(function(canvas) {
-        //document.body.appendChild(canvas);
-        //});
-
-       /* var w = 0;//document.getElementById("invoice").offsetWidth;
-        var h = 0;//document.getElementById("invoice").offsetHeight;
-
-        html2canvas(document.getElementById("invoice-box"), {
-            dpi: 300,
-            scale: 3,
-            //useCORS: true,
-            allowTaint : true,
-            onrendered: function(canvas) {
-
-                var imgData = canvas.toDataURL('image/png');
-                //console.log('Report Image URL: '+imgData);
-                var doc = new jsPDF('p', 'mm', [650, 650]); //210mm wide and 297mm high
-                
-                doc.addImage(imgData, 'PNG', 10, 10);
-                doc.save('sample.pdf');
-            }
-        }); */
-
-        //Using JSPDF & Autotable
-
-        //var doc = new jsPDF();
-        //doc.autoTable({html: '#content'});
-        
-        //Pass Array
-       /* doc.autoTable({
-          head: [['Item', 'Unit Cost', 'Quantity', 'Price']],
-          body: [['Test2', 'Test3']]
-        })
-        doc.save('table.pdf');*/
       }
   },
  filters: {
@@ -268,6 +228,4 @@ export default {
 .rtl table tr td:nth-child(2) {
   text-align: left;
 }
-
-
 </style>
