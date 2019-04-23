@@ -14,6 +14,8 @@ import Register from '@/components/Register';
 import Todos from '@/components/Todos';
 import firebase from 'firebase';
 import PriceProject from '@/components/PriceProject'
+import jsPDF from 'jspdf';
+import 'jspdf-autotable';
 
 Vue.use(Router);
 
