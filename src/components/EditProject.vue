@@ -70,7 +70,7 @@
           </div>
         </div>   
         <button type="submit" class="btn">Submit</button>
-        <router-link to="/projects" class="btn grey">Cancel</router-link>
+        <a class="btn grey" @click="$router.go(-1)">Cancel</a> 
       </form>
     </div>
   </div>
