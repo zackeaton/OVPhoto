@@ -5,7 +5,7 @@
         <h4>Invoices</h4>
       </li>
       <li v-for="invoice in invoices" v-bind:key="invoice.id" class="collection-item">
-        <div class="chip">{{invoice.invoice_id}}</div>
+        <div class="chip">{{invoice.id}}</div>
         {{invoice.invoice_id}}
         <router-link
           class="secondary-content"
@@ -39,7 +39,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           const data = {
-            //id: doc.id,
+            id: doc.id,
             cost_1: doc.data().cost_1,
             cost_2: doc.data().cost_2,
             cost_3: doc.data().cost_3,

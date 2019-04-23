@@ -1,86 +1,74 @@
 <template>
-    <div class="invoice-box">
-  <table cellpadding="0" cellspacing="0">
-    <tr class="top">
-      <td colspan="4">
-        <table>
-          <tr>
-            <td class="title">
-              <img src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w" style="width:100%; max-width:300px;">
-            </td>
+  <div id="new-invoice">
+    <h3>New Invoice</h3>
+    <div class="row">
+      <form @submit.prevent="saveInvoice" class="col s12">
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="project_id" required>
+            <label>Project ID</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="invoice_id" required>
+            <label>Invoice ID</label>
+          </div>
+        </div>
+         <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="created" required>
+            <label>Created</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="due" required>
+            <label>Due</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="item_1" required>
+            <label>Item 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="cost_1" required>
+            <label>Cost 1</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="item_2" required>
+            <label>Item 2</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="cost_2" required>
+            <label>Cost 2</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="item_3" required>
+            <label>Item 3</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s 12">
+            <input type="text" v-model="cost_3" required>
+            <label>Cost 3</label>
+          </div>
+        </div>
 
-            <td>
-              Invoice #: 123<br> 
-              Created: <input type="date" id='dates' v-model="invoice_created_date" class='right-align col s2' required>
-              <br> Due: <input type="date" id='dates' v-model="invoice_due_date" class='right-align col s2' required>
-            </td>
-          </tr>
-        </table>
-      </td>
-
-    <tr class="information">
-      <td colspan="4">
-        <table>
-          <tr>
-            <td>
-              OV Photography<br> 1 University Blvd<br> St. Louis, MO 63121
-            </td>
-
-            <td>
-              First Name Last Name<br> Project #: 123<br> first@example.com
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-    <tr class="heading">
-      <td colspan="3">Payment Method</td>
-      <td>Payment Method</td>
-    </tr>
-
-    <tr class="details">
-      <td colspan="3">Check</td>
-      <td>1000</td>
-    </tr>
-  </table>
-
-  <table>
-    <thead>
-      <tr>
-      <td>Item</td>
-      <td>Unit Cost</td>
-      <td>Quantity</td>
-      <td>Price</td>
-      </tr>
-    </thead>
-
-    <tr class="item" v-bind:key="item" v-for="item in items">
-      <td><input v-model="item.description" /></td>
-      <td><input type="number" v-model="item.price" /></td>
-      <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
-       onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="item.quantity" /></td>
-      <td>${{ item.price * item.quantity}}</td>
-    </tr>
-
-    <!--<ul>
-      <li :key='item.id' v-for='item in items'>{{item.price}}</li>
-    </ul> -->
-
-   <tr>
-      <td colspan="4">
-        <router-link to="/projects" class="btn grey">Back</router-link>
-        <button class="btn" @click="addRow">Add row</button>
-        <button class="btn red" @click="delRow">Delete row</button>
-      </td>
-    </tr>
-
-    <tr class="total">
-      <td colspan="3"></td>
-      <td>Total: ${{ total }}</td>
-    </tr>
-  </table>
-</div>
+        <button type="submit" class="btn">Submit</button>
+        <router-link to="/invoices" class="btn grey">Cancel</router-link>
+      </form>
+    </div>
+  </div>
 </template>
 
 
