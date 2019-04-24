@@ -70,8 +70,8 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            // console.log(user);
-            alert(`Account Created for ${user.email}`);
+             console.log(user);
+            alert(`Account Created for ${user}`);
             this.$router.go({ path: this.$router.path });
           },
           err => {
@@ -88,7 +88,8 @@ export default {
     } ,
     register: function(e) {
       
-    }
+    },
+    
   } 
 };
 </script>

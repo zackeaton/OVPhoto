@@ -60,14 +60,14 @@
             </td>
 
             <td>
-              First Name Last Name<br> {{project_id}}<br> first@example.com
+              First Name Last Name<br> Project ID: {{project_id}}<br> first@example.com
             </td>
           </tr>
         </table>
       </td>
     </tr>
 
-    <tr class="heading">
+   <!-- <tr class="heading">
       <td colspan="3">Payment Method</td>
       <td>Payment Method</td>
     </tr>
@@ -75,8 +75,8 @@
     <tr class="details">
       <td colspan="3">Check</td>
       <td>1000</td>
-    </tr>
-  </table>
+    </tr> -->
+  </table> 
 
   <table>
     <thead>
@@ -127,6 +127,11 @@
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
     </ul> -->
 
+   <tr class="total">
+      <td colspan="3"></td>
+      <td>Total: ${{ total }}</td>
+    </tr>
+
    <tr>
       <td colspan="4">
         <router-link to="/projects" class="btn grey">Back</router-link>
@@ -136,10 +141,6 @@
       </td>
     </tr>
 
-    <tr class="total">
-      <td colspan="3"></td>
-      <td>Total: ${{ total }}</td>
-    </tr>
   </table>
 </div>
 </template>
