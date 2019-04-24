@@ -37,6 +37,11 @@
             </router-link>
           </li>
           <li v-if="isLoggedIn">
+            <router-link to="/invoices">
+            <i class="fa fa-credit-card"></i>
+            </router-link>
+          </li>
+          <li v-if="isLoggedIn">
             <router-link to="/customers">
               <i class="fa fa-users"></i>
             </router-link>

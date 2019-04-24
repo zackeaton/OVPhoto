@@ -15,7 +15,7 @@
             <label>Invoice ID</label>
           </div>
         </div>
-         <div class="row">
+        <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="created" required>
             <label>Created</label>
@@ -94,43 +94,21 @@ export default {
     saveInvoice() {
       db.collection("invoices")
         .add({
-        cost_1: this.cost_1,
-        cost_2: this.cost_2,
-        cost_3: this.cost_3,
-        created: this.created,
-        due: this.due,
-        invoice_id: this.invoice_id,
-        item_1: this.item_1,
-        item_2: this.item_2,
-        item_3: this.item_3,
-        project_id: this.project_id
+          cost_1: this.cost_1,
+          cost_2: this.cost_2,
+          cost_3: this.cost_3,
+          created: this.created,
+          due: this.due,
+          invoice_id: this.invoice_id,
+          item_1: this.item_1,
+          item_2: this.item_2,
+          item_3: this.item_3,
+          project_id: this.project_id
         })
         .then(docRef => this.$router.push("/invoices"))
         .catch(error => console.log(err));
     }
-  },
-     computed: {
-    total() {
-      return this.items.reduce(
-        (acc, item) => acc + item.price * item.quantity,
-        0
-      );
-    }
-  },
-  methods: {
-      addRow() {
-      this.items.push({ description: "", quantity: 1, price: 0 });
-    },
-      delRow() {
-        this.items.splice(-1,1);
-      }
-  },
- filters: {
-    currency(value) {
-      return value.toFixed(2);
-    }
   }
-
 };
 </script>
 

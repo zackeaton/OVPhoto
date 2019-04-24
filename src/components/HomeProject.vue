@@ -26,10 +26,10 @@
 <script>
 import db from "./firebaseInit.js";
 export default {
-  name: "projects",
+  name: "projects, customers, invoices",
   data() {
     return {
-      projects: []
+      projects: [],
     };
   },
   created() {
