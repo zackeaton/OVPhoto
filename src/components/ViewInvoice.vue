@@ -1,5 +1,5 @@
 <template>
-  <div id="view-invoice">
+  <!-- <div id="view-invoice">
     <ul class="collection with-header">
       <li class="collection-header">
         <h4>Invoice # {{invoice_id}}</h4>
@@ -28,8 +28,121 @@
       </router-link>
     </div>
   </div>
-</template>
+</template> -->
 
+<div id="view-invoice">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td class="title">
+              <img src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w" style="width:100%; max-width:300px;">
+            </td>
+
+            <td>
+              Invoice #: {{invoice_id}}<br> 
+              Created: {{created}}
+              <br> 
+              Due: {{due}}
+              <!-- <input type="date" id='dates' v-model="invoice_due_date" class='right-align col s2' required> -->
+            </td>
+          </tr>
+        </table>
+      </td>
+
+    <tr class="information">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td>
+              OV Photography<br> 1 University Blvd<br> St. Louis, MO 63121
+            </td>
+
+            <td>
+              First Name Last Name<br> {{project_id}}<br> first@example.com
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+    <tr class="heading">
+      <td colspan="3">Payment Method</td>
+      <td>Payment Method</td>
+    </tr>
+
+    <tr class="details">
+      <td colspan="3">Check</td>
+      <td>1000</td>
+    </tr>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+      <td>Item</td>
+      <td>Unit Cost</td>
+      <td>Quantity</td>
+      <td>Price</td>
+      </tr>
+    </thead>
+
+     <thead>
+      <tr>
+      <td>{{item_1}}</td>
+      <td>{{cost_1}}</td>
+      <td>Quantity</td>
+      <td>{{cost_1}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>{{item_2}}</td>
+      <td>{{cost_2}}</td>
+      <td>Quantity</td>
+      <td>{{cost_2}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>{{item_3}}</td>
+      <td>{{cost_3}}</td>
+      <td>Quantity</td>
+      <td>{{cost_3}}</td>
+      </tr>
+    </thead>
+
+    <!-- <tr class="item" v-bind:key="item" v-for="item in items">
+      <td><input v-model="item.description" /></td>
+      <td><input type="number" v-model="item.price" /></td>
+      <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
+       onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="item.quantity" /></td>
+      <td>${{ item.price * item.quantity}}</td>
+    </tr> -->
+
+    <!--<ul>
+      <li :key='item.id' v-for='item in items'>{{item.price}}</li>
+    </ul> -->
+
+   <tr>
+      <td colspan="4">
+        <router-link to="/projects" class="btn grey">Back</router-link>
+        <button @click="deleteInvoice" class="btn red">Delete</button>
+       <!-- <button class="btn" @click="addRow">Add row</button> -->
+       <!-- <button class="btn red" @click="delRow">Delete row</button> -->
+      </td>
+    </tr>
+
+    <tr class="total">
+      <td colspan="3"></td>
+      <td>Total: ${{ total }}</td>
+    </tr>
+  </table>
+</div>
+</template>
 
 
 <script>
@@ -106,7 +219,7 @@ export default {
             });
           });
       }
-    }
+    },
   }
 };
 </script>
