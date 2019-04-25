@@ -1,6 +1,8 @@
 <template>
   <div id="edit-project">
-    <h3>Edit Project</h3>Customer:
+    <h3>Edit Project</h3>
+    
+    Customer:
     <div class="row">
       <div class="input-field col s 12">
         <select>
@@ -8,6 +10,7 @@
         </select>
       </div>
     </div>
+    
     <div class="row">
       <form @submit.prevent="updateProject" class="col s12">
         Project ID:
