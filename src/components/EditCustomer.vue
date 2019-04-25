@@ -5,44 +5,51 @@
       <form @submit.prevent="updateCustomer" class="col s12">
         <div class="row">
           <div class="input-field col s 12">
+            Customer ID
           <input disabled type="text" v-model="customer_id" required>
-          <label>Customer ID</label>
+          <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            First Name
           <input type="text" v-model="first_name" required>
-          <label>First Name</label>
+          <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Last Name
           <input type="text" v-model="last_name" required>
-          <label>Last Name</label>
+          <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Phone
           <input type="text" v-model="phone" required>
-          <label>Phone</label>
+          <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Email
           <input type="text" v-model="email" required>
-          <label>Email</label>
+          <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Social
           <input type="text" v-model="social" required>
-          <label>Social</label>
+          <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Returning Customer
           <input type="text" v-model="returning_customer" required>
-          <label>Returning Customer</label>
+          <label></label>
           </div>
         </div>
 

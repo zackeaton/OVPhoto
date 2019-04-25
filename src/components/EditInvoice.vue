@@ -5,62 +5,72 @@
       <form @submit.prevent="updateInvoice" class="col s12">
           <div class="row">
           <div class="input-field col s 12">
+            Project ID:
             <input disabled type="text" v-model="project_id" required>
-            <label>Project ID</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Invoice ID:
             <input disabled type="text" v-model="invoice_id" required>
-            <label>Invoice ID</label>
+            <label></label>
           </div>
         </div>
          <div class="row">
           <div class="input-field col s 12">
+            Created:
             <input type="text" v-model="created" required>
-            <label>Created</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Due:
             <input type="text" v-model="due" required>
-            <label>Due</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Item 1:
             <input type="text" v-model="item_1" required>
-            <label>Item 1</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Cost 1:
             <input type="text" v-model="cost_1" required>
-            <label>Cost 1</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Item 2:
             <input type="text" v-model="item_2" required>
-            <label>Item 2</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Cost 2:
             <input type="text" v-model="cost_2" required>
-            <label>Cost 2</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Item 3:
             <input type="text" v-model="item_3" required>
-            <label>Item 3</label>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
+            Cost 3:
             <input type="text" v-model="cost_3" required>
-            <label>Cost 3</label>
+            <label></label>
           </div>
         </div>
         
