@@ -4,6 +4,7 @@
       <li class="collection-header">
         <h4>Project # {{project_id}}</h4>
       </li>
+      <li class="collection-item">Customer: {{customer}}</li>
       <li class="collection-item">project ID: {{project_id}}</li>
       <li class='collection-item'>Project Name: {{project_name}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>

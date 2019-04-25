@@ -1,81 +1,85 @@
 <template>
   <div id="edit-project">
-    <h3>Edit Project</h3>
+    <h3>Edit Project</h3>Customer:
+    <div class="row">
+      <div class="input-field col s 12">
+        <select>
+          <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
+        </select>
+      </div>
+    </div>
     <div class="row">
       <form @submit.prevent="updateProject" class="col s12">
+        Project ID:
         <div class="row">
           <div class="input-field col s 12">
             <input disabled type="text" v-model="project_id" required>
-            <label>Project ID#</label>
+            <label></label>
           </div>
-        </div>
+        </div>Project Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="project_name" required>
-            <label>Project Name</label>
+            <label></label>
           </div>
-        </div>
+        </div>Consult Date:
         <div class="row">
           <div class="input-field col s 12">
             <input type="date" v-model="consult_date" class="datepicker" required>
-            <label>Consult Date</label>
+            <label></label>
           </div>
-        </div>
+        </div>Shoot Date:
         <div class="row">
           <div class="input-field col s 12">
             <input type="date" class="datepicker" v-model="shoot_date" required>
-            <label>Shoot Date</label>
+            <label></label>
           </div>
-        </div>
+        </div>Shoot Type:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_type" required>
-            <label>Shoot Type</label>
+            <label></label>
           </div>
-        </div>
+        </div>Shoot Location:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_location" required>
-            <label>Shoot Location</label>
+            <label></label>
           </div>
-        </div>
+        </div>Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_cost" required>
-            <label>Invoice Cost</label>
+            <label></label>
           </div>
-        </div>
+        </div>Deposit Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_cost" required>
-            <label>Deposit Cost</label>
+            <label></label>
           </div>
-        </div>
+        </div>Deposit Status:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_status" required>
-            <label>Deposit Status</label>
+            <label></label>
           </div>
-        </div>
+        </div>Invoice Status:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_status" required>
-            <label>Invoice Status</label>
+            <label></label>
           </div>
-        </div>
+        </div>Notes:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="notes">
-            <label>Notes</label>
+            <label></label>
           </div>
         </div>
         <br>
-        <div class="row">
-          <div class="input-field col s 12">
-            <input type="text" v-model="customer">
-            <label>Customer</label>
-          </div>
-        </div>
+        <!-- <label></label> -->
+
         <button type="submit" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
       </form>
@@ -90,7 +94,8 @@ export default {
   name: "edit-project",
   data() {
     return {
-      customerArray:[],
+      customerArray: [],
+      customer: null,
       project_id: null,
       project_name: null,
       consult_date: null,
@@ -112,6 +117,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           next(vm => {
+            vm.customer = doc.data().customer;
             vm.project_id = doc.data().project_id;
             vm.project_name = doc.data().project_name;
             vm.consult_date = doc.data().consult_date;
@@ -137,14 +143,16 @@ export default {
       .get()
       .then(snapshot => {
         snapshot.forEach(doc => {
-          this.customerArray.push(doc.data().customer_id +", "+  doc.data().first_name)
+          this.customerArray.push(
+            " " + doc.data().customer_id + " " + doc.data().first_name
+          );
         });
       });
     // const customers = snapshot.docs.map(doc =>{
     //   doc
     // })
     // console.log(customers)
-    console.log(this.customerArray)
+    console.log(this.customerArray);
   },
   methods: {
     fetchData() {
@@ -153,6 +161,7 @@ export default {
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
+            this.customer = doc.data().customer;
             this.project_id = doc.data().project_id;
             this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
@@ -176,6 +185,7 @@ export default {
           querySnapshot.forEach(doc => {
             doc.ref
               .update({
+                customer: this.customer,
                 project_id: this.project_id,
                 project_name: this.project_name,
                 consult_date: this.consult_date,
@@ -200,3 +210,10 @@ export default {
   }
 };
 </script>
+
+<style>
+select {
+  display: block !important;
+}
+</style>
+
