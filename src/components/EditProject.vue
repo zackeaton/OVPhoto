@@ -100,7 +100,6 @@ export default {
   data() {
     return {
       customerArray: [],
-      customer: null,
       project_id: null,
       project_name: null,
       consult_date: null,
@@ -122,7 +121,6 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           next(vm => {
-            vm.customer = doc.data().customer;
             vm.project_id = doc.data().project_id;
             vm.project_name = doc.data().project_name;
             vm.consult_date = doc.data().consult_date;
@@ -166,7 +164,6 @@ export default {
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
-            this.customer = doc.data().customer;
             this.project_id = doc.data().project_id;
             this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
@@ -190,7 +187,6 @@ export default {
           querySnapshot.forEach(doc => {
             doc.ref
               .update({
-                customer: this.customer,
                 project_id: this.project_id,
                 project_name: this.project_name,
                 consult_date: this.consult_date,
@@ -214,8 +210,8 @@ export default {
     }
   }
 };
-        
 </script>
+
 
 <style>
 select {
