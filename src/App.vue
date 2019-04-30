@@ -11,7 +11,7 @@
 import Navbar from './components/Navbar';
 import NewCustomer from './components/NewCustomer';
 import NewProject from './components/NewProject';
-import Todos from './components/Todos';
+import NewTask from './components/NewTask';
 import NewInvoice from './components/NewInvoice';
 
 export default {
@@ -21,7 +21,7 @@ export default {
     NewCustomer,
     NewProject,
     NewInvoice,
-    Todos
+    NewTask,
   }
 };
 </script>

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/Home';
+import Home from '@/components/Home'
 import HomeCustomer from '@/components/HomeCustomer';
 import ViewCustomer from '@/components/ViewCustomer';
 import NewCustomer from '@/components/NewCustomer';
@@ -11,13 +11,16 @@ import NewProject from '@/components/NewProject';
 import EditProject from '@/components/EditProject';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
-import Todos from '@/components/Todos';
 import firebase from 'firebase';
 import PriceProject from '@/components/PriceProject';
 import HomeInvoice from '@/components/HomeInvoice';
 import NewInvoice from '@/components/NewInvoice';
 import ViewInvoice from '@/components/ViewInvoice';
 import EditInvoice from '@/components/EditInvoice';
+import HomeTask from '@/components/HomeTask';
+import NewTask from '@/components/NewTask';
+import ViewTask from '@/components/ViewTask';
+import EditTask from '@/components/EditTask';
 
 
 
@@ -34,9 +37,33 @@ let router = new Router({
       }
     },
     {
-      path: '/todos',
-      name: 'todos',
-      component: Todos,
+      path: '/tasks',
+      name: 'tasks',
+      component: HomeTask,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/tasks/view/:task_id',
+      name: 'view-task',
+      component: ViewTask,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/new/task',
+      name: 'new-task',
+      component: NewTask,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/tasks/edit/:task_id',
+      name: 'edit-tasks',
+      component: EditTask,
       meta: {
         requiresAuth: true
       }

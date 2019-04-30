@@ -55,6 +55,21 @@ export default {
           this.projects.push(data);
         });
       });
+  },
+  methods: {
+   deleteTask() {
+      if (confirm("Are you sure?")) {
+        db.collection("tasks")
+          .where("task_id", "==", this.$route.params.task_id)
+          .get()
+          .then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+              doc.ref.delete();
+              this.$router.push("/tasks");
+            });
+          });
+      }
+    }
   }
 };
 </script>
