@@ -82,6 +82,8 @@
         </div>
         <br>
         <!-- <label></label> -->
+        <br>
+        
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
@@ -212,6 +214,7 @@ export default {
     }
   }
 };
+        
 </script>
 
 <style>
