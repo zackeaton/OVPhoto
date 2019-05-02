@@ -4,31 +4,27 @@
     <div class="row">
       <form @submit.prevent="saveTask" class="col s12">
         <div class="row">
-            Task ID
           <div class="input-field col s 12">
             <input type="text" v-model="task_id" required>
-            <label></label>
+            <label>Task ID</label>
           </div>
         </div>
         <div class="row">
-            Task
           <div class="input-field col s 12">
             <input type="text" v-model="task" required>
-            <label></label>
+            <label>Task</label>
           </div>
         </div>
         <div class="row">
-            Due
           <div class="input-field col s 12">
-            <input type="text" v-model="due" required>
-            <label></label>
+            <input type="date" class='datepicker' v-model="due" required>
+            <label>Due</label>
           </div>
         </div>
         <div class="row">
-            Project ID
           <div class="input-field col s 12">
             <input type="text" v-model="project_id" required>
-            <label></label>
+            <label>Project ID</label>
           </div>
         </div>
 
