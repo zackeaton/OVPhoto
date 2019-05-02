@@ -5,30 +5,26 @@
       <form @submit.prevent="updateTask" class="col s12">
         <div class="row">
           <div class="input-field col s 12">
-            Task ID
           <input disabled type="text" v-model="task_id" required>
-          <label></label>
+          <label>Task ID</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            Task
           <input type="text" v-model="task" required>
-          <label></label>
+          <label>Task</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            Due
           <input type="text" v-model="due" required>
-          <label></label>
+          <label>Due</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            Project ID
           <input type="text" v-model="project_id" required>
-          <label></label>
+          <label>Project ID</label>
           </div>
         </div>
 
