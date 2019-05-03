@@ -197,6 +197,11 @@ export default {
   watch: {
     $route: "fetchData"
   },
+  computed: {
+    total() {
+      return this.cost_1 + this.cost_2 + this.cost_3;
+    }
+  },
   methods: {
     fetchData() {
       db.collection("invoices")
