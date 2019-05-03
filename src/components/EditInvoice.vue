@@ -75,7 +75,7 @@
         </div>
         
         <button type="submit" class="btn">Submit</button>
-        <router-link to="/projects" class="btn grey">Cancel</router-link>
+        <router-link to="/invoices" class="btn grey">Cancel</router-link>
       </form>
     </div>
   </div>
