@@ -17,13 +17,13 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="created" required>
+            <input type="date" class='datepicker' v-model="created" required>
             <label>Created</label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="due" required>
+            <input type="date" class='datepicker' v-model="due" required>
             <label>Due</label>
           </div>
         </div>

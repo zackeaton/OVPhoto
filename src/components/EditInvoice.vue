@@ -20,14 +20,14 @@
          <div class="row">
           <div class="input-field col s 12">
             Created:
-            <input type="text" v-model="created" required>
+            <input type="date" class='datepicker' v-model="created" required>
             <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             Due:
-            <input type="text" v-model="due" required>
+            <input type="date" class='datepicker' v-model="due" required>
             <label></label>
           </div>
         </div>

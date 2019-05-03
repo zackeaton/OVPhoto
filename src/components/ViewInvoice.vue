@@ -30,7 +30,7 @@
   </div>
 </template> -->
 
-<div id="view-invoice">
+<div class='invoice-box' id="view-invoice">
   <table cellpadding="0" cellspacing="0">
     <tr class="top">
       <td colspan="4">
@@ -92,7 +92,7 @@
       <tr>
       <td>{{item_1}}</td>
       <td>{{cost_1}}</td>
-      <td>Quantity</td>
+      <td>1</td>
       <td>{{cost_1}}</td>
       </tr>
     </thead>
@@ -101,7 +101,7 @@
       <tr>
       <td>{{item_2}}</td>
       <td>{{cost_2}}</td>
-      <td>Quantity</td>
+      <td>1</td>
       <td>{{cost_2}}</td>
       </tr>
     </thead>
@@ -110,7 +110,7 @@
       <tr>
       <td>{{item_3}}</td>
       <td>{{cost_3}}</td>
-      <td>Quantity</td>
+      <td>1</td>
       <td>{{cost_3}}</td>
       </tr>
     </thead>
@@ -135,7 +135,7 @@
    <tr>
       <td colspan="4">
         <router-link to="/invoices" class="btn grey">Back</router-link>
-        <button @click="deleteInvoice" class="btn red">Delete</button>
+        <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
        <!-- <button class="btn" @click="addRow">Add row</button> -->
        <!-- <button class="btn red" @click="delRow">Delete row</button> -->
       </td>
