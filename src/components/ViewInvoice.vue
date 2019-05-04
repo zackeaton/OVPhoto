@@ -137,6 +137,7 @@
       <td colspan="4">
         <router-link to="/invoices" class="btn grey">Back</router-link>
         <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
+        <button class ='btn' @click='printAll'>Print Invoice</button>
        <!-- <button class="btn" @click="addRow">Add row</button> -->
        <!-- <button class="btn red" @click="delRow">Delete row</button> -->
       </td>
@@ -239,10 +240,26 @@ export default {
           });
       }
     },
+    printAll() {
+      window.print();
+    }
   }
 };
 </script>
 <style>
+@media print {
+    .nav-wrapper {
+    display: none !important;
+  }
+  
+@media only screen and (max-width: 600px) {
+  .invoice-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+}
 .invoice-box {
   max-width: 800px;
   margin: auto;

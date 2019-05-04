@@ -72,6 +72,7 @@
         <router-link to="/projects" class="btn grey">Back</router-link>
         <button class="btn" @click="addRow">Add row</button>
         <button class="btn red" @click="delRow">Delete row</button>
+        <button class ='btn' @click='printWindow()'>Print Invoice</button>
       </td>
     </tr>
 
@@ -213,6 +214,7 @@ export default {
     text-align: center;
   }
 }
+
 
 /** RTL Stuff **/
 .rtl {
