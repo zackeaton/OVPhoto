@@ -5,7 +5,7 @@
         <h4>Tasks</h4>
       </li>
       <li v-for="task in tasks" v-bind:key="task.id" class="collection-item">
-        <div class="chip">Due: {{task.id}}</div> {{task.task_id}} 
+      <!--  <div class="chip">Due: {{task.id}}</div> {{task.task_id}}  -->
         <div class="chip">Due: {{task.due}}</div> {{task.task}} 
         <router-link
           class="secondary-content"

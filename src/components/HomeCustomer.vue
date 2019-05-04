@@ -5,7 +5,7 @@
         <h4>Customers</h4>
       </li>
       <li v-for="customer in customers" v-bind:key="customer.id" class="collection-item">
-        <div class="chip">{{customer.id}}</div>
+       <!-- <div class="chip">{{customer.id}}</div> -->
         {{customer.first_name}} {{customer.last_name}}
         <router-link
           class="secondary-content"
