@@ -199,7 +199,7 @@ export default {
   },
   computed: {
     total() {
-      return this.cost_1 + this.cost_2 + this.cost_3;
+      return parseInt(this.cost_1) + parseInt(this.cost_2) + parseInt(this.cost_3);
     }
   },
   methods: {

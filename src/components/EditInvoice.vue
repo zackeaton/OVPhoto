@@ -152,7 +152,7 @@
         <div class="row">
           <div class="input-field col s 12">
             Cost 1:
-            <input type="text" v-model="cost_1" required>
+            <input type="number" v-model="cost_1" required>
             <label></label>
           </div>
         </div>
@@ -177,7 +177,7 @@
         <div class="row">
           <div class="input-field col s 12">
             Cost 2:
-            <input type="text" v-model="cost_2" required>
+            <input type="number" v-model="cost_2" required>
             <label></label>
           </div>
         </div>
@@ -202,7 +202,7 @@
         <div class="row">
           <div class="input-field col s 12">
             Cost 3:
-            <input type="text" v-model="cost_3" required>
+            <input type="number" v-model="cost_3" required>
             <label></label>
           </div>
         </div>
