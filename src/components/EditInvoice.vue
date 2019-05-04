@@ -91,10 +91,11 @@
 
             <td>
               Invoice #: {{invoice_id}}<br> 
-              Created: {{created}}
+              Created: 
+              <input type="date" id='dates' v-model="created" class='right-align col s2' required>
               <br> 
-              Due: {{due}}
-              <!-- <input type="date" id='dates' v-model="invoice_due_date" class='right-align col s2' required> -->
+              Due: 
+              <input type="date" id='dates' v-model="due" class='right-align col s2' required>
             </td>
           </tr>
         </table>
@@ -110,11 +111,11 @@
 
             <td>
                 Customer:
-               <select>
+               <select v-model='fbase_id'>
                 <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
                </select>
               <br>
-              First Name Last Name<br> Project ID: {{project_id}}<br> first@example.com
+             <!-- First Name Last Name<br> Project ID: {{project_id}}<br> first@example.com -->
             </td>
           </tr>
         </table>
@@ -260,7 +261,8 @@ export default {
       item_1: null,
       item_2: null,
       item_3: null,
-      project_id: null
+      project_id: null,
+      fbase_id: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -279,7 +281,8 @@ export default {
             vm.item_1 = doc.data().item_1;
             vm.item_2 = doc.data().item_2;
             vm.item_3 = doc.data().item_3;
-            vm.project_id = doc.data().project_id
+            vm.project_id = doc.data().project_id;
+            vm.fbase_id = doc.data().fbase_id;
           });
         });
       });
@@ -294,7 +297,8 @@ export default {
       .then(snapshot => {
         snapshot.forEach(doc => {
           this.customerArray.push(
-            " " + doc.data().customer_id + " " + doc.data().first_name + " " + doc.data().last_name + " " + doc.data().email
+           // " " + doc.data().customer_id + " " + doc.data().first_name + " " + doc.data().last_name + " " + doc.data().email
+            " " + doc.data().first_name + " " + doc.data().last_name + " | " + doc.data().email
           );
         });
       });
@@ -321,6 +325,7 @@ export default {
             this.item_2 = doc.data().item_2;
             this.item_3 = doc.data().item_3;
             this.project_id = doc.data().project_id;
+            this.fbase_id = doc.data().fbase_id;
           });
         });
     },
@@ -342,6 +347,7 @@ export default {
                 item_2: this.item_2,
                 item_3: this.item_3,
                 project_id: this.project_id,
+                fbase_id: this.fbase_id,
               })
               .then(() => {
                 this.$router.push({
