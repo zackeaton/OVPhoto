@@ -226,7 +226,7 @@
 
    <tr>
       <td colspan="4">
-        <button type="submit" class="btn">Submit</button>
+        <button @click='updateInvoice' class="btn">Submit</button>
         <router-link to="/invoices" class="btn grey">Cancel</router-link>
        <!-- <button class="btn" @click="addRow">Add row</button> -->
        <!-- <button class="btn red" @click="delRow">Delete row</button> -->
