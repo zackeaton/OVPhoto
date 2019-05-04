@@ -135,7 +135,7 @@ export default {
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
             vm.project_name = doc.data().project_name;
-            vm.cust_name = doc.data().cust_name;
+            //vm.cust_name = doc.data().cust_name;
           });
         });
       });
@@ -158,7 +158,7 @@ export default {
     //   doc
     // })
     // console.log(customers)
-    console.log(this.customerArray);
+    //console.log(this.customerArray);
   },
   methods: {
     fetchData() {
@@ -180,7 +180,7 @@ export default {
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
             this.project_name = doc.data().project_name;
-            this.cust_name = doc.data().cust_name;
+            //this.cust_name = doc.data().cust_name;
           });
         });
     },
@@ -204,7 +204,7 @@ export default {
                 dept_status: this.dept_status,
                 invoice_status: this.invoice_status,
                 notes: this.notes,
-                cust_name: this.cust_name
+                //cust_name: this.cust_name
               })
               .then(() => {
                 this.$router.push({
