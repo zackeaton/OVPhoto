@@ -5,7 +5,7 @@
         <h4>Invoices</h4>
       </li>
       <li v-for="invoice in invoices" v-bind:key="invoice.id" class="collection-item">
-        <div class="chip">{{invoice.id}}</div>
+        <div class="chip">{{invoice.fbase_id}}</div>
         {{invoice.invoice_id}}
         <router-link
           class="secondary-content"
@@ -49,7 +49,8 @@ export default {
             item_1: doc.data().item_1,
             item_2: doc.data().item_2,
             item_3: doc.data().item_3,
-            project_id: doc.data().project_id
+            project_id: doc.data().project_id,
+            fbase_id: doc.data().fbase_id
           };
           this.invoices.push(data);
         });
