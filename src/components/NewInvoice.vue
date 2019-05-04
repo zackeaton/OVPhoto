@@ -290,7 +290,7 @@ export default {
       .then(snapshot => {
         snapshot.forEach(doc => {
           this.customerArray.push(
-            " " + doc.data().first_name + " " + doc.data().last_name
+            " " + doc.data().first_name + " " + doc.data().last_name + " | " + doc.data().email
           );
         });
       });
@@ -408,5 +408,8 @@ export default {
 
 .rtl table tr td:nth-child(2) {
   text-align: left;
+}
+select {
+  display: block !important;
 }
 </style>
