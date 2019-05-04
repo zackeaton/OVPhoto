@@ -3,46 +3,46 @@
     <h3>New Customer</h3>
     <div class="row">
       <form @submit.prevent="saveCustomer" class="col s12">
-        <div class="row">
-          <div class="input-field col s 12">
-            <input type="text" v-model="customer_id" required>
-            <label>Customer ID#</label>
-          </div>
-        </div>
+        First Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="first_name" required>
-            <label>First Name</label>
+            <label></label>
           </div>
         </div>
+        Last Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="last_name" required>
-            <label>Last Name</label>
+            <label></label>
           </div>
         </div>
+        Phone Number:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="phone" required>
-            <label>Phone Number</label>
+            <label></label>
           </div>
         </div>
+        Email:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="email" required>
-            <label>Email</label>
+            <label></label>
           </div>
         </div>
+        Lead Generation:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="social" required>
-            <label>Instagram @</label>
+            <label></label>
           </div>
         </div>
+        Returning Customer Y/N:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="returning_customer" required>
-            <label>Returning Customer Y/N</label>
+            <label></label>
           </div>
         </div>
 

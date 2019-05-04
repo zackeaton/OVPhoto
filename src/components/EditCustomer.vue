@@ -5,13 +5,6 @@
       <form @submit.prevent="updateCustomer" class="col s12">
         <div class="row">
           <div class="input-field col s 12">
-            Customer ID
-          <input disabled type="text" v-model="customer_id" required>
-          <label></label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s 12">
             First Name
           <input type="text" v-model="first_name" required>
           <label></label>

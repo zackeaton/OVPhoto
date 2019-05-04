@@ -9,7 +9,7 @@
         {{customer.first_name}} {{customer.last_name}}
         <router-link
           class="secondary-content"
-          v-bind:to="{ name: 'view-customer', params: { customer_id: customer.customer_id }}"
+          v-bind:to="{ name: 'view-customer', params: { customer_id: customer.id }}"
         >
           <i class="fa fa-folder-open"></i>
         </router-link>

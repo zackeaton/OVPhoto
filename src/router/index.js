@@ -177,7 +177,7 @@ let router = new Router({
       name: 'view-customer',
       component: ViewCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {

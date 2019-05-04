@@ -4,12 +4,11 @@
       <li class="collection-header">
         <h4>{{first_name}} {{last_name}}</h4>
       </li>
-      <li class="collection-item">Customer ID: {{customer_id}}</li>
       <li class="collection-item">First Name: {{first_name}}</li>
       <li class="collection-item">Last Name: {{last_name}}</li>
       <li class="collection-item">Telephone: {{phone}}</li>
       <li class="collection-item">Email: {{email}}</li>
-      <li class="collection-item">Instagram (@): {{social}}</li>
+      <li class="collection-item">Lead Generation: {{social}}</li>
       <li class="collection-item">Are they a returning customer: {{returning_customer}}</li>
     </ul>
 
@@ -46,11 +45,11 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("customers")
-      .where("customer_id", "==", to.params.customer_id)
+      .doc(to.params.customer_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
+      .then((doc) => {
           next(vm => {
+            console.log(vm)
             vm.customer_id = doc.data().customer_id;
             vm.first_name = doc.data().first_name;
             vm.last_name = doc.data().last_name;
@@ -59,7 +58,6 @@ export default {
             vm.social = doc.data().social;
             vm.returning_customer = doc.data().returning_customer;
           });
-        });
       });
   },
   watch: {
@@ -71,7 +69,7 @@ export default {
         .where("customer_id", "==", this.$route.params.customer_id)
         .get()
         .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
+          querySnapshot(doc => {
             this.customer_id = doc.data().customer_id;
             this.first_name = doc.data().first_name;
             this.last_name = doc.data().last_name;
@@ -82,15 +80,15 @@ export default {
         });
     },
     deleteCustomer() {
+    console.log(this.$route.params.customer_id)
       if (confirm("Are you sure?")) {
         db.collection("customers")
-          .where("customer_id", "==", this.$route.params.customer_id)
+          .doc(this.$route.params.customer_id)
           .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+          .then(doc => {
               doc.ref.delete();
               this.$router.push("/customers");
-            });
+            
           });
       }
     }
