@@ -109,6 +109,11 @@
             </td>
 
             <td>
+                Customer:
+               <select>
+                <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
+               </select>
+              <br>
               First Name Last Name<br> Project ID: {{project_id}}<br> first@example.com
             </td>
           </tr>
@@ -245,6 +250,7 @@ export default {
   name: "edit-invoice",
   data() {
     return {
+      customerArray: [],
       cost_1: null,
       cost_2: null,
       cost_3: null,
@@ -280,6 +286,23 @@ export default {
   },
   watch: {
     $route: "fetchData"
+  },
+   async mounted() {
+    const snapshot = await db
+      .collection("customers")
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.customerArray.push(
+            " " + doc.data().customer_id + " " + doc.data().first_name + " " + doc.data().last_name + " " + doc.data().email
+          );
+        });
+      });
+    // const customers = snapshot.docs.map(doc =>{
+    //   doc
+    // })
+    // console.log(customers)
+    console.log(this.customerArray);
   },
   methods: {
     fetchData() {
@@ -332,3 +355,9 @@ export default {
   }
 };
 </script>
+
+<style>
+select {
+  display: block !important;
+}
+</style>

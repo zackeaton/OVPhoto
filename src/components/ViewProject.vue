@@ -4,7 +4,7 @@
       <li class="collection-header">
         <h4>Project # {{project_id}}</h4>
       </li>
-      <li class="collection-item">Customer: {{customer}}</li>
+      <li class="collection-item">Customer: {{cust_name}}</li>
       <li class="collection-item">project ID: {{project_id}}</li>
       <li class='collection-item'>Project Name: {{project_name}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>
@@ -53,7 +53,8 @@ export default {
       dept_status: null,
       invoice_status: null,
       notes: null,
-      project_name: null
+      project_name: null,
+      cust_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -75,6 +76,7 @@ export default {
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
             vm.project_name = doc.data().project_name;
+            vm.cust_name = doc.data().cust_name;
           });
         });
       });
@@ -101,6 +103,7 @@ export default {
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
             this.project_name = doc.data().project_name;
+            this.cust_name = doc.data().cust_name;
           });
         });
     },
