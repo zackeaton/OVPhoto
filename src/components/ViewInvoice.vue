@@ -116,6 +116,50 @@
       </tr>
     </thead>
 
+    <thead>
+      <tr>
+      <td>{{item_4}}</td>
+      <td>{{cost_4}}</td>
+      <td>1</td>
+      <td>{{cost_4}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>{{item_5}}</td>
+      <td>{{cost_5}}</td>
+      <td>1</td>
+      <td>{{cost_5}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>{{item_6}}</td>
+      <td>{{cost_6}}</td>
+      <td>1</td>
+      <td>{{cost_6}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>{{item_7}}</td>
+      <td>{{cost_7}}</td>
+      <td>1</td>
+      <td>{{cost_7}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>{{item_8}}</td>
+      <td>{{cost_8}}</td>
+      <td>1</td>
+      <td>{{cost_8}}</td>
+      </tr>
+    </thead>
     <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
@@ -166,12 +210,22 @@ export default {
       cost_1: null,
       cost_2: null,
       cost_3: null,
+      cost_4: null,
+      cost_5: null,
+      cost_6: null,
+      cost_7: null,
+      cost_8: null,
       created: null,
       due: null,
       invoice_id: null,
       item_1: null,
       item_2: null,
       item_3: null,
+      item_4: null,
+      item_5: null,
+      item_6: null,
+      item_7: null,
+      item_8: null,
       project_id: null,
       fbase_id: null,
     };
@@ -186,12 +240,22 @@ export default {
             vm.cost_1 = doc.data().cost_1;
             vm.cost_2 = doc.data().cost_2;
             vm.cost_3 = doc.data().cost_3;
+            vm.cost_4 = doc.data().cost_4;
+            vm.cost_5 = doc.data().cost_5;
+            vm.cost_6 = doc.data().cost_6;
+            vm.cost_7 = doc.data().cost_7;
+            vm.cost_8 = doc.data().cost_8;
             vm.created = doc.data().created;
             vm.due = doc.data().due;
             vm.invoice_id = doc.data().invoice_id;
             vm.item_1 = doc.data().item_1;
             vm.item_2 = doc.data().item_2;
             vm.item_3 = doc.data().item_3;
+            vm.item_4 = doc.data().item_4;
+            vm.item_5 = doc.data().item_5;
+            vm.item_6 = doc.data().item_6;
+            vm.item_7 = doc.data().item_7;
+            vm.item_8 = doc.data().item_8;
             vm.project_id = doc.data().project_id;
             vm.fbase_id = doc.data().fbase_id;
           });
@@ -216,12 +280,22 @@ export default {
             this.cost_1 = doc.data().cost_1;
             this.cost_2 = doc.data().cost_2;
             this.cost_3 = doc.data().cost_3;
+            this.cost_4 = doc.data().cost_4;
+            this.cost_5 = doc.data().cost_5;
+            this.cost_6 = doc.data().cost_6;
+            this.cost_7 = doc.data().cost_7;
+            this.cost_8 = doc.data().cost_8;
             this.created = doc.data().created;
             this.due = doc.data().due;
             this.invoice_id = doc.data().invoice_id;
             this.item_1 = doc.data().item_1;
             this.item_2 = doc.data().item_2;
             this.item_3 = doc.data().item_3;
+            this.item_4 = doc.data().item_4;
+            this.item_5 = doc.data().item_5;
+            this.item_6 = doc.data().item_6;
+            this.item_7 = doc.data().item_7;
+            this.item_8 = doc.data().item_8;
             this.project_id = doc.data().project_id;
             this.fbase_id = doc.data().fbase_id;
           });

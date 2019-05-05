@@ -216,6 +216,130 @@
       </tr>
     </thead>
 
+    <thead>
+      <tr>
+      <td>
+        <div class='row'>
+        <div class="input-field col s 12">
+            Item 4:
+            <input type="text" v-model="item_4" required>
+            <label></label>
+          </div>
+          </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 4:
+            <input type="number" v-model="cost_4" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_4}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>
+        <div class='row'>
+        <div class="input-field col s 12">
+            Item 5:
+            <input type="text" v-model="item_5" required>
+            <label></label>
+          </div>
+          </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 5:
+            <input type="number" v-model="cost_5" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_5}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>
+        <div class='row'>
+        <div class="input-field col s 12">
+            Item 6:
+            <input type="text" v-model="item_6" required>
+            <label></label>
+          </div>
+          </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 6:
+            <input type="number" v-model="cost_6" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_6}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>
+        <div class='row'>
+        <div class="input-field col s 12">
+            Item 7:
+            <input type="text" v-model="item_7" required>
+            <label></label>
+          </div>
+          </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 7:
+            <input type="number" v-model="cost_7" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_7}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>
+        <div class='row'>
+        <div class="input-field col s 12">
+            Item 8:
+            <input type="text" v-model="item_8" required>
+            <label></label>
+          </div>
+          </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 8:
+            <input type="number" v-model="cost_8" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_8}}</td>
+      </tr>
+    </thead>
     <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
@@ -253,12 +377,22 @@ export default {
       cost_1: null,
       cost_2: null,
       cost_3: null,
+      cost_4: null,
+      cost_5: null,
+      cost_6: null,
+      cost_7: null,
+      cost_8: null,
       created: null,
       due: null,
       invoice_id: null,
       item_1: null,
       item_2: null,
       item_3: null,
+      item_4: null,
+      item_5: null,
+      item_6: null,
+      item_7: null,
+      item_8: null,
       project_id: null,
       fbase_id: null,
     };
@@ -270,12 +404,22 @@ export default {
           cost_1: this.cost_1,
           cost_2: this.cost_2,
           cost_3: this.cost_3,
+          cost_4: this.cost_4,
+          cost_5: this.cost_5,
+          cost_6: this.cost_6,
+          cost_7: this.cost_7,
+          cost_8: this.cost_8,
           created: this.created,
           due: this.due,
           invoice_id: this.invoice_id,
           item_1: this.item_1,
           item_2: this.item_2,
           item_3: this.item_3,
+          item_4: this.item_4,
+          item_5: this.item_5,
+          item_6: this.item_6,
+          item_7: this.item_7,
+          item_8: this.item_8,
           project_id: this.project_id,
           fbase_id: this.fbase_id,
         })
