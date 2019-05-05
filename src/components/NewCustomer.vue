@@ -34,14 +34,14 @@
         Lead Generation:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="social" required>
+            <input type="text" v-model="social">
             <label></label>
           </div>
         </div>
         Returning Customer Y/N:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="returning_customer" required>
+            <input type="text" v-model="returning_customer">
             <label></label>
           </div>
         </div>
