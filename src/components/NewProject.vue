@@ -1,6 +1,15 @@
 <template>
   <div id="new-project">
     <h3>New Project</h3>
+    Customer:
+    <div class="row">
+      <div class="input-field col s 12">
+        <select v-model="cust_name">
+          <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
+        </select>
+      </div>
+    </div>
+
     <div class="row">
       <form @submit.prevent="saveProject" class="col s12">
         <div class="row">
@@ -84,6 +93,7 @@ export default {
   name: "new-project",
   data() {
     return {
+      customerArray: [],
       project_id: null,
       consult_date: null,
       shoot_date: null,
@@ -94,8 +104,26 @@ export default {
       dept_status: null,
       invoice_status: null,
       notes: null,
-      project_name: null
+      project_name: null,
+      cust_name: null
     };
+  },
+  async mounted() {
+    const snapshot = await db
+      .collection("customers")
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.customerArray.push(
+            " " + doc.data().first_name + " " + doc.data().last_name
+          );
+        });
+      });
+    // const customers = snapshot.docs.map(doc =>{
+    //   doc
+    // })
+    // console.log(customers)
+    //console.log(this.customerArray);
   },
   methods: {
     saveProject() {
@@ -111,7 +139,8 @@ export default {
           dept_status: this.dept_status,
           invoice_status: this.invoice_status,
           notes: this.notes,
-          project_name: this.project_name
+          project_name: this.project_name,
+          cust_name: this.cust_name,
         })
         .then(docRef => this.$router.push("/projects"))
         .catch(error => console.log(err));

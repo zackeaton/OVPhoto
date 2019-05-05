@@ -60,7 +60,8 @@
             </td>
 
             <td>
-              First Name Last Name<br> Project ID: {{project_id}}<br> first@example.com
+              Customer Name | Email<br> {{fbase_id}}<br>
+              Project ID: {{project_id}}
             </td>
           </tr>
         </table>
@@ -136,6 +137,7 @@
       <td colspan="4">
         <router-link to="/invoices" class="btn grey">Back</router-link>
         <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
+        <button class ='btn' @click='printAll'>Print Invoice</button>
        <!-- <button class="btn" @click="addRow">Add row</button> -->
        <!-- <button class="btn red" @click="delRow">Delete row</button> -->
       </td>
@@ -170,7 +172,8 @@ export default {
       item_1: null,
       item_2: null,
       item_3: null,
-      project_id: null
+      project_id: null,
+      fbase_id: null,
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -189,7 +192,8 @@ export default {
             vm.item_1 = doc.data().item_1;
             vm.item_2 = doc.data().item_2;
             vm.item_3 = doc.data().item_3;
-            vm.project_id = doc.data().project_id
+            vm.project_id = doc.data().project_id;
+            vm.fbase_id = doc.data().fbase_id;
           });
         });
       //});
@@ -199,7 +203,7 @@ export default {
   },
   computed: {
     total() {
-      return this.cost_1 + this.cost_2 + this.cost_3;
+      return parseInt(this.cost_1) + parseInt(this.cost_2) + parseInt(this.cost_3);
     }
   },
   methods: {
@@ -219,6 +223,7 @@ export default {
             this.item_2 = doc.data().item_2;
             this.item_3 = doc.data().item_3;
             this.project_id = doc.data().project_id;
+            this.fbase_id = doc.data().fbase_id;
           });
         });
     },
@@ -235,10 +240,26 @@ export default {
          // });
       }
     },
+    printAll() {
+      window.print();
+    }
   }
 };
 </script>
 <style>
+@media print {
+    .nav-wrapper {
+    display: none !important;
+  }
+  
+@media only screen and (max-width: 600px) {
+  .invoice-box table tr.top table td {
+    width: 100%;
+    display: block;
+    text-align: center;
+  }
+}
+}
 .invoice-box {
   max-width: 800px;
   margin: auto;

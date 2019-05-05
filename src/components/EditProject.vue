@@ -5,7 +5,7 @@
     Customer:
     <div class="row">
       <div class="input-field col s 12">
-        <select>
+        <select v-model="cust_name">
           <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
         </select>
       </div>
@@ -111,7 +111,8 @@ export default {
       dept_status: null,
       invoice_status: null,
       notes: null,
-      project_name: null
+      project_name: null,
+      cust_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -121,6 +122,7 @@ export default {
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
           next(vm => {
+            vm.cust_name = doc.data().cust_name;
             vm.project_id = doc.data().project_id;
             vm.project_name = doc.data().project_name;
             vm.consult_date = doc.data().consult_date;
@@ -133,6 +135,7 @@ export default {
             vm.invoice_status = doc.data().invoice_status;
             vm.notes = doc.data().notes;
             vm.project_name = doc.data().project_name;
+            //vm.cust_name = doc.data().cust_name;
           });
         });
       });
@@ -147,7 +150,7 @@ export default {
       .then(snapshot => {
         snapshot.forEach(doc => {
           this.customerArray.push(
-            " " + doc.data().customer_id + " " + doc.data().first_name
+            " " + doc.data().first_name + " " + doc.data().last_name
           );
         });
       });
@@ -155,7 +158,7 @@ export default {
     //   doc
     // })
     // console.log(customers)
-    console.log(this.customerArray);
+    //console.log(this.customerArray);
   },
   methods: {
     fetchData() {
@@ -164,6 +167,7 @@ export default {
         .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
+            this.cust_name = doc.data().cust_name;
             this.project_id = doc.data().project_id;
             this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
@@ -176,6 +180,7 @@ export default {
             this.invoice_status = doc.data().invoice_status;
             this.notes = doc.data().notes;
             this.project_name = doc.data().project_name;
+            //this.cust_name = doc.data().cust_name;
           });
         });
     },
@@ -187,6 +192,7 @@ export default {
           querySnapshot.forEach(doc => {
             doc.ref
               .update({
+                cust_name: this.cust_name,
                 project_id: this.project_id,
                 project_name: this.project_name,
                 consult_date: this.consult_date,
@@ -197,7 +203,8 @@ export default {
                 dept_cost: this.dept_cost,
                 dept_status: this.dept_status,
                 invoice_status: this.invoice_status,
-                notes: this.notes
+                notes: this.notes,
+                //cust_name: this.cust_name
               })
               .then(() => {
                 this.$router.push({

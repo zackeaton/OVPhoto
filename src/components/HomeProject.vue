@@ -5,7 +5,7 @@
         <h4>Projects</h4>
       </li>
       <li v-for="project in projects" v-bind:key="project.id" class="collection-item">
-        <div class="chip">{{project.id}}</div>
+        <div class="chip">{{project.cust_name}}</div>
         {{project.project_name}}
         <router-link
           class="secondary-content"
@@ -50,7 +50,8 @@ export default {
             dept_cost: doc.data().dept_cost,
             dept_status: doc.data().dept_status,
             invoice_status: doc.data().invoice_status,
-            notes: doc.data().notes
+            notes: doc.data().notes,
+            cust_name: doc.data().cust_name
           };
           this.projects.push(data);
         });

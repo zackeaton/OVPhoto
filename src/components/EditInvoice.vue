@@ -1,7 +1,7 @@
 <template>
   <div id="edit-invoice">
     <h3>Edit Invoice</h3>
-    <div class="row">
+   <!-- <div class="row">
       <form @submit.prevent="updateInvoice" class="col s12">
           <div class="row">
           <div class="input-field col s 12">
@@ -73,11 +73,174 @@
             <label></label>
           </div>
         </div>
-        
         <button type="submit" class="btn">Submit</button>
         <router-link to="/invoices" class="btn grey">Cancel</router-link>
-      </form>
-    </div>
+        
+      </form> 
+    </div> -->
+
+    <div class='invoice-box' id="view-invoice">
+  <table cellpadding="0" cellspacing="0">
+    <tr class="top">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td class="title">
+              <img src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w" style="width:100%; max-width:300px;">
+            </td>
+
+            <td>
+              Invoice #: {{invoice_id}}<br> 
+              Created: 
+              <input type="date" id='dates' v-model="created" class='right-align col s2' required>
+              <br> 
+              Due: 
+              <input type="date" id='dates' v-model="due" class='right-align col s2' required>
+            </td>
+          </tr>
+        </table>
+      </td>
+
+    <tr class="information">
+      <td colspan="4">
+        <table>
+          <tr>
+            <td>
+              OV Photography<br> 1 University Blvd<br> St. Louis, MO 63121
+            </td>
+
+            <td>
+                Customer:
+               <select v-model='fbase_id'>
+                <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
+               </select>
+              <br>
+             <!-- First Name Last Name<br> Project ID: {{project_id}}<br> first@example.com -->
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+
+   <!-- <tr class="heading">
+      <td colspan="3">Payment Method</td>
+      <td>Payment Method</td>
+    </tr>
+
+    <tr class="details">
+      <td colspan="3">Check</td>
+      <td>1000</td>
+    </tr> -->
+  </table> 
+
+  <table>
+    <thead>
+      <tr>
+      <td>Item</td>
+      <td>Unit Cost</td>
+      <td>Quantity</td>
+      <td>Price</td>
+      </tr>
+    </thead>
+
+     <thead>
+      <tr>
+      <td>
+        <div class='row'>
+        <div class="input-field col s 12">
+            Item 1:
+            <input type="text" v-model="item_1" required>
+            <label></label>
+          </div>
+          </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 1:
+            <input type="number" v-model="cost_1" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_1}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Item 2:
+            <input type="text" v-model="item_2" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 2:
+            <input type="number" v-model="cost_2" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_2}}</td>
+      </tr>
+    </thead>
+
+    <thead>
+      <tr>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Item 3:
+            <input type="text" v-model="item_3" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>
+        <div class="row">
+          <div class="input-field col s 12">
+            Cost 3:
+            <input type="number" v-model="cost_3" required>
+            <label></label>
+          </div>
+        </div>
+      </td>
+      <td>1</td>
+      <td>{{cost_3}}</td>
+      </tr>
+    </thead>
+
+    <!-- <tr class="item" v-bind:key="item" v-for="item in items">
+      <td><input v-model="item.description" /></td>
+      <td><input type="number" v-model="item.price" /></td>
+      <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
+       onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="item.quantity" /></td>
+      <td>${{ item.price * item.quantity}}</td>
+    </tr> -->
+
+    <!--<ul>
+      <li :key='item.id' v-for='item in items'>{{item.price}}</li>
+    </ul> -->
+
+   <tr>
+      <td colspan="4">
+        <button @click='updateInvoice' class="btn">Submit</button>
+        <router-link to="/invoices" class="btn grey">Cancel</router-link>
+       <!-- <button class="btn" @click="addRow">Add row</button> -->
+       <!-- <button class="btn red" @click="delRow">Delete row</button> -->
+      </td>
+    </tr>
+
+  </table>
+  </div>
   </div>
 </template>
 
@@ -88,6 +251,7 @@ export default {
   name: "edit-invoice",
   data() {
     return {
+      customerArray: [],
       cost_1: null,
       cost_2: null,
       cost_3: null,
@@ -97,7 +261,8 @@ export default {
       item_1: null,
       item_2: null,
       item_3: null,
-      project_id: null
+      project_id: null,
+      fbase_id: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -116,13 +281,32 @@ export default {
             vm.item_1 = doc.data().item_1;
             vm.item_2 = doc.data().item_2;
             vm.item_3 = doc.data().item_3;
-            vm.project_id = doc.data().project_id
+            vm.project_id = doc.data().project_id;
+            vm.fbase_id = doc.data().fbase_id;
           });
         });
       });
   },
   watch: {
     $route: "fetchData"
+  },
+   async mounted() {
+    const snapshot = await db
+      .collection("customers")
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.customerArray.push(
+           // " " + doc.data().customer_id + " " + doc.data().first_name + " " + doc.data().last_name + " " + doc.data().email
+            " " + doc.data().first_name + " " + doc.data().last_name + " | " + doc.data().email
+          );
+        });
+      });
+    // const customers = snapshot.docs.map(doc =>{
+    //   doc
+    // })
+    // console.log(customers)
+    console.log(this.customerArray);
   },
   methods: {
     fetchData() {
@@ -141,6 +325,7 @@ export default {
             this.item_2 = doc.data().item_2;
             this.item_3 = doc.data().item_3;
             this.project_id = doc.data().project_id;
+            this.fbase_id = doc.data().fbase_id;
           });
         });
     },
@@ -162,6 +347,7 @@ export default {
                 item_2: this.item_2,
                 item_3: this.item_3,
                 project_id: this.project_id,
+                fbase_id: this.fbase_id,
               })
               .then(() => {
                 this.$router.push({
@@ -175,3 +361,9 @@ export default {
   }
 };
 </script>
+
+<style>
+select {
+  display: block !important;
+}
+</style>
