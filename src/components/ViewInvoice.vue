@@ -203,6 +203,19 @@ export default {
   },
   computed: {
     total() {
+      //Make sure it's never null
+      if(this.cost_1 == null)
+      {
+        this.cost_1 = 0;
+      } 
+      if(this.cost_2 == null)
+      {
+        this.cost_2 = 0;
+      } 
+      if(this.cost_3 == null)
+      {
+        this.cost_3 = 0;
+      } 
       return parseInt(this.cost_1) + parseInt(this.cost_2) + parseInt(this.cost_3);
     }
   },

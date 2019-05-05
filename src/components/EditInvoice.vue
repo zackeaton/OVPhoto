@@ -330,6 +330,20 @@ export default {
         });
     },
     updateInvoice() {
+      //Added error handling for null values
+     /* if(cost_1 == null)
+      {
+        this.cost_1 = 0;
+      }
+      if(cost_2 == null)
+      {
+        this.cost_2 = 0;
+      }
+       if(cost_3 == null)
+      {
+        this.cost_3 = 0;
+      } */
+
       db.collection("invoices")
         .where("invoice_id", "==", this.$route.params.invoice_id)
         .get()
