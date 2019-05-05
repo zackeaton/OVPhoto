@@ -9,7 +9,7 @@
         {{project.project_name}}
         <router-link
           class="secondary-content"
-          v-bind:to="{ name: 'view-project', params: { project_id: project.project_id }}"
+          v-bind:to="{ name: 'view-project', params: { project_id: project.id }}"
         >
           <i class="fa fa-folder-open"></i>
         </router-link>
@@ -26,7 +26,7 @@
 <script>
 import db from "./firebaseInit.js";
 export default {
-  name: "projects, customers, invoices",
+  name: "projects",
   data() {
     return {
       projects: [],
@@ -55,21 +55,6 @@ export default {
           this.projects.push(data);
         });
       });
-  },
-  methods: {
-   deleteTask() {
-      if (confirm("Are you sure?")) {
-        db.collection("tasks")
-          .where("task_id", "==", this.$route.params.task_id)
-          .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-              doc.ref.delete();
-              this.$router.push("/tasks");
-            });
-          });
-      }
-    }
   }
 };
 </script>

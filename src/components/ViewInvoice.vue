@@ -175,11 +175,11 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("invoices")
-      .where("invoice_id", "==", to.params.invoice_id)
+      .doc(to.params.invoice_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
+      .then((doc) => {
           next(vm => {
+            console.log(vm)
             vm.cost_1 = doc.data().cost_1;
             vm.cost_2 = doc.data().cost_2;
             vm.cost_3 = doc.data().cost_3;
@@ -192,7 +192,7 @@ export default {
             vm.project_id = doc.data().project_id
           });
         });
-      });
+      //});
   },
   watch: {
     $route: "fetchData"
@@ -208,7 +208,7 @@ export default {
         .where("invoice_id", "==", this.$route.params.invoice_id)
         .get()
         .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
+          qquerySnapshot(doc => {
             this.cost_1 = doc.data().cost_1;
             this.cost_2 = doc.data().cost_2;
             this.cost_3 = doc.data().cost_3;
@@ -223,16 +223,16 @@ export default {
         });
     },
     deleteInvoice() {
+      console.log(this.$route.params.invoice_id)
       if (confirm("Are you sure?")) {
         db.collection("invoices")
-          .where("invoice_id", "==", this.$route.params.invoice_id)
+          .doc(this.$route.params.invoice_id)
           .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+          .then(doc => {
               doc.ref.delete();
               this.$router.push("/invoices");
             });
-          });
+         // });
       }
     },
   }

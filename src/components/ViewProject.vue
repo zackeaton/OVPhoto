@@ -19,10 +19,15 @@
     </ul>
     <router-link to="/projects" class="btn grey">Back</router-link>
     <button @click="deleteProject" class="btn red">Delete</button>
-    <router-link v-bind:to="{name: 'price-project', params: {project_id: project_id}}">
-        <button class='btn red'>Price Project</button>
-      </router-link>
 
+    <div class="fixed-action-btn">
+      <router-link
+        v-bind:to="{name: 'edit-project', params: {project_id: project_id}}"
+        class="btn-floating btn-large red"
+      >
+        <i class="fa fa-pencil-alt"></i>
+      </router-link>
+    </div>
     <div class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-project', params: {project_id: project_id}}"
@@ -33,7 +38,6 @@
     </div>
   </div>
 </template>
-
 
 
 <script>
@@ -58,11 +62,11 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("projects")
-      .where("project_id", "==", to.params.project_id)
+      .doc(to.params.project_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
+      .then((doc) => {
           next(vm => {
+          console.log(vm)
             vm.project_id = doc.data().project_id;
             vm.project_name = doc.data().project_name
             vm.consult_date = doc.data().consult_date;
@@ -77,7 +81,7 @@ export default {
             vm.project_name = doc.data().project_name;
           });
         });
-      });
+//});
   },
   watch: {
     $route: "fetchData"
@@ -88,7 +92,7 @@ export default {
         .where("project_id", "==", this.$route.params.project_id)
         .get()
         .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
+          querySnapshot(doc => {
             this.project_id = doc.data().project_id;
             this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
@@ -105,16 +109,16 @@ export default {
         });
     },
     deleteProject() {
+    console.log(this.$route.params.project_id)
       if (confirm("Are you sure?")) {
         db.collection("projects")
-          .where("project_id", "==", this.$route.params.project_id)
+          .doc(this.$route.params.project_id)
           .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+          .then(doc => {
               doc.ref.delete();
               this.$router.push("/projects");
             });
-          });
+         // });
       }
     }
   }

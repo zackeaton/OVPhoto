@@ -97,7 +97,7 @@ let router = new Router({
       name: 'view-invoice',
       component: ViewInvoice,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -145,7 +145,7 @@ let router = new Router({
       name: 'view-project',
       component: ViewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {

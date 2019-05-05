@@ -9,7 +9,7 @@
         {{invoice.invoice_id}}
         <router-link
           class="secondary-content"
-          v-bind:to="{ name: 'view-invoice', params: { invoice_id: invoice.invoice_id }}"
+          v-bind:to="{ name: 'view-invoice', params: { invoice_id: invoice.id }}"
         >
           <i class="fa fa-folder-open"></i>
         </router-link>
