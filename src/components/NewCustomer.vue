@@ -87,3 +87,8 @@ export default {
   }
 };
 </script>
+<style>
+select {
+  display: block !important;
+}
+</style>

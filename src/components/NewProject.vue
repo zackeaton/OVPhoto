@@ -12,70 +12,94 @@
 
     <div class="row">
       <form @submit.prevent="saveProject" class="col s12">
-        <div class="row">
-          <div class="input-field col s 12">
-            <input type="text" v-model="project_id" required>
-            <label>Project ID#</label>
-          </div>
-        </div>
+        Project Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="project_name" required>
-            <label>Project Name</label>
+            <label></label>
           </div>
         </div>
+        Consult Date:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="date" class='datepicker' v-model="consult_date" required>
-            <label>Consult Date</label>
+            <input type="date" class='datepicker' v-model="consult_date">
+            <label></label>
           </div>
         </div>
+        Shoot Date:
         <div class="row">
           <div class="input-field col s 12">
             <input type="date" class='datepicker' v-model="shoot_date" required>
-            <label>Shoot Date</label>
+            <label></label>
           </div>
         </div>
+        Shoot Type
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_type" required>
-            <label>Shoot Type</label>
+            <select v-model="shoot_type" required>>
+            <option disabled value="">Please select one</option>
+            <option>Wedding</option>
+            <option>Event</option>
+            <option>Engagement Session</option>
+            <option>Couples Session</option>
+            <option>Anniversary Session</option>
+            <option>Personal Branding Session</option>
+            <option>Commercial Photoshoot</option>
+            <option>Mini Session</option>
+            <option>Newborn Session</option>
+            <option>Family Session</option>
+            <option>Personal Session</option>
+            <option>Maternity Session</option>
+            <option>Fashion Photoshoot</option>
+            <option>Senior Session</option>
+            <option>Children's Session</option>
+              </select>
           </div>
         </div>
+        Shoot Location:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_location" required>
-            <label>Shoot Location</label>
+            <label></label>
           </div>
         </div>
+        Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_cost" required>
-            <label>Invoice Cost</label>
+            <label></label>
           </div>
         </div>
+        Deposit Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_cost" required>
-            <label>Deposit Cost</label>
+            <label></label>
           </div>
         </div>
+        Deposit Status:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="dept_status" required>
-            <label>Deposit Status</label>
+            <select v-model="dept_status" required>>
+            <option disabled value="">Please select one</option>
+            <option>Unpaid</option>
+            <option>Paid</option>
+            <option>Pending</option>
+              </select>
           </div>
         </div>
+        Invoice Status:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_status" required>
-            <label>Invoice Status</label>
+            <label></label>
           </div>
         </div>
+        Notes:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="notes">
-            <label>Notes</label>
+            <label></label>
           </div>
         </div>
 
@@ -148,3 +172,9 @@ export default {
   }
 };
 </script>
+
+<style>
+select {
+  display: block !important;
+}
+</style>

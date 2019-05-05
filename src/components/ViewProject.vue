@@ -2,10 +2,10 @@
   <div id="view-project">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>Project # {{project_id}}</h4>
+        <h4>{{project_name}}</h4>
       </li>
       <li class="collection-item">Customer: {{cust_name}}</li>
-      <li class="collection-item">project ID: {{project_id}}</li>
+      <!--<li class="collection-item">project ID: {{project_id}}</li>-->
       <li class='collection-item'>Project Name: {{project_name}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
