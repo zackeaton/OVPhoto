@@ -20,7 +20,7 @@
         Phone Number:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="phone" required>
+            <input type="text" v-model="phone">
             <label></label>
           </div>
         </div>
