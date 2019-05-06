@@ -40,6 +40,7 @@ export default {
   name: "edit-task",
   data() {
     return {
+      projectArray: [],
       task_id: null,
       task: null,
       due: null,
@@ -63,6 +64,23 @@ export default {
   },
   watch: {
     $route: "fetchData"
+  },
+    async mounted() {
+    const snapshot = await db
+      .collection("projects")
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.projectArray.push(
+            " " + doc.data().project_name + " " //+ doc.data().last_name
+          );
+        });
+      });
+    // const customers = snapshot.docs.map(doc =>{
+    //   doc
+    // })
+    // console.log(customers)
+    //console.log(this.customerArray);
   },
   methods: {
     fetchData() {
@@ -103,3 +121,8 @@ export default {
   }
 };
 </script>
+<style>
+select {
+  display: block !important;
+}
+</style>
