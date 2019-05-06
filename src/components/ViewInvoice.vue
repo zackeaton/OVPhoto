@@ -258,6 +258,35 @@ export default {
             vm.item_8 = doc.data().item_8;
             vm.project_id = doc.data().project_id;
             vm.fbase_id = doc.data().fbase_id;
+
+            if(vm.item_2 == null || vm.item_2 == "")
+            {
+              line2.style.display = "none";
+            }
+            if(vm.item_3 == null || vm.item_3 == "")
+            {
+              line3.style.display = "none";
+            }
+            if(vm.item_4 == null || vm.item_4 == "")
+            {
+              line4.style.display = "none";
+            }
+            if(vm.item_5 == null || vm.item_5 == "")
+            {
+              line5.style.display = "none";
+            }
+            if(vm.item_6 == null || vm.item_6 == "")
+            {
+              line6.style.display = "none";
+            }
+            if(vm.item_7 == null || vm.item_7 == "")
+            {
+              line7.style.display = "none";
+            }
+            if(vm.item_8 == null || vm.item_8 == "")
+            {
+              line8.style.display = "none";
+            }
           });
         });
       //});
