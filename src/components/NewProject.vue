@@ -1,16 +1,17 @@
 <template>
   <div id="new-project">
     <h3>New Project</h3>Customer:
+    
+
     <div class="row">
+      <form @submit.prevent="saveProject" class="col s12">
+        <div class="row">
       <div class="input-field col s 12">
-        <select v-model="cust_name">
+        <select required v-model="cust_name">
           <option v-for="(name,index) in customerArray" :key="index">{{name}}</option>
         </select>
       </div>
     </div>
-
-    <div class="row">
-      <form @submit.prevent="saveProject" class="col s12">
         Project Name:
         <div class="row">
           <div class="input-field col s 12">
@@ -62,13 +63,13 @@
         </div>Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="invoice_cost" required>
+            <input type="number" v-model="invoice_cost" required>
             <label></label>
           </div>
         </div>Deposit Cost:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="dept_cost" required>
+            <input type="number" v-model="dept_cost" required>
             <label></label>
           </div>
         </div>Deposit Status:

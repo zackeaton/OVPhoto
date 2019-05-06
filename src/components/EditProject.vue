@@ -62,13 +62,13 @@
         </div>Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="invoice_cost" required>
+            <input type="number" v-model="invoice_cost" required>
             <label></label>
           </div>
         </div>Deposit Cost:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="dept_cost" required>
+            <input type="number" v-model="dept_cost" required>
             <label></label>
           </div>
         </div>Deposit Status:
