@@ -50,13 +50,16 @@
               </select>
           </div>
         </div>
-        Returning Customer Y/N:
-        <div class="row">
+       <!--  Returning Customer Y/N:
+         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="returning_customer">
-            <label></label>
+            <select v-model="returning_customer" required>>
+            <option disabled value="">Please select one</option>
+            <option></option>
+            <option>Facebook</option>
+              </select>
           </div>
-        </div>
+        </div> -->
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>

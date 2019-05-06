@@ -38,13 +38,13 @@
           <label></label>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="input-field col s 12">
             Returning Customer
           <input type="text" v-model="returning_customer" required>
           <label></label>
           </div>
-        </div>
+        </div> -->
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
