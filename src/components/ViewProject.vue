@@ -15,7 +15,7 @@
       <li class="collection-item">Deposit Cost: {{dept_cost}}</li>
       <li class="collection-item">Deposite Status: {{dept_status}}</li>
       <li class="collection-item">Invoice Status: {{invoice_status}}</li>
-      <li class="collection-item">Notes: {{notes}}</li>
+      <li class="collection-item">Notes: <textarea v-model="notes" readonly></textarea></li>
     </ul>
     <router-link to="/projects" class="btn grey">Back</router-link>
     <button @click="deleteProject" class="btn red">Delete</button>
