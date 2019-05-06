@@ -54,6 +54,7 @@ Project Name:
             <option>Fashion Photoshoot</option>
             <option>Senior Session</option>
             <option>Children's Session</option>
+            <option>Other</option>
               </select>
           </div>
         </div>
