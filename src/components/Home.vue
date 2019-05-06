@@ -2,18 +2,9 @@
 <div id="home-task">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>Tasks</h4>
+        <h4>About</h4>
       </li>
-      <li v-for="task in tasks" v-bind:key="task.id" class="collection-item">
-        <div class="chip">{{task.id}}</div>
-        {{task.task_id}} {{task.due}} {{task.task}} {{task.project_id}}
-        <router-link
-          class="secondary-content"
-          v-bind:to="{ name: 'view-task', params: { task_id: task.task_id }}"
-        >
-          <i class="fa fa-folder-open"></i>
-        </router-link>
-      </li>
+   
     </ul>
     <div class="fixed-action-btn">
       <router-link to="/new/task" class="btn-floating btn-large red">

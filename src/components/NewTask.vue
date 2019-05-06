@@ -5,12 +5,6 @@
       <form @submit.prevent="saveTask" class="col s12">
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="task_id" required>
-            <label>Task ID</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s 12">
             <input type="text" v-model="task" required>
             <label>Task</label>
           </div>
@@ -21,12 +15,14 @@
             <label>Due</label>
           </div>
         </div>
+        Project:
         <div class="row">
-          <div class="input-field col s 12">
-            <input type="text" v-model="project_id" required>
-            <label>Project ID</label>
-          </div>
-        </div>
+         <div class="input-field col s 12">
+        <select v-model="project_id">
+          <option v-for="(name,index) in projectArray" :key="index">{{name}}</option>
+        </select>
+      </div>
+    </div>
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
@@ -42,11 +38,29 @@ export default {
   name: "new-task",
   data() {
     return {
+      projectArray: [],
       task_id: null,
       task: null,
       due: null,
       project_id: null,
     };
+  },
+  async mounted() {
+    const snapshot = await db
+      .collection("projects")
+      .get()
+      .then(snapshot => {
+        snapshot.forEach(doc => {
+          this.projectArray.push(
+            " " + doc.data().project_name + " " //+ doc.data().project_name
+          );
+        });
+      });
+    // const customers = snapshot.docs.map(doc =>{
+    //   doc
+    // })
+    // console.log(customers)
+    //console.log(this.customerArray);
   },
   methods: {
     saveTask() {

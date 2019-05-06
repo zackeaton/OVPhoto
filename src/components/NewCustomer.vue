@@ -20,7 +20,7 @@
         Phone Number:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="phone">
+            <input type="number" v-model="phone">
             <label></label>
           </div>
         </div>
@@ -32,10 +32,22 @@
           </div>
         </div>
         Lead Generation:
-        <div class="row">
+       <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="social">
-            <label></label>
+            <select v-model="social" required>>
+            <option disabled value="">Please select one</option>
+            <option>Instagram</option>
+            <option>Facebook</option>
+            <option>Google</option>
+            <option>The Knot</option>
+            <option>Wedding Wire</option>
+            <option>Wedding Pioneer</option>
+            <option>Wedding Chicks</option>
+            <option>Vendor Referral</option>
+            <option>Client Referral</option>
+            <option>Friend Referral</option>
+            <option>Other</option>
+              </select>
           </div>
         </div>
         Returning Customer Y/N:

@@ -9,7 +9,7 @@
         <div class="chip">Due: {{task.due}}</div> {{task.task}} 
         <router-link
           class="secondary-content"
-          v-bind:to="{ name: 'view-task', params: { task_id: task.task_id }}"
+          v-bind:to="{ name: 'view-task', params: { task_id: task.id }}"
         >
           <i class="fa fa-folder-open"></i>
         </router-link>

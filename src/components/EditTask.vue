@@ -3,30 +3,28 @@
     <h3>Edit Task</h3>
     <div class="row">
       <form @submit.prevent="updateTask" class="col s12">
-        <div class="row">
-          <div class="input-field col s 12">
-          <input disabled type="text" v-model="task_id" required>
-          <label>Task ID</label>
-          </div>
-        </div>
+        Task
         <div class="row">
           <div class="input-field col s 12">
           <input type="text" v-model="task" required>
-          <label>Task</label>
+          <label></label>
           </div>
         </div>
+        Due
         <div class="row">
           <div class="input-field col s 12">
-          <input type="text" v-model="due" required>
-          <label>Due</label>
+          <input type="date" class="datepicker" v-model="due" required>
+          <label></label>
           </div>
         </div>
+        Project:
         <div class="row">
-          <div class="input-field col s 12">
-          <input type="text" v-model="project_id" required>
-          <label>Project ID</label>
-          </div>
-        </div>
+         <div class="input-field col s 12">
+        <select v-model="project_id">
+          <option v-for="(name,index) in projectArray" :key="index">{{name}}</option>
+        </select>
+      </div>
+    </div>
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>

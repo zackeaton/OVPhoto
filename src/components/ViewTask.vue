@@ -4,7 +4,6 @@
       <li class="collection-header">
         <h4>Task # {{task_id}}</h4>
       </li>
-      <li class="collection-item">Task ID: {{task_id}}</li>
       <li class="collection-item">Task: {{task}}</li>
       <li class="collection-item">Due: {{due}}</li>
       <li class="collection-item">Project ID: {{project_id}}</li>
@@ -40,18 +39,18 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("tasks")
-      .where("task_id", "==", to.params.task_id)
+      .doc(to.params.task_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
+      .then((doc) => {
           next(vm => {
+            console.log(vm)
             vm.task_id = doc.data().task_id;
             vm.task = doc.data().task;
             vm.due = doc.data().due;
             vm.project_id = doc.data().project_id;
           });
         });
-      });
+     // });
   },
   watch: {
     $route: "fetchData"
@@ -62,7 +61,7 @@ export default {
         .where("task_id", "==", this.$route.params.task_id)
         .get()
         .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
+          querySnapshot(doc => {
             this.task_id = doc.data().task_id;
             this.task = doc.data().task;
             this.due = doc.data().due;
@@ -71,16 +70,16 @@ export default {
         });
     },
     deleteTask() {
+      console.log(this.$route.params.task_id)
       if (confirm("Are you sure?")) {
         db.collection("tasks")
-          .where("task_id", "==", this.$route.params.task_id)
+          .doc(this.$route.params.task_id)
           .get()
-          .then(querySnapshot => {
-            querySnapshot.forEach(doc => {
+          .then(doc => {
               doc.ref.delete();
               this.$router.push("/tasks");
             });
-          });
+         // });
       }
     }
   }

@@ -91,8 +91,12 @@
         Invoice Status:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="invoice_status" required>
-            <label></label>
+             <select v-model="invoice_status" required>>
+            <option disabled value="">Please select one</option>
+            <option>Unpaid</option>
+            <option>Paid</option>
+            <option>Pending</option>
+              </select>
           </div>
         </div>
         Notes:
