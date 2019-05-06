@@ -89,7 +89,7 @@
       </tr>
     </thead>
 
-     <thead>
+     <thead id='line1'>
       <tr>
       <td>{{item_1}}</td>
       <td>{{cost_1}}</td>
@@ -98,7 +98,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line2'>
       <tr>
       <td>{{item_2}}</td>
       <td>{{cost_2}}</td>
@@ -107,7 +107,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line3'>
       <tr>
       <td>{{item_3}}</td>
       <td>{{cost_3}}</td>
@@ -116,7 +116,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line4'>
       <tr>
       <td>{{item_4}}</td>
       <td>{{cost_4}}</td>
@@ -125,7 +125,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line5'>
       <tr>
       <td>{{item_5}}</td>
       <td>{{cost_5}}</td>
@@ -134,7 +134,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line6'>
       <tr>
       <td>{{item_6}}</td>
       <td>{{cost_6}}</td>
@@ -143,7 +143,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line7'>
       <tr>
       <td>{{item_7}}</td>
       <td>{{cost_7}}</td>
@@ -152,7 +152,7 @@
       </tr>
     </thead>
 
-    <thead>
+    <thead id='line8'>
       <tr>
       <td>{{item_8}}</td>
       <td>{{cost_8}}</td>
