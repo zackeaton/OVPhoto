@@ -9,7 +9,7 @@
       <li class="collection-item">Telephone: {{phone}}</li>
       <li class="collection-item">Email: {{email}}</li>
       <li class="collection-item">Lead Generation: {{social}}</li>
-      <li class="collection-item">Are they a returning customer: {{returning_customer}}</li>
+     <!-- <li class="collection-item">Are they a returning customer: {{returning_customer}}</li>-->
     </ul>
 
     <router-link to="/customers" class="btn grey">Back</router-link>

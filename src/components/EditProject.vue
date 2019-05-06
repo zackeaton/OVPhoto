@@ -13,76 +13,100 @@
     
     <div class="row">
       <form @submit.prevent="updateProject" class="col s12">
-        Project ID:
-        <div class="row">
-          <div class="input-field col s 12">
-            <input disabled type="text" v-model="project_id" required>
-            <label></label>
-          </div>
-        </div>Project Name:
+Project Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="project_name" required>
             <label></label>
           </div>
-        </div>Consult Date:
+        </div>
+        Consult Date:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="date" v-model="consult_date" class="datepicker" required>
+            <input type="date" class='datepicker' v-model="consult_date">
             <label></label>
           </div>
-        </div>Shoot Date:
+        </div>
+        Shoot Date:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="date" class="datepicker" v-model="shoot_date" required>
+            <input type="date" class='datepicker' v-model="shoot_date" required>
             <label></label>
           </div>
-        </div>Shoot Type:
+        </div>
+        Shoot Type
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="shoot_type" required>
-            <label></label>
+            <select v-model="shoot_type" required>>
+            <option disabled value="">Please select one</option>
+            <option>Wedding</option>
+            <option>Event</option>
+            <option>Engagement Session</option>
+            <option>Couples Session</option>
+            <option>Anniversary Session</option>
+            <option>Personal Branding Session</option>
+            <option>Commercial Photoshoot</option>
+            <option>Mini Session</option>
+            <option>Newborn Session</option>
+            <option>Family Session</option>
+            <option>Personal Session</option>
+            <option>Maternity Session</option>
+            <option>Fashion Photoshoot</option>
+            <option>Senior Session</option>
+            <option>Children's Session</option>
+              </select>
           </div>
-        </div>Shoot Location:
+        </div>
+        Shoot Location:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_location" required>
             <label></label>
           </div>
-        </div>Invoice Cost:
+        </div>
+        Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_cost" required>
             <label></label>
           </div>
-        </div>Deposit Cost:
+        </div>
+        Deposit Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_cost" required>
             <label></label>
           </div>
-        </div>Deposit Status:
+        </div>
+        Deposit Status:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="dept_status" required>
-            <label></label>
+            <select v-model="dept_status" required>>
+            <option disabled value="">Please select one</option>
+            <option>Unpaid</option>
+            <option>Paid</option>
+            <option>Pending</option>
+              </select>
           </div>
-        </div>Invoice Status:
+        </div>
+        Invoice Status:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="invoice_status" required>
-            <label></label>
+             <select v-model="invoice_status" required>>
+            <option disabled value="">Please select one</option>
+            <option>Unpaid</option>
+            <option>Paid</option>
+            <option>Pending</option>
+              </select>
           </div>
-        </div>Notes:
+        </div>
+        Notes:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="notes">
             <label></label>
           </div>
         </div>
-        <br>
-        <!-- <label></label> -->
-        <br>
         
 
         <button type="submit" class="btn">Submit</button>
