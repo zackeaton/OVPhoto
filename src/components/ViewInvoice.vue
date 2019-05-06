@@ -1,35 +1,4 @@
 <template>
-  <!-- <div id="view-invoice">
-    <ul class="collection with-header">
-      <li class="collection-header">
-        <h4>Invoice # {{invoice_id}}</h4>
-      </li>
-      <li class="collection-item">Project ID: {{project_id}}</li>
-      <li class='collection-item'>Invoice ID: {{invoice_id}}</li>
-      <li class='collection-item'>Created: {{created}}</li>
-      <li class='collection-item'>Due: {{due}}</li>
-      <li class='collection-item'>Item 1: {{item_1}}</li> 
-      <li class='collection-item'>Cost 1: {{cost_1}}</li>     
-      <li class='collection-item'>Item 2: {{item_2}}</li>
-      <li class='collection-item'>Cost 2: {{cost_2}}</li>
-      <li class='collection-item'>Item 3: {{item_3}}</li>
-      <li class='collection-item'>Cost 3: {{cost_3}}</li>
-      
-    </ul>
-    <router-link to="/invoices" class="btn grey">Back</router-link>
-    <button @click="deleteInvoice" class="btn red">Delete</button>
-
-    <div class="fixed-action-btn">
-      <router-link
-        v-bind:to="{name: 'edit-invoice', params: {invoice_id: invoice_id}}"
-        class="btn-floating btn-large red"
-      >
-        <i class="fa fa-pencil-alt"></i>
-      </router-link>
-    </div>
-  </div>
-</template> -->
-
 <div class='invoice-box' id="view-invoice">
   <table cellpadding="0" cellspacing="0">
     <tr class="top">
@@ -262,30 +231,37 @@ export default {
             if(vm.item_2 == null || vm.item_2 == "")
             {
               line2.style.display = "none";
+              vm.cost_2 = 0;
             }
             if(vm.item_3 == null || vm.item_3 == "")
             {
               line3.style.display = "none";
+              vm.cost_3 = 0;
             }
             if(vm.item_4 == null || vm.item_4 == "")
             {
               line4.style.display = "none";
+              vm.cost_4 = 0;
             }
             if(vm.item_5 == null || vm.item_5 == "")
             {
               line5.style.display = "none";
+              vm.cost_5 = 0;
             }
             if(vm.item_6 == null || vm.item_6 == "")
             {
               line6.style.display = "none";
+              vm.cost_6 = 0;
             }
             if(vm.item_7 == null || vm.item_7 == "")
             {
               line7.style.display = "none";
+              vm.cost_7 = 0;
             }
             if(vm.item_8 == null || vm.item_8 == "")
             {
               line8.style.display = "none";
+              vm.cost_8 = 0;
             }
           });
         });
