@@ -2,7 +2,7 @@
   <div id="view-task">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>Task # {{task_id}}</h4>
+        <h4>{{task}}</h4>
       </li>
       <li class="collection-item">Task: {{task}}</li>
       <li class="collection-item">Due: {{due}}</li>
