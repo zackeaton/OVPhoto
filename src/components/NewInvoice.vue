@@ -399,7 +399,22 @@ export default {
   },
   methods: {
     saveInvoice() {
-      db.collection("invoices")
+
+      //Validation first
+      if(this.invoice_id == null)
+      {
+        alert("Invoice ID cannot be empty")
+      }
+      else if(this.fbase_id == null)
+      {
+        alert("You must choose a client")
+      }
+      else if(this.item_1 == null)
+      {
+        alert("Item 1 cannot be empty");
+      }
+      else{
+        db.collection("invoices")
         .add({
           cost_1: this.cost_1,
           cost_2: this.cost_2,
@@ -425,6 +440,7 @@ export default {
         })
         .then(docRef => this.$router.push("/invoices"))
         .catch(error => console.log(err));
+      }
     }
   },
   async mounted() {

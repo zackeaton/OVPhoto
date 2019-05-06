@@ -93,7 +93,7 @@
       <tr>
       <td>{{item_1}}</td>
       <td>{{cost_1}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_1}}</td>
       </tr>
     </thead>
@@ -102,7 +102,7 @@
       <tr>
       <td>{{item_2}}</td>
       <td>{{cost_2}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_2}}</td>
       </tr>
     </thead>
@@ -111,7 +111,7 @@
       <tr>
       <td>{{item_3}}</td>
       <td>{{cost_3}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_3}}</td>
       </tr>
     </thead>
@@ -120,7 +120,7 @@
       <tr>
       <td>{{item_4}}</td>
       <td>{{cost_4}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_4}}</td>
       </tr>
     </thead>
@@ -129,7 +129,7 @@
       <tr>
       <td>{{item_5}}</td>
       <td>{{cost_5}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_5}}</td>
       </tr>
     </thead>
@@ -138,7 +138,7 @@
       <tr>
       <td>{{item_6}}</td>
       <td>{{cost_6}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_6}}</td>
       </tr>
     </thead>
@@ -147,7 +147,7 @@
       <tr>
       <td>{{item_7}}</td>
       <td>{{cost_7}}</td>
-      <td>1</td>
+      <td> </td>
       <td>{{cost_7}}</td>
       </tr>
     </thead>
@@ -156,7 +156,7 @@
       <tr>
       <td>{{item_8}}</td>
       <td>{{cost_8}}</td>
-      <td>1</td>
+      <td></td>
       <td>{{cost_8}}</td>
       </tr>
     </thead>
@@ -279,6 +279,26 @@ export default {
       if(this.cost_3 == null)
       {
         this.cost_3 = 0;
+      } 
+      if(this.cost_4 == null)
+      {
+        this.cost_4 = 0;
+      } 
+      if(this.cost_5 == null)
+      {
+        this.cost_5 = 0;
+      } 
+      if(this.cost_6 == null)
+      {
+        this.cost_6 = 0;
+      } 
+      if(this.cost_7 == null)
+      {
+        this.cost_7 = 0;
+      } 
+      if(this.cost_8 == null)
+      {
+        this.cost_8 = 0;
       } 
       return parseInt(this.cost_1) + parseInt(this.cost_2) + parseInt(this.cost_3);
     }
