@@ -177,7 +177,7 @@
       <td>Total: ${{ total }}</td>
     </tr>
 
-   <tr>
+   <tr id='buttons'>
       <td colspan="4">
         <router-link to="/invoices" class="btn grey">Back</router-link>
         <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
@@ -188,7 +188,7 @@
     </tr>
 
   </table>
-<div class="fixed-action-btn">
+<div id='edit_button' class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-invoice', params: {invoice_id: invoice_id}}"
         class="btn-floating btn-large red"
@@ -387,6 +387,12 @@ export default {
     .nav-wrapper {
     display: none !important;
   }
+    #buttons {
+       display: none !important;
+    }
+    #edit_button{
+       display: none !important;
+    }
   
 @media only screen and (max-width: 600px) {
   .invoice-box table tr.top table td {
