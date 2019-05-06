@@ -8,13 +8,13 @@
             <span class="email black-text">{{currentUser}}</span>
           </li>
           <li v-if="isLoggedIn">
-            <router-link to="/tasks">Dashboard</router-link>
+            <router-link to="/">Tasks</router-link>
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/invoices">Invoices</router-link>
           </li>
           <li v-if="isLoggedIn">
-            <router-link to="/customers">Customers</router-link>
+            <router-link to="/customers">Clients</router-link>
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/projects">Projects</router-link>

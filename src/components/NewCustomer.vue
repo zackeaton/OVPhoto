@@ -1,6 +1,6 @@
 <template>
   <div id="new-customer">
-    <h3>New Customer</h3>
+    <h3>New Client</h3>
     <div class="row">
       <form @submit.prevent="saveCustomer" class="col s12">
         First Name:

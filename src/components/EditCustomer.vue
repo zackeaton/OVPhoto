@@ -1,6 +1,6 @@
 <template>
   <div id="edit-customer">
-    <h3>Edit Customer</h3>
+    <h3>Edit Client</h3>
     <div class="row">
       <form @submit.prevent="updateCustomer" class="col s12">
         <div class="row">

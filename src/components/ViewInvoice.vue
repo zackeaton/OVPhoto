@@ -1,5 +1,7 @@
 <template>
   <div class="invoice-box" id="view-invoice">
+    <ul class="collection with-header">
+      <li class="collection-header">
     <table cellpadding="0" cellspacing="0">
       <tr class="top">
         <td colspan="4">
@@ -165,6 +167,8 @@
         </td>
       </tr>
     </table>
+      </li>
+    </ul>
     <div id="edit_button" class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-invoice', params: {invoice_id: invoice_id}}"

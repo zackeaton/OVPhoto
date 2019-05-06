@@ -2,7 +2,7 @@
   <div id="home-customer">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>Customers</h4>
+        <h4>Clients</h4>
       </li>
       <li v-for="customer in customers" v-bind:key="customer.id" class="collection-item">
         <!-- <div class="chip">{{customer.id}}</div> -->
