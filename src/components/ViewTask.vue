@@ -34,23 +34,23 @@ export default {
       task_id: null,
       task: null,
       due: null,
-      project_name: null,
+      project_name: null
     };
   },
   beforeRouteEnter(to, from, next) {
     db.collection("tasks")
       .doc(to.params.task_id)
       .get()
-      .then((doc) => {
-          next(vm => {
-            console.log(vm)
-            vm.task_id = doc.data().task_id;
-            vm.task = doc.data().task;
-            vm.due = doc.data().due;
-            vm.project_id = doc.data().project_id;
-          });
+      .then(doc => {
+        next(vm => {
+          console.log(vm);
+          vm.task_id = doc.data().task_id;
+          vm.task = doc.data().task;
+          vm.due = doc.data().due;
+          vm.project_id = doc.data().project_id;
         });
-     // });
+      });
+    // });
   },
   watch: {
     $route: "fetchData"
@@ -70,16 +70,16 @@ export default {
         });
     },
     deleteTask() {
-      console.log(this.$route.params.task_id)
+      console.log(this.$route.params.task_id);
       if (confirm("Are you sure?")) {
         db.collection("tasks")
           .doc(this.$route.params.task_id)
           .get()
           .then(doc => {
-              doc.ref.delete();
-              this.$router.push("/tasks");
-            });
-         // });
+            doc.ref.delete();
+            this.$router.push("/tasks");
+          });
+        // });
       }
     }
   }

@@ -29,7 +29,7 @@ export default {
   name: "projects",
   data() {
     return {
-      projects: [],
+      projects: []
     };
   },
   created() {

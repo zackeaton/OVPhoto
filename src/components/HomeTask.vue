@@ -1,12 +1,13 @@
-<template>  
-<div id="home-task">
+<template>
+  <div id="home-task">
     <ul class="collection with-header">
       <li class="collection-header">
         <h4>Tasks</h4>
       </li>
       <li v-for="task in tasks" v-bind:key="task.id" class="collection-item">
-      <!--  <div class="chip">Due: {{task.id}}</div> {{task.task_id}}  -->
-        <div class="chip">Due: {{task.due}}</div> {{task.task}} 
+        <!--  <div class="chip">Due: {{task.id}}</div> {{task.task_id}}  -->
+        <div class="chip">Due: {{task.due}}</div>
+        {{task.task}}
         <router-link
           class="secondary-content"
           v-bind:to="{ name: 'view-task', params: { task_id: task.id }}"
@@ -43,8 +44,7 @@ export default {
             task_id: doc.data().task_id,
             task: doc.data().task,
             due: doc.data().due,
-            project_id: doc.data().project_id,
-            
+            project_id: doc.data().project_id
           };
           this.tasks.push(data);
         });

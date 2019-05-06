@@ -1,10 +1,9 @@
-<template>  
-<div id="home-task">
+<template>
+  <div id="home-task">
     <ul class="collection with-header">
       <li class="collection-header">
         <h4>About</h4>
       </li>
-   
     </ul>
     <div class="fixed-action-btn">
       <router-link to="/new/task" class="btn-floating btn-large red">
@@ -34,8 +33,7 @@ export default {
             task_id: doc.data().task_id,
             task: doc.data().task,
             due: doc.data().due,
-            project_id: doc.data().project_id,
-            
+            project_id: doc.data().project_id
           };
           this.tasks.push(data);
         });

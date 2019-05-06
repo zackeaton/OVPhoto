@@ -11,18 +11,17 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            <input type="date" class='datepicker' v-model="due" required>
+            <input type="date" class="datepicker" v-model="due" required>
             <label>Due</label>
           </div>
-        </div>
-        Project:
+        </div>Project:
         <div class="row">
-         <div class="input-field col s 12">
-        <select v-model="project_id">
-          <option v-for="(name,index) in projectArray" :key="index">{{name}}</option>
-        </select>
-      </div>
-    </div>
+          <div class="input-field col s 12">
+            <select v-model="project_id">
+              <option v-for="(name,index) in projectArray" :key="index">{{name}}</option>
+            </select>
+          </div>
+        </div>
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
@@ -42,7 +41,7 @@ export default {
       task_id: null,
       task: null,
       due: null,
-      project_id: null,
+      project_id: null
     };
   },
   async mounted() {
@@ -69,7 +68,7 @@ export default {
           task_id: this.task_id,
           task: this.task,
           due: this.due,
-          project_id: this.project_id,
+          project_id: this.project_id
         })
         .then(docRef => this.$router.push("/tasks"))
         .catch(error => console.log(err));

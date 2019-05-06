@@ -9,7 +9,7 @@
       <li class="collection-item">Telephone: {{phone}}</li>
       <li class="collection-item">Email: {{email}}</li>
       <li class="collection-item">Lead Generation: {{social}}</li>
-     <!-- <li class="collection-item">Are they a returning customer: {{returning_customer}}</li>-->
+      <!-- <li class="collection-item">Are they a returning customer: {{returning_customer}}</li>-->
     </ul>
 
     <router-link to="/customers" class="btn grey">Back</router-link>
@@ -47,17 +47,17 @@ export default {
     db.collection("customers")
       .doc(to.params.customer_id)
       .get()
-      .then((doc) => {
-          next(vm => {
-            console.log(vm)
-            vm.customer_id = doc.data().customer_id;
-            vm.first_name = doc.data().first_name;
-            vm.last_name = doc.data().last_name;
-            vm.phone = doc.data().phone;
-            vm.email = doc.data().email;
-            vm.social = doc.data().social;
-            vm.returning_customer = doc.data().returning_customer;
-          });
+      .then(doc => {
+        next(vm => {
+          console.log(vm);
+          vm.customer_id = doc.data().customer_id;
+          vm.first_name = doc.data().first_name;
+          vm.last_name = doc.data().last_name;
+          vm.phone = doc.data().phone;
+          vm.email = doc.data().email;
+          vm.social = doc.data().social;
+          vm.returning_customer = doc.data().returning_customer;
+        });
       });
   },
   watch: {
@@ -80,15 +80,14 @@ export default {
         });
     },
     deleteCustomer() {
-    console.log(this.$route.params.customer_id)
+      console.log(this.$route.params.customer_id);
       if (confirm("Are you sure?")) {
         db.collection("customers")
           .doc(this.$route.params.customer_id)
           .get()
           .then(doc => {
-              doc.ref.delete();
-              this.$router.push("/customers");
-            
+            doc.ref.delete();
+            this.$router.push("/customers");
           });
       }
     }

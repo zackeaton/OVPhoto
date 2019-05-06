@@ -1,7 +1,6 @@
 <template>
   <div id="new-project">
-    <h3>New Project</h3>
-    Customer:
+    <h3>New Project</h3>Customer:
     <div class="row">
       <div class="input-field col s 12">
         <select v-model="cust_name">
@@ -18,89 +17,83 @@
             <input type="text" v-model="project_name" required>
             <label></label>
           </div>
-        </div>
-        Consult Date:
+        </div>Consult Date:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="date" class='datepicker' v-model="consult_date">
+            <input type="date" class="datepicker" v-model="consult_date">
             <label></label>
           </div>
-        </div>
-        Shoot Date:
+        </div>Shoot Date:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="date" class='datepicker' v-model="shoot_date" required>
+            <input type="date" class="datepicker" v-model="shoot_date" required>
             <label></label>
           </div>
-        </div>
-        Shoot Type
+        </div>Shoot Type
         <div class="row">
           <div class="input-field col s 12">
-            <select v-model="shoot_type" required>>
-            <option disabled value="">Please select one</option>
-            <option>Wedding</option>
-            <option>Event</option>
-            <option>Engagement Session</option>
-            <option>Couples Session</option>
-            <option>Anniversary Session</option>
-            <option>Personal Branding Session</option>
-            <option>Commercial Photoshoot</option>
-            <option>Mini Session</option>
-            <option>Newborn Session</option>
-            <option>Family Session</option>
-            <option>Personal Session</option>
-            <option>Maternity Session</option>
-            <option>Fashion Photoshoot</option>
-            <option>Senior Session</option>
-            <option>Children's Session</option>
-            <option>Other</option>
-              </select>
+            <select v-model="shoot_type" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Wedding</option>
+              <option>Event</option>
+              <option>Engagement Session</option>
+              <option>Couples Session</option>
+              <option>Anniversary Session</option>
+              <option>Personal Branding Session</option>
+              <option>Commercial Photoshoot</option>
+              <option>Mini Session</option>
+              <option>Newborn Session</option>
+              <option>Family Session</option>
+              <option>Personal Session</option>
+              <option>Maternity Session</option>
+              <option>Fashion Photoshoot</option>
+              <option>Senior Session</option>
+              <option>Children's Session</option>
+              <option>Other</option>
+            </select>
           </div>
-        </div>
-        Shoot Location:
+        </div>Shoot Location:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="shoot_location" required>
             <label></label>
           </div>
-        </div>
-        Invoice Cost:
+        </div>Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="invoice_cost" required>
             <label></label>
           </div>
-        </div>
-        Deposit Cost:
+        </div>Deposit Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="dept_cost" required>
             <label></label>
           </div>
-        </div>
-        Deposit Status:
+        </div>Deposit Status:
         <div class="row">
           <div class="input-field col s 12">
-            <select v-model="dept_status" required>>
-            <option disabled value="">Please select one</option>
-            <option>Unpaid</option>
-            <option>Paid</option>
-            <option>Pending</option>
-              </select>
+            <select v-model="dept_status" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Unpaid</option>
+              <option>Paid</option>
+              <option>Pending</option>
+            </select>
           </div>
-        </div>
-        Invoice Status:
+        </div>Invoice Status:
         <div class="row">
           <div class="input-field col s 12">
-             <select v-model="invoice_status" required>>
-            <option disabled value="">Please select one</option>
-            <option>Unpaid</option>
-            <option>Paid</option>
-            <option>Pending</option>
-              </select>
+            <select v-model="invoice_status" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Unpaid</option>
+              <option>Paid</option>
+              <option>Pending</option>
+            </select>
           </div>
-        </div>
-        Notes:
+        </div>Notes:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="notes">
@@ -169,7 +162,7 @@ export default {
           invoice_status: this.invoice_status,
           notes: this.notes,
           project_name: this.project_name,
-          cust_name: this.cust_name,
+          cust_name: this.cust_name
         })
         .then(docRef => this.$router.push("/projects"))
         .catch(error => console.log(err));

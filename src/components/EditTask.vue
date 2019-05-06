@@ -6,25 +6,23 @@
         Task
         <div class="row">
           <div class="input-field col s 12">
-          <input type="text" v-model="task" required>
-          <label></label>
+            <input type="text" v-model="task" required>
+            <label></label>
           </div>
-        </div>
-        Due
+        </div>Due
         <div class="row">
           <div class="input-field col s 12">
-          <input type="date" class="datepicker" v-model="due" required>
-          <label></label>
+            <input type="date" class="datepicker" v-model="due" required>
+            <label></label>
+          </div>
+        </div>Project:
+        <div class="row">
+          <div class="input-field col s 12">
+            <select v-model="project_id">
+              <option v-for="(name,index) in projectArray" :key="index">{{name}}</option>
+            </select>
           </div>
         </div>
-        Project:
-        <div class="row">
-         <div class="input-field col s 12">
-        <select v-model="project_id">
-          <option v-for="(name,index) in projectArray" :key="index">{{name}}</option>
-        </select>
-      </div>
-    </div>
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
@@ -44,7 +42,7 @@ export default {
       task_id: null,
       task: null,
       due: null,
-      project_id: null,
+      project_id: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -65,7 +63,7 @@ export default {
   watch: {
     $route: "fetchData"
   },
-    async mounted() {
+  async mounted() {
     const snapshot = await db
       .collection("projects")
       .get()
@@ -107,7 +105,7 @@ export default {
                 task_id: this.task_id,
                 task: this.task,
                 due: this.due,
-                project_id: this.project_id,
+                project_id: this.project_id
               })
               .then(() => {
                 this.$router.push({

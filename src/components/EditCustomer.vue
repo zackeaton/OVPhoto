@@ -6,36 +6,36 @@
         <div class="row">
           <div class="input-field col s 12">
             First Name
-          <input type="text" v-model="first_name" required>
-          <label></label>
+            <input type="text" v-model="first_name" required>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             Last Name
-          <input type="text" v-model="last_name" required>
-          <label></label>
+            <input type="text" v-model="last_name" required>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             Phone
-          <input type="text" v-model="phone" required>
-          <label></label>
+            <input type="text" v-model="phone" required>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             Email
-          <input type="text" v-model="email" required>
-          <label></label>
+            <input type="text" v-model="email" required>
+            <label></label>
           </div>
         </div>
         <div class="row">
           <div class="input-field col s 12">
             Social
-          <input type="text" v-model="social" required>
-          <label></label>
+            <input type="text" v-model="social" required>
+            <label></label>
           </div>
         </div>
         <!-- <div class="row">
@@ -44,7 +44,7 @@
           <input type="text" v-model="returning_customer" required>
           <label></label>
           </div>
-        </div> -->
+        </div>-->
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>

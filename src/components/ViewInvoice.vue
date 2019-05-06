@@ -1,43 +1,52 @@
 <template>
-<div class='invoice-box' id="view-invoice">
-  <table cellpadding="0" cellspacing="0">
-    <tr class="top">
-      <td colspan="4">
-        <table>
-          <tr>
-            <td class="title">
-              <img src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w" style="width:100%; max-width:300px;">
-            </td>
+  <div class="invoice-box" id="view-invoice">
+    <table cellpadding="0" cellspacing="0">
+      <tr class="top">
+        <td colspan="4">
+          <table>
+            <tr>
+              <td class="title">
+                <img
+                  src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w"
+                  style="width:100%; max-width:300px;"
+                >
+              </td>
 
-            <td>
-              Invoice #: {{invoice_id}}<br> 
-              Created: {{created}}
-              <br> 
-              Due: {{due}}
-              <!-- <input type="date" id='dates' v-model="invoice_due_date" class='right-align col s2' required> -->
-            </td>
-          </tr>
-        </table>
-      </td>
+              <td>
+                Invoice #: {{invoice_id}}
+                <br>
+                Created: {{created}}
+                <br>
+                Due: {{due}}
+                <!-- <input type="date" id='dates' v-model="invoice_due_date" class='right-align col s2' required> -->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr class="information">
+        <td colspan="4">
+          <table>
+            <tr>
+              <td>
+                OV Photography
+                <br>1 University Blvd
+                <br>St. Louis, MO 63121
+              </td>
 
-    <tr class="information">
-      <td colspan="4">
-        <table>
-          <tr>
-            <td>
-              OV Photography<br> 1 University Blvd<br> St. Louis, MO 63121
-            </td>
+              <td>
+                Customer Name | Email
+                <br>
+                {{fbase_id}}
+                <br>
+                Project ID: {{project_id}}
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
 
-            <td>
-              Customer Name | Email<br> {{fbase_id}}<br>
-              Project ID: {{project_id}}
-            </td>
-          </tr>
-        </table>
-      </td>
-    </tr>
-
-   <!-- <tr class="heading">
+      <!-- <tr class="heading">
       <td colspan="3">Payment Method</td>
       <td>Payment Method</td>
     </tr>
@@ -45,119 +54,118 @@
     <tr class="details">
       <td colspan="3">Check</td>
       <td>1000</td>
-    </tr> -->
-  </table> 
+      </tr>-->
+    </table>
 
-  <table>
-    <thead>
-      <tr>
-      <td>Item</td>
-      <td>Unit Cost</td>
-      <td>Quantity</td>
-      <td>Price</td>
-      </tr>
-    </thead>
+    <table>
+      <thead>
+        <tr>
+          <td>Item</td>
+          <td>Unit Cost</td>
+          <td>Quantity</td>
+          <td>Price</td>
+        </tr>
+      </thead>
 
-     <thead id='line1'>
-      <tr>
-      <td>{{item_1}}</td>
-      <td>{{cost_1}}</td>
-      <td> </td>
-      <td>{{cost_1}}</td>
-      </tr>
-    </thead>
+      <thead id="line1">
+        <tr>
+          <td>{{item_1}}</td>
+          <td>{{cost_1}}</td>
+          <td></td>
+          <td>{{cost_1}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line2'>
-      <tr>
-      <td>{{item_2}}</td>
-      <td>{{cost_2}}</td>
-      <td> </td>
-      <td>{{cost_2}}</td>
-      </tr>
-    </thead>
+      <thead id="line2">
+        <tr>
+          <td>{{item_2}}</td>
+          <td>{{cost_2}}</td>
+          <td></td>
+          <td>{{cost_2}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line3'>
-      <tr>
-      <td>{{item_3}}</td>
-      <td>{{cost_3}}</td>
-      <td> </td>
-      <td>{{cost_3}}</td>
-      </tr>
-    </thead>
+      <thead id="line3">
+        <tr>
+          <td>{{item_3}}</td>
+          <td>{{cost_3}}</td>
+          <td></td>
+          <td>{{cost_3}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line4'>
-      <tr>
-      <td>{{item_4}}</td>
-      <td>{{cost_4}}</td>
-      <td> </td>
-      <td>{{cost_4}}</td>
-      </tr>
-    </thead>
+      <thead id="line4">
+        <tr>
+          <td>{{item_4}}</td>
+          <td>{{cost_4}}</td>
+          <td></td>
+          <td>{{cost_4}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line5'>
-      <tr>
-      <td>{{item_5}}</td>
-      <td>{{cost_5}}</td>
-      <td> </td>
-      <td>{{cost_5}}</td>
-      </tr>
-    </thead>
+      <thead id="line5">
+        <tr>
+          <td>{{item_5}}</td>
+          <td>{{cost_5}}</td>
+          <td></td>
+          <td>{{cost_5}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line6'>
-      <tr>
-      <td>{{item_6}}</td>
-      <td>{{cost_6}}</td>
-      <td> </td>
-      <td>{{cost_6}}</td>
-      </tr>
-    </thead>
+      <thead id="line6">
+        <tr>
+          <td>{{item_6}}</td>
+          <td>{{cost_6}}</td>
+          <td></td>
+          <td>{{cost_6}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line7'>
-      <tr>
-      <td>{{item_7}}</td>
-      <td>{{cost_7}}</td>
-      <td> </td>
-      <td>{{cost_7}}</td>
-      </tr>
-    </thead>
+      <thead id="line7">
+        <tr>
+          <td>{{item_7}}</td>
+          <td>{{cost_7}}</td>
+          <td></td>
+          <td>{{cost_7}}</td>
+        </tr>
+      </thead>
 
-    <thead id='line8'>
-      <tr>
-      <td>{{item_8}}</td>
-      <td>{{cost_8}}</td>
-      <td></td>
-      <td>{{cost_8}}</td>
-      </tr>
-    </thead>
-    <!-- <tr class="item" v-bind:key="item" v-for="item in items">
+      <thead id="line8">
+        <tr>
+          <td>{{item_8}}</td>
+          <td>{{cost_8}}</td>
+          <td></td>
+          <td>{{cost_8}}</td>
+        </tr>
+      </thead>
+      <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
       <td><input type="number" pattern=" 0+\.[0-9]*[1-9][0-9]*$"
        onkeypress="return event.charCode >= 48 && event.charCode <= 57" v-model="item.quantity" /></td>
       <td>${{ item.price * item.quantity}}</td>
-    </tr> -->
+      </tr>-->
 
-    <!--<ul>
+      <!--<ul>
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
-    </ul> -->
+      </ul>-->
 
-   <tr class="total">
-      <td colspan="3"></td>
-      <td>Total: ${{ total }}</td>
-    </tr>
+      <tr class="total">
+        <td colspan="3"></td>
+        <td>Total: ${{ total }}</td>
+      </tr>
 
-   <tr id='buttons'>
-      <td colspan="4">
-        <router-link to="/invoices" class="btn grey">Back</router-link>
-        <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
-        <button class ='btn' @click='printAll'>Print Invoice</button>
-       <!-- <button class="btn" @click="addRow">Add row</button> -->
-       <!-- <button class="btn red" @click="delRow">Delete row</button> -->
-      </td>
-    </tr>
-
-  </table>
-<div id='edit_button' class="fixed-action-btn">
+      <tr id="buttons">
+        <td colspan="4">
+          <router-link to="/invoices" class="btn grey">Back</router-link>
+          <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
+          <button class="btn" @click="printAll">Print Invoice</button>
+          <!-- <button class="btn" @click="addRow">Add row</button> -->
+          <!-- <button class="btn red" @click="delRow">Delete row</button> -->
+        </td>
+      </tr>
+    </table>
+    <div id="edit_button" class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-invoice', params: {invoice_id: invoice_id}}"
         class="btn-floating btn-large red"
@@ -165,8 +173,7 @@
         <i class="fa fa-pencil-alt"></i>
       </router-link>
     </div>
-
-</div>
+  </div>
 </template>
 
 
@@ -196,76 +203,69 @@ export default {
       item_7: null,
       item_8: null,
       project_id: null,
-      fbase_id: null,
+      fbase_id: null
     };
   },
   beforeRouteEnter(to, from, next) {
     db.collection("invoices")
       .doc(to.params.invoice_id)
       .get()
-      .then((doc) => {
-          next(vm => {
-            console.log(vm)
-            vm.cost_1 = doc.data().cost_1;
-            vm.cost_2 = doc.data().cost_2;
-            vm.cost_3 = doc.data().cost_3;
-            vm.cost_4 = doc.data().cost_4;
-            vm.cost_5 = doc.data().cost_5;
-            vm.cost_6 = doc.data().cost_6;
-            vm.cost_7 = doc.data().cost_7;
-            vm.cost_8 = doc.data().cost_8;
-            vm.created = doc.data().created;
-            vm.due = doc.data().due;
-            vm.invoice_id = doc.data().invoice_id;
-            vm.item_1 = doc.data().item_1;
-            vm.item_2 = doc.data().item_2;
-            vm.item_3 = doc.data().item_3;
-            vm.item_4 = doc.data().item_4;
-            vm.item_5 = doc.data().item_5;
-            vm.item_6 = doc.data().item_6;
-            vm.item_7 = doc.data().item_7;
-            vm.item_8 = doc.data().item_8;
-            vm.project_id = doc.data().project_id;
-            vm.fbase_id = doc.data().fbase_id;
+      .then(doc => {
+        next(vm => {
+          console.log(vm);
+          vm.cost_1 = doc.data().cost_1;
+          vm.cost_2 = doc.data().cost_2;
+          vm.cost_3 = doc.data().cost_3;
+          vm.cost_4 = doc.data().cost_4;
+          vm.cost_5 = doc.data().cost_5;
+          vm.cost_6 = doc.data().cost_6;
+          vm.cost_7 = doc.data().cost_7;
+          vm.cost_8 = doc.data().cost_8;
+          vm.created = doc.data().created;
+          vm.due = doc.data().due;
+          vm.invoice_id = doc.data().invoice_id;
+          vm.item_1 = doc.data().item_1;
+          vm.item_2 = doc.data().item_2;
+          vm.item_3 = doc.data().item_3;
+          vm.item_4 = doc.data().item_4;
+          vm.item_5 = doc.data().item_5;
+          vm.item_6 = doc.data().item_6;
+          vm.item_7 = doc.data().item_7;
+          vm.item_8 = doc.data().item_8;
+          vm.project_id = doc.data().project_id;
+          vm.fbase_id = doc.data().fbase_id;
 
-            if(vm.item_2 == null || vm.item_2 == "")
-            {
-              line2.style.display = "none";
-              vm.cost_2 = 0;
-            }
-            if(vm.item_3 == null || vm.item_3 == "")
-            {
-              line3.style.display = "none";
-              vm.cost_3 = 0;
-            }
-            if(vm.item_4 == null || vm.item_4 == "")
-            {
-              line4.style.display = "none";
-              vm.cost_4 = 0;
-            }
-            if(vm.item_5 == null || vm.item_5 == "")
-            {
-              line5.style.display = "none";
-              vm.cost_5 = 0;
-            }
-            if(vm.item_6 == null || vm.item_6 == "")
-            {
-              line6.style.display = "none";
-              vm.cost_6 = 0;
-            }
-            if(vm.item_7 == null || vm.item_7 == "")
-            {
-              line7.style.display = "none";
-              vm.cost_7 = 0;
-            }
-            if(vm.item_8 == null || vm.item_8 == "")
-            {
-              line8.style.display = "none";
-              vm.cost_8 = 0;
-            }
-          });
+          if (vm.item_2 == null || vm.item_2 == "") {
+            line2.style.display = "none";
+            vm.cost_2 = 0;
+          }
+          if (vm.item_3 == null || vm.item_3 == "") {
+            line3.style.display = "none";
+            vm.cost_3 = 0;
+          }
+          if (vm.item_4 == null || vm.item_4 == "") {
+            line4.style.display = "none";
+            vm.cost_4 = 0;
+          }
+          if (vm.item_5 == null || vm.item_5 == "") {
+            line5.style.display = "none";
+            vm.cost_5 = 0;
+          }
+          if (vm.item_6 == null || vm.item_6 == "") {
+            line6.style.display = "none";
+            vm.cost_6 = 0;
+          }
+          if (vm.item_7 == null || vm.item_7 == "") {
+            line7.style.display = "none";
+            vm.cost_7 = 0;
+          }
+          if (vm.item_8 == null || vm.item_8 == "") {
+            line8.style.display = "none";
+            vm.cost_8 = 0;
+          }
         });
-      //});
+      });
+    //});
   },
   watch: {
     $route: "fetchData"
@@ -273,40 +273,40 @@ export default {
   computed: {
     total() {
       //Make sure it's never null
-      if(this.cost_1 == null)
-      {
+      if (this.cost_1 == null) {
         this.cost_1 = 0;
-      } 
-      if(this.cost_2 == null)
-      {
+      }
+      if (this.cost_2 == null) {
         this.cost_2 = 0;
-      } 
-      if(this.cost_3 == null)
-      {
+      }
+      if (this.cost_3 == null) {
         this.cost_3 = 0;
-      } 
-      if(this.cost_4 == null)
-      {
+      }
+      if (this.cost_4 == null) {
         this.cost_4 = 0;
-      } 
-      if(this.cost_5 == null)
-      {
+      }
+      if (this.cost_5 == null) {
         this.cost_5 = 0;
-      } 
-      if(this.cost_6 == null)
-      {
+      }
+      if (this.cost_6 == null) {
         this.cost_6 = 0;
-      } 
-      if(this.cost_7 == null)
-      {
+      }
+      if (this.cost_7 == null) {
         this.cost_7 = 0;
-      } 
-      if(this.cost_8 == null)
-      {
+      }
+      if (this.cost_8 == null) {
         this.cost_8 = 0;
-      } 
-      return parseInt(this.cost_1) + parseInt(this.cost_2) + parseInt(this.cost_3) + parseInt(this.cost_4) +
-      parseInt(this.cost_5) + parseInt(this.cost_6) + parseInt(this.cost_7) + parseInt(this.cost_8);
+      }
+      return (
+        parseInt(this.cost_1) +
+        parseInt(this.cost_2) +
+        parseInt(this.cost_3) +
+        parseInt(this.cost_4) +
+        parseInt(this.cost_5) +
+        parseInt(this.cost_6) +
+        parseInt(this.cost_7) +
+        parseInt(this.cost_8)
+      );
     }
   },
   methods: {
@@ -341,16 +341,16 @@ export default {
         });
     },
     deleteInvoice() {
-      console.log(this.$route.params.invoice_id)
+      console.log(this.$route.params.invoice_id);
       if (confirm("Are you sure?")) {
         db.collection("invoices")
           .doc(this.$route.params.invoice_id)
           .get()
           .then(doc => {
-              doc.ref.delete();
-              this.$router.push("/invoices");
-            });
-         // });
+            doc.ref.delete();
+            this.$router.push("/invoices");
+          });
+        // });
       }
     },
     printAll() {
@@ -361,23 +361,23 @@ export default {
 </script>
 <style>
 @media print {
-    .nav-wrapper {
+  .nav-wrapper {
     display: none !important;
   }
-    #buttons {
-       display: none !important;
-    }
-    #edit_button{
-       display: none !important;
-    }
-  
-@media only screen and (max-width: 600px) {
-  .invoice-box table tr.top table td {
-    width: 100%;
-    display: block;
-    text-align: center;
+  #buttons {
+    display: none !important;
   }
-}
+  #edit_button {
+    display: none !important;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .invoice-box table tr.top table td {
+      width: 100%;
+      display: block;
+      text-align: center;
+    }
+  }
 }
 .invoice-box {
   max-width: 800px;

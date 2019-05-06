@@ -6,7 +6,7 @@
       </li>
       <li class="collection-item">Customer: {{cust_name}}</li>
       <!--<li class="collection-item">project ID: {{project_id}}</li>-->
-      <li class='collection-item'>Project Name: {{project_name}}</li>
+      <li class="collection-item">Project Name: {{project_name}}</li>
       <li class="collection-item">Consult Date: {{consult_date}}</li>
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
       <li class="collection-item">Shoot Type: {{shoot_type}}</li>
@@ -65,25 +65,25 @@ export default {
     db.collection("projects")
       .doc(to.params.project_id)
       .get()
-      .then((doc) => {
-          next(vm => {
-          console.log(vm)
-            vm.project_id = doc.data().project_id;
-            vm.project_name = doc.data().project_name
-            vm.consult_date = doc.data().consult_date;
-            vm.shoot_date = doc.data().shoot_date;
-            vm.shoot_type = doc.data().shoot_type;
-            vm.shoot_location = doc.data().shoot_location;
-            vm.invoice_cost = doc.data().invoice_cost;
-            vm.dept_cost = doc.data().dept_cost;
-            vm.dept_status = doc.data().dept_status;
-            vm.invoice_status = doc.data().invoice_status;
-            vm.notes = doc.data().notes;
-            vm.project_name = doc.data().project_name;
-            vm.cust_name = doc.data().cust_name;
-          });
+      .then(doc => {
+        next(vm => {
+          console.log(vm);
+          vm.project_id = doc.data().project_id;
+          vm.project_name = doc.data().project_name;
+          vm.consult_date = doc.data().consult_date;
+          vm.shoot_date = doc.data().shoot_date;
+          vm.shoot_type = doc.data().shoot_type;
+          vm.shoot_location = doc.data().shoot_location;
+          vm.invoice_cost = doc.data().invoice_cost;
+          vm.dept_cost = doc.data().dept_cost;
+          vm.dept_status = doc.data().dept_status;
+          vm.invoice_status = doc.data().invoice_status;
+          vm.notes = doc.data().notes;
+          vm.project_name = doc.data().project_name;
+          vm.cust_name = doc.data().cust_name;
         });
-//});
+      });
+    //});
   },
   watch: {
     $route: "fetchData"
@@ -112,16 +112,16 @@ export default {
         });
     },
     deleteProject() {
-    console.log(this.$route.params.project_id)
+      console.log(this.$route.params.project_id);
       if (confirm("Are you sure?")) {
         db.collection("projects")
           .doc(this.$route.params.project_id)
           .get()
           .then(doc => {
-              doc.ref.delete();
-              this.$router.push("/projects");
-            });
-         // });
+            doc.ref.delete();
+            this.$router.push("/projects");
+          });
+        // });
       }
     }
   }

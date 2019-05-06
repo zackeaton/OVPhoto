@@ -29,7 +29,7 @@
             <button v-on:click="logout" class="btn black">Logout</button>
           </li>
         </ul>
-        
+
         <ul class="side-nav hide-on-large-only" id="mobile-demo">
           <li v-if="isLoggedIn">
             <router-link to="/">
@@ -38,7 +38,7 @@
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/invoices">
-            <i class="fa fa-credit-card"></i>
+              <i class="fa fa-credit-card"></i>
             </router-link>
           </li>
           <li v-if="isLoggedIn">

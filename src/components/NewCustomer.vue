@@ -9,48 +9,45 @@
             <input type="text" v-model="first_name" required>
             <label></label>
           </div>
-        </div>
-        Last Name:
+        </div>Last Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="last_name" required>
             <label></label>
           </div>
-        </div>
-        Phone Number:
+        </div>Phone Number:
         <div class="row">
           <div class="input-field col s 12">
             <input type="number" v-model="phone">
             <label></label>
           </div>
-        </div>
-        Email:
+        </div>Email:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="email" required>
             <label></label>
           </div>
-        </div>
-        Lead Generation:
-       <div class="row">
+        </div>Lead Generation:
+        <div class="row">
           <div class="input-field col s 12">
-            <select v-model="social" required>>
-            <option disabled value="">Please select one</option>
-            <option>Instagram</option>
-            <option>Facebook</option>
-            <option>Google</option>
-            <option>The Knot</option>
-            <option>Wedding Wire</option>
-            <option>Wedding Pioneer</option>
-            <option>Wedding Chicks</option>
-            <option>Vendor Referral</option>
-            <option>Client Referral</option>
-            <option>Friend Referral</option>
-            <option>Other</option>
-              </select>
+            <select v-model="social" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Google</option>
+              <option>The Knot</option>
+              <option>Wedding Wire</option>
+              <option>Wedding Pioneer</option>
+              <option>Wedding Chicks</option>
+              <option>Vendor Referral</option>
+              <option>Client Referral</option>
+              <option>Friend Referral</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
-       <!--  Returning Customer Y/N:
+        <!--  Returning Customer Y/N:
          <div class="row">
           <div class="input-field col s 12">
             <select v-model="returning_customer" required>>
@@ -59,7 +56,7 @@
             <option>Facebook</option>
               </select>
           </div>
-        </div> -->
+        </div>-->
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
