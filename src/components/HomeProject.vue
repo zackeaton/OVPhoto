@@ -36,7 +36,7 @@ export default {
   },
   created() {
     db.collection("projects")
-      .orderBy("project_id")
+      .orderBy("shoot_date")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
