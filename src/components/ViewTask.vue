@@ -9,7 +9,7 @@
       <li class="collection-item">Project Name: {{project_id}}</li>
     </ul>
 
-    <router-link to="/" class="btn grey">Back</router-link>
+    <router-link to="/tasks" class="btn grey">Back</router-link>
     <button @click="deleteTask" class="btn red">Delete</button>
 
     <div class="fixed-action-btn">
@@ -83,7 +83,7 @@ console.log(this.$route)
           .get()
           .then(doc => {
             doc.ref.delete();
-            this.$router.push("/");
+            this.$router.push("/tasks");
           });
         // });
       }

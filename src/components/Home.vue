@@ -2,15 +2,23 @@
   <div id="home-task">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>About</h4>
+        <center><h4>Welcome</h4></center>
       </li>
+      <center>
+      <div><h6>Welcome to the OV Photography Web Application.<br>To get started please click the "login" or "register" button below.</h6></div>
+    </center>
     </ul>
+    <center>
+        <router-link to="/register" class="btn grey">Register</router-link>
+    <router-link to="/login" class="btn grey">Login</router-link>
+    </center>
     <div class="fixed-action-btn">
       <router-link to="/new/task" class="btn-floating btn-large red">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
   </div>
+
 </template>
 
 <script>

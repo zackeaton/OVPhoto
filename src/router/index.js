@@ -30,7 +30,7 @@ Vue.use(Router);
 let router = new Router({
   routes: [
     {
-      path: '/home',
+      path: '/',
       name: 'Home',
       component: Home,
       meta: {
@@ -38,7 +38,7 @@ let router = new Router({
       }
     },
     {
-      path: '/',
+      path: '/tasks',
       name: 'tasks',
       component: HomeTask,
       meta: {
