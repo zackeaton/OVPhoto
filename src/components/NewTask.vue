@@ -25,6 +25,8 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
+        <button onClick='alert("This is the page to create a new task. It includes the task name, due date, and the name of the project the task is assigned to");' 
+  class='btn'>Help</button>
       </form>
     </div>
   </div>

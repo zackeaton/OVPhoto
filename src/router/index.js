@@ -21,6 +21,7 @@ import HomeTask from '@/components/HomeTask';
 import NewTask from '@/components/NewTask';
 import ViewTask from '@/components/ViewTask';
 import EditTask from '@/components/EditTask';
+import contextHelp from '@/components/contextHelp';
 
 
 
@@ -184,6 +185,14 @@ let router = new Router({
       path: '/projects/price/:project_id',
       name: 'price-project',
       component: PriceProject,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/help',
+      name: 'help',
+      component: contextHelp,
       meta: {
         requiresAuth: false
       }

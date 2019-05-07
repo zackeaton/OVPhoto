@@ -6,7 +6,7 @@
       </li>
       <li class="collection-item">Task: {{task}}</li>
       <li class="collection-item">Due: {{due}}</li>
-      <li class="collection-item">Project ID: {{project_id}}</li>
+      <li class="collection-item">Project Name: {{project_id}}</li>
     </ul>
 
     <router-link to="/tasks" class="btn grey">Back</router-link>
@@ -20,6 +20,9 @@
         <i class="fa fa-pencil-alt"></i>
       </router-link>
     </div>
+
+    <button onClick='alert("This page is an expanded view of a task. It includes the task name, its due date, and the project name. Tasks can be deleted or edited on this page as well. To edit a task, click the pencil icon in the bottom right corner");' 
+  class='btn'>Help</button>
   </div>
 </template>
 

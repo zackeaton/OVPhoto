@@ -21,6 +21,13 @@
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
+
+ <!-- <router-link to="/help" class="btn">
+    Help
+  </router-link> -->
+
+  <button onClick='alert("This page is a view of all the tasks in the system. To add a new task, click the + in the bottom right corner. To expand a task, click the folder icon in the task name row. This will take you to an expanded view with the task name, due date, and project name. You can also delete or edit a task from the expanded task page.");' 
+  class='btn'>Help</button>
   </div>
 </template>
 

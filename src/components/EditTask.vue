@@ -26,6 +26,8 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
+        <button onClick='alert("This page allows you to edit existing tasks. You can change the task name, the task due date, and the list of projects you can assign this task to");' 
+  class='btn'>Help</button>
       </form>
     </div>
   </div>
