@@ -72,7 +72,7 @@ export default {
           due: this.due,
           project_id: this.project_id
         })
-        .then(docRef => this.$router.push("/tasks"))
+        .then(docRef => this.$router.push("/"))
         .catch(error => console.log(err));
     }
   }

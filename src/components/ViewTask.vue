@@ -83,7 +83,7 @@ console.log(this.$route)
           .get()
           .then(doc => {
             doc.ref.delete();
-            this.$router.push("/tasks");
+            this.$router.push("/");
           });
         // });
       }
