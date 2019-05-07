@@ -162,6 +162,8 @@
           <router-link to="/invoices" class="btn grey">Back</router-link>
           <button @click="deleteInvoice" class="btn red">Delete Invoice</button>
           <button class="btn" @click="printAll">Print Invoice</button>
+          <button onClick='alert("This page displays a clients invoice. From this page, you can delete or print / save this invoice as a PDF. To edit an invoice, click the pencil in the bottom right corner.");' 
+  class='btn'>Help</button>
           <!-- <button class="btn" @click="addRow">Add row</button> -->
           <!-- <button class="btn red" @click="delRow">Delete row</button> -->
         </td>

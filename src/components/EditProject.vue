@@ -103,6 +103,8 @@
 
         <button type="submit" @click="updateProject" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
+        <button onClick='alert("This page allows you to edit an existing project. ");' 
+  class='btn'>Help</button>
       </form>
     </div>
   </div>

@@ -104,6 +104,8 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
+        <button onClick='alert("This page allows you to create a new project. All fields are required except a consult date and any notes. ");' 
+  class='btn'>Help</button>
       </form>
     </div>
   </div>

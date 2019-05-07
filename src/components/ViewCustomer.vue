@@ -14,6 +14,8 @@
 
     <router-link to="/customers" class="btn grey">Back</router-link>
     <button @click="deleteCustomer" class="btn red">Delete</button>
+    <button onClick='alert("This page is a more detailed view of a client. To edit a clients info, click the pencil icon. Client info can also be deleted by pressing the red delete button");' 
+  class='btn'>Help</button>
 
     <div class="fixed-action-btn">
       <router-link

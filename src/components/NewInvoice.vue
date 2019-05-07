@@ -371,7 +371,7 @@
           <td colspan="4">
             <button @click="saveInvoice" class="btn">Submit</button>
             <router-link to="/invoices" class="btn grey">Cancel</router-link>
-            <button onClick='alert("This is the page you can create a new invoice from. Selecting a customer from the dropdown is required, as is the first row.");' 
+            <button onClick='alert("This is the page you can create a new invoice from. Selecting a customer & a project from the dropdown is required, as is the first row.");' 
   class='btn'>Help</button>
             <!-- <button class="btn" @click="addRow">Add row</button> -->
             <!-- <button class="btn red" @click="delRow">Delete row</button> -->
