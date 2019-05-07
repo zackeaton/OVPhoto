@@ -34,7 +34,7 @@ export default {
   name: "view-customer",
   data() {
     return {
-      tempId:null,
+      tempId: null,
       customer_id: null,
       first_name: null,
       last_name: null,

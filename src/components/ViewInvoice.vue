@@ -171,7 +171,7 @@
     </ul>
     <div id="edit_button" class="fixed-action-btn">
       <router-link
-        v-bind:to="{name: 'edit-invoice', params: {invoice_id: invoice_id}}"
+        v-bind:to="{name: 'edit-invoice', params: {invoice_id: this.tempInvoice}}"
         class="btn-floating btn-large red"
       >
         <i class="fa fa-pencil-alt"></i>
@@ -187,6 +187,7 @@ export default {
   name: "view-invoice",
   data() {
     return {
+      tempInvoice: null,
       cost_1: null,
       cost_2: null,
       cost_3: null,
@@ -211,6 +212,8 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
+    console.log(to.params.invoice_id)
+
     db.collection("invoices")
       .doc(to.params.invoice_id)
       .get()
@@ -274,6 +277,10 @@ export default {
   watch: {
     $route: "fetchData"
   },
+  mounted(){
+    this.tempInvoice = this.$route.params.invoice_id
+console.log(this.$route)
+  },
   computed: {
     total() {
       //Make sure it's never null
@@ -318,8 +325,7 @@ export default {
       db.collection("invoices")
         .where("invoice_id", "==", this.$route.params.invoice_id)
         .get()
-        .then(querySnapshot => {
-          qquerySnapshot(doc => {
+        .then((doc) => {
             this.cost_1 = doc.data().cost_1;
             this.cost_2 = doc.data().cost_2;
             this.cost_3 = doc.data().cost_3;
@@ -341,7 +347,7 @@ export default {
             this.item_8 = doc.data().item_8;
             this.project_id = doc.data().project_id;
             this.fbase_id = doc.data().fbase_id;
-          });
+          //});
         });
     },
     deleteInvoice() {

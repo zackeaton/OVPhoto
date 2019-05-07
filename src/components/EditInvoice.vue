@@ -422,11 +422,11 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("invoices")
-      .where("invoice_id", "==", to.params.invoice_id)
+      .doc(to.params.invoice_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          next(vm => {
+      .then(doc => {
+        console.log(doc);
+        next(vm => {
             vm.cost_1 = doc.data().cost_1;
             vm.cost_2 = doc.data().cost_2;
             vm.cost_3 = doc.data().cost_3;
@@ -449,7 +449,7 @@ export default {
             vm.project_id = doc.data().project_id;
             vm.fbase_id = doc.data().fbase_id;
           });
-        });
+        //});
       });
   },
   watch: {
@@ -519,12 +519,14 @@ export default {
         alert("Item 1 cannot be empty");
       } else {
         db.collection("invoices")
-          .where("invoice_id", "==", this.$route.params.invoice_id)
+          /* .where("invoice_id", "==", this.$route.params.invoice_id)
           .get()
           .then(querySnapshot => {
             querySnapshot.forEach(doc => {
               doc.ref
-                .update({
+                .update({ */
+                .doc(this.$route.params.invoice_id)
+                  .set({
                   cost_1: this.cost_1,
                   cost_2: this.cost_2,
                   cost_3: this.cost_3,
@@ -547,14 +549,16 @@ export default {
                   project_id: this.project_id,
                   fbase_id: this.fbase_id
                 })
-                .then(() => {
-                  this.$router.push({
-                    name: "view-invoice",
-                    params: { invoice_id: this.invoice_id }
-                  });
-                });
-            });
+                .then(docRef => {
+          this.$router.push({
+            name: "view-invoice",
+            params: { invoice_id: this.$route.params.invoice_id}
           });
+        }).catch((err)=>{
+          // console.log(err)
+        });
+            //});
+         // });
       }
     }
   }
