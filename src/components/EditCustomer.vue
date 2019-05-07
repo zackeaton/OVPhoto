@@ -2,7 +2,7 @@
   <div id="edit-customer">
     <h3>Edit Client</h3>
     <div class="row">
-      <form @submit.prevent="updateCustomer" class="col s12">
+      <form class="col s12">
         <div class="row">
           <div class="input-field col s 12">
             First Name
@@ -46,7 +46,7 @@
           </div>
         </div>-->
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" @click="updateCustomer" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
       </form>
     </div>
@@ -71,20 +71,20 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("customers")
-      .where("customer_id", "==", to.params.customer_id)
+      .doc(to.params.customer_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          next(vm => {
-            vm.customer_id = doc.data().customer_id;
-            vm.first_name = doc.data().first_name;
-            vm.last_name = doc.data().last_name;
-            vm.phone = doc.data().phone;
-            vm.email = doc.data().email;
-            vm.social = doc.data().social;
-            vm.returning_customer = doc.data().returning_customer;
-          });
+      .then(doc => {
+        console.log(doc);
+        next(vm => {
+          vm.customer_id = doc.data().customer_id;
+          vm.first_name = doc.data().first_name;
+          vm.last_name = doc.data().last_name;
+          vm.phone = doc.data().phone;
+          vm.email = doc.data().email;
+          vm.social = doc.data().social;
+          vm.returning_customer = doc.data().returning_customer;
         });
+        //});
       });
   },
   watch: {
@@ -107,29 +107,26 @@ export default {
         });
     },
     updateCustomer() {
+      console.log(this.first_name)
       db.collection("customers")
-        .where("customer_id", "==", this.$route.params.customer_id)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            doc.ref
-              .update({
-                customer_id: this.customer_id,
-                first_name: this.first_name,
-                last_name: this.last_name,
-                phone: this.phone,
-                email: this.email,
-                social: this.social,
-                returning_customer: this.returning_customer
-              })
-              .then(() => {
-                this.$router.push({
-                  name: "view-customer",
-                  params: { customer_id: this.customer_id }
-                });
-              });
+        .doc(this.$route.params.customer_id)
+        .set({
+          first_name: this.first_name,
+          last_name: this.last_name,
+          phone: this.phone,
+          email: this.email,
+          social: this.social,
+          returning_customer: this.returning_customer
+        })
+        .then(docRef => {
+          this.$router.push({
+            name: "view-customer",
+            params: { customer_id: this.$route.params.customer_id}
           });
+        }).catch((err)=>{
+          // console.log(err)
         });
+      //});
     }
   }
 };

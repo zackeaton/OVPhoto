@@ -17,7 +17,7 @@
 
     <div class="fixed-action-btn">
       <router-link
-        v-bind:to="{name: 'edit-customer', params: {customer_id: customer_id}}"
+        v-bind:to="{name: 'edit-customer', params: {customer_id: this.tempId}}"
         class="btn-floating btn-large red"
       >
         <i class="fa fa-pencil-alt"></i>
@@ -34,6 +34,7 @@ export default {
   name: "view-customer",
   data() {
     return {
+      tempId:null,
       customer_id: null,
       first_name: null,
       last_name: null,
@@ -44,12 +45,15 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
+    console.log(to.params.customer_id)
+
     db.collection("customers")
       .doc(to.params.customer_id)
       .get()
       .then(doc => {
         next(vm => {
           console.log(vm);
+          console.log(doc.data())
           vm.customer_id = doc.data().customer_id;
           vm.first_name = doc.data().first_name;
           vm.last_name = doc.data().last_name;
@@ -63,20 +67,23 @@ export default {
   watch: {
     $route: "fetchData"
   },
+  mounted(){
+    this.tempId = this.$route.params.customer_id
+console.log(this.$route)
+  },
   methods: {
     fetchData() {
       db.collection("customers")
         .where("customer_id", "==", this.$route.params.customer_id)
         .get()
-        .then(querySnapshot => {
-          querySnapshot(doc => {
+        .then((doc) => {
             this.customer_id = doc.data().customer_id;
             this.first_name = doc.data().first_name;
             this.last_name = doc.data().last_name;
             this.phone = doc.data().phone;
             this.social = doc.data().social;
             this.returning_customer = doc.data().returning_customer;
-          });
+          //});
         });
     },
     deleteCustomer() {
