@@ -1,46 +1,78 @@
 <template>
-  <div id="home-customer">
+  <div id="home-task">
     <ul class="collection with-header">
-      <li class="collection-header"><h4>Customers</h4></li>
-      <li v-for="customer in customers" v-bind:key="customer.id" class="collection-item">
-        <div class="chip">{{customer.id}}</div>
-       {{customer.first_name}} {{customer.last_name}}
-         <router-link class="secondary-content" v-bind:to="{ name: 'view-customer', params: { customer_id: customer.customer_id }}"><i class="fa fa-angle-double-down"></i></router-link>
+      <li class="collection-header">
+        <center><h4>Welcome</h4></center>
       </li>
+      <center>
+      <div><h6>Welcome to the OV Photography Web Application.<br>To get started please click the "login" or "register" button below.</h6></div>
+    </center>
     </ul>
+    <center>
+        <router-link to="/register" class="btn grey">Register</router-link>
+    <router-link to="/login" class="btn grey">Login</router-link>
+    </center>
     <div class="fixed-action-btn">
-      <router-link to="/new/customer" class="btn-floating btn-large red">
+      <router-link to="/new/task" class="btn-floating btn-large red">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
   </div>
+
 </template>
 
 <script>
-import db from './firebaseInit.js'
+import db from "./firebaseInit.js";
 export default {
-  name: 'dashboard',
+  name: "dashboard",
   data() {
     return {
-      customers: []
-    }
+      tasks: []
+    };
   },
-  created () {
-    db.collection('customers').orderBy('customer_id').get().then(querySnapshot => {
-      querySnapshot.forEach(doc => {
-        const data = {
-          'id': doc.id,
-          'customer_id': doc.data().customer_id,
-          'first_name': doc.data().first_name,
-          'last_name': doc.data().last_name,
-          'phone': doc.data().phone,
-          'email': doc.data().email,
-          'social': doc.data().social,
-          'returning_customer': doc.data().returning_customer
-        }
-        this.customers.push(data)
-      })
-    })
+  created() {
+    db.collection("tasks")
+      .orderBy("due")
+      .get()
+      .then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+          const data = {
+            id: doc.id,
+            task_id: doc.data().task_id,
+            task: doc.data().task,
+            due: doc.data().due,
+            project_id: doc.data().project_id
+          };
+          this.tasks.push(data);
+        });
+      });
   }
-}
+};
 </script>
+
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+.btn {
+  display: inline-block;
+  border: none;
+  background: #555;
+  color: #fff;
+  padding: 7px 20px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: #666;
+}
+</style>

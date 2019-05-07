@@ -4,7 +4,10 @@
       <div class="row">
         <div class="col s12 m8 offset-m2">
           <div class="login card-panel grey lighten-4 black-text center">
-            <h3>Login <i class="fa fa-sign-in-alt"></i></h3>
+            <h3>
+              Login
+              <i class="fa fa-sign-in-alt"></i>
+            </h3>
             <form action="index.html">
               <div class="input-field">
                 <i class="material-icons prefix">
@@ -50,7 +53,7 @@ export default {
         .signInWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            alert(`You are logged in as ${user.email}`);
+            alert(`You are logged in as ${this.email}`);
             this.$router.go({ path: this.$router.path });
           },
           err => {

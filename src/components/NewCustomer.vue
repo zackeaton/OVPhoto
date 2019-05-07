@@ -1,50 +1,62 @@
 <template>
   <div id="new-customer">
-    <h3>New Customer</h3>
+    <h3>New Client</h3>
     <div class="row">
       <form @submit.prevent="saveCustomer" class="col s12">
-        <div class="row">
-          <div class="input-field col s 12">
-            <input type="text" v-model="customer_id" required>
-            <label>Customer ID#</label>
-          </div>
-        </div>
+        First Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="first_name" required>
-            <label>First Name</label>
+            <label></label>
           </div>
-        </div>
+        </div>Last Name:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="last_name" required>
-            <label>Last Name</label>
+            <label></label>
           </div>
-        </div>
+        </div>Phone Number:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="phone" required>
-            <label>Phone Number</label>
+            <input type="number" v-model="phone">
+            <label></label>
           </div>
-        </div>
+        </div>Email:
         <div class="row">
           <div class="input-field col s 12">
             <input type="text" v-model="email" required>
-            <label>Email</label>
+            <label></label>
           </div>
-        </div>
+        </div>Lead Generation:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="social" required>
-            <label>Instagram @</label>
+            <select v-model="social" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Google</option>
+              <option>The Knot</option>
+              <option>Wedding Wire</option>
+              <option>Wedding Pioneer</option>
+              <option>Wedding Chicks</option>
+              <option>Vendor Referral</option>
+              <option>Client Referral</option>
+              <option>Friend Referral</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
-        <div class="row">
+        <!--  Returning Customer Y/N:
+         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="returning_customer" required>
-            <label>Returning Customer Y/N</label>
+            <select v-model="returning_customer" required>>
+            <option disabled value="">Please select one</option>
+            <option></option>
+            <option>Facebook</option>
+              </select>
           </div>
-        </div>
+        </div>-->
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
@@ -87,3 +99,8 @@ export default {
   }
 };
 </script>
+<style>
+select {
+  display: block !important;
+}
+</style>

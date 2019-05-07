@@ -4,7 +4,10 @@
       <div class="row">
         <div class="col s12 m8 offset-m2">
           <div class="login card-panel grey lighten-4 black-text center">
-            <h3>Register <i class="fa fa-user-plus"></i></h3>
+            <h3>
+              Register
+              <i class="fa fa-user-plus"></i>
+            </h3>
             <form action="index.html">
               <div class="input-field">
                 <i class="material-icons prefix">
@@ -61,34 +64,39 @@ export default {
   },
   methods: {
     validate: function(email) {
-    var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
-    if (re.test(this.email)) {
-        if (this.email.indexOf('@ovphotography.co', this.email.length - '@ovphotography.co'.length) !== -1) {
-            alert('Submission was successful.');
-            firebase
-        .auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          user => {
-            // console.log(user);
-            alert(`Account Created for ${user.email}`);
-            this.$router.go({ path: this.$router.path });
-          },
-          err => {
-            alert(err.message);
-          }
-        );
-      e.preventDefault();
+      var re = /^\s*[\w\-\+_]+(\.[\w\-\+_]+)*\@[\w\-\+_]+\.[\w\-\+_]+(\.[\w\-\+_]+)*\s*$/;
+      if (re.test(this.email)) {
+        if (
+          this.email.indexOf(
+            "@ovphotography.co",
+            this.email.length - "@ovphotography.co".length
+          ) !== -1
+        ) {
+          alert("Submission was successful.");
+          firebase
+            .auth()
+            .createUserWithEmailAndPassword(this.email, this.password)
+            .then(
+              user => {
+                console.log(user);
+                alert(`Account Created for ${user}`);
+                this.$router.go({ path: this.$router.path });
+              },
+              err => {
+                alert(err.message);
+              }
+            );
+          e.preventDefault();
         } else {
-            alert('Email must be a OVPhotography e-mail address (your.name@ovphotography.co).');
+          alert(
+            "Email must be a OVPhotography e-mail address (your.name@ovphotography.co)."
+          );
         }
-    } else {
-        alert('Not a valid e-mail address.');
-    }
-    } ,
-    register: function(e) {
-      
-    }
-  } 
+      } else {
+        alert("Not a valid e-mail address.");
+      }
+    },
+    register: function(e) {}
+  }
 };
 </script>

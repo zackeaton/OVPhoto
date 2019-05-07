@@ -5,11 +5,11 @@
         <h4>Projects</h4>
       </li>
       <li v-for="project in projects" v-bind:key="project.id" class="collection-item">
-        <div class="chip">{{project.id}}</div>
+        <div class="chip">{{project.cust_name}}</div>
         {{project.project_name}}
         <router-link
           class="secondary-content"
-          v-bind:to="{ name: 'view-project', params: { project_id: project.project_id }}"
+          v-bind:to="{ name: 'view-project', params: { project_id: project.id }}"
         >
           <i class="fa fa-folder-open"></i>
         </router-link>
@@ -20,6 +20,8 @@
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
+    <button onClick='alert("This page displays a list of all projects in the system. To create a new project, click the + in the bottom right corner. To view more info about the project, click the folder icon next to the customer name");' 
+  class='btn'>Help</button>
   </div>
 </template>
 
@@ -50,7 +52,8 @@ export default {
             dept_cost: doc.data().dept_cost,
             dept_status: doc.data().dept_status,
             invoice_status: doc.data().invoice_status,
-            notes: doc.data().notes
+            notes: doc.data().notes,
+            cust_name: doc.data().cust_name
           };
           this.projects.push(data);
         });

@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Home from '@/components/Home';
+import Home from '@/components/Home'
 import HomeCustomer from '@/components/HomeCustomer';
 import ViewCustomer from '@/components/ViewCustomer';
 import NewCustomer from '@/components/NewCustomer';
@@ -12,7 +12,18 @@ import EditProject from '@/components/EditProject';
 import Login from '@/components/Login';
 import Register from '@/components/Register';
 import firebase from 'firebase';
-import PriceProject from '@/components/PriceProject'
+import PriceProject from '@/components/PriceProject';
+import HomeInvoice from '@/components/HomeInvoice';
+import NewInvoice from '@/components/NewInvoice';
+import ViewInvoice from '@/components/ViewInvoice';
+import EditInvoice from '@/components/EditInvoice';
+import HomeTask from '@/components/HomeTask';
+import NewTask from '@/components/NewTask';
+import ViewTask from '@/components/ViewTask';
+import EditTask from '@/components/EditTask';
+import contextHelp from '@/components/contextHelp';
+
+
 
 Vue.use(Router);
 
@@ -23,7 +34,71 @@ let router = new Router({
       name: 'Home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/tasks',
+      name: 'tasks',
+      component: HomeTask,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/tasks/view/:task_id',
+      name: 'view-task',
+      component: ViewTask,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/new/task',
+      name: 'new-task',
+      component: NewTask,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/tasks/edit/:task_id',
+      name: 'edit-tasks',
+      component: EditTask,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/invoices',
+      name: 'home-invoice',
+      component: HomeInvoice,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/new/invoice',
+      name: 'new-invoice',
+      component: NewInvoice,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/invoices/edit/:invoice_id',
+      name: 'edit-invoice',
+      component: EditInvoice,
+      meta: {
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/invoices/view/:invoice_id',
+      name: 'view-invoice',
+      component: ViewInvoice,
+      meta: {
+        requiresAuth: false
       }
     },
     {
@@ -31,7 +106,7 @@ let router = new Router({
       name: 'home-customer',
       component: HomeCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -39,7 +114,7 @@ let router = new Router({
       name: 'projects',
       component: HomeProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -47,7 +122,7 @@ let router = new Router({
       name: 'login',
       component: Login,
       meta: {
-        requiresGuest: true
+        requiresGuest: false
       }
     },
     {
@@ -55,7 +130,7 @@ let router = new Router({
       name: 'register',
       component: Register,
       meta: {
-        requiresGuest: true
+        requiresGuest: false
       }
     },
     {
@@ -63,7 +138,7 @@ let router = new Router({
       name: 'new-project',
       component: NewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -71,7 +146,7 @@ let router = new Router({
       name: 'view-project',
       component: ViewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -79,7 +154,7 @@ let router = new Router({
       name: 'edit-project',
       component: EditProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -87,7 +162,7 @@ let router = new Router({
       name: 'new-customer',
       component: NewCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -95,7 +170,7 @@ let router = new Router({
       name: 'edit-customer',
       component: EditCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -103,7 +178,7 @@ let router = new Router({
       name: 'view-customer',
       component: ViewCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -111,7 +186,15 @@ let router = new Router({
       name: 'price-project',
       component: PriceProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
+      }
+    },
+    {
+      path: '/help',
+      name: 'help',
+      component: contextHelp,
+      meta: {
+        requiresAuth: false
       }
     },
   ]

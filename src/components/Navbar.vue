@@ -2,16 +2,19 @@
   <nav>
     <div class="nav-wrapper">
       <div class="container">
-        <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
+        <router-link to="/tasks" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
         <ul class="right hide-on-med-and-down">
           <li v-if="isLoggedIn">
             <span class="email black-text">{{currentUser}}</span>
           </li>
           <li v-if="isLoggedIn">
-            <router-link to="/">Dashboard</router-link>
+            <router-link to="/tasks">Tasks</router-link>
           </li>
           <li v-if="isLoggedIn">
-            <router-link to="/customers">Customers</router-link>
+            <router-link to="/invoices">Invoices</router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/customers">Clients</router-link>
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/projects">Projects</router-link>
@@ -26,11 +29,16 @@
             <button v-on:click="logout" class="btn black">Logout</button>
           </li>
         </ul>
-        
+
         <ul class="side-nav hide-on-large-only" id="mobile-demo">
           <li v-if="isLoggedIn">
-            <router-link to="/">
+            <router-link to="/tasks">
               <i class="fa fa-chart-line"></i>
+            </router-link>
+          </li>
+          <li v-if="isLoggedIn">
+            <router-link to="/invoices">
+              <i class="fa fa-credit-card"></i>
             </router-link>
           </li>
           <li v-if="isLoggedIn">

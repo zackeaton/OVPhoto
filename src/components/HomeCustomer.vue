@@ -2,14 +2,14 @@
   <div id="home-customer">
     <ul class="collection with-header">
       <li class="collection-header">
-        <h4>Customers</h4>
+        <h4>Clients</h4>
       </li>
       <li v-for="customer in customers" v-bind:key="customer.id" class="collection-item">
-        <div class="chip">{{customer.id}}</div>
+        <!-- <div class="chip">{{customer.id}}</div> -->
         {{customer.first_name}} {{customer.last_name}}
         <router-link
           class="secondary-content"
-          v-bind:to="{ name: 'view-customer', params: { customer_id: customer.customer_id }}"
+          v-bind:to="{ name: 'view-customer', params: { customer_id: customer.id }}"
         >
           <i class="fa fa-folder-open"></i>
         </router-link>
@@ -20,6 +20,8 @@
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
+    <button onClick='alert("From this page you can view a list of all clients entered into the system. New clients can be created by clicking the + in the bottom right corner. To view more information about a client, click the folder icon next to the clients name.");' 
+  class='btn'>Help</button>
   </div>
 </template>
 
@@ -34,7 +36,7 @@ export default {
   },
   created() {
     db.collection("customers")
-      .orderBy("customer_id")
+      .orderBy("last_name")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {

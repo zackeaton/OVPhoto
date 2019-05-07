@@ -1,53 +1,69 @@
 <template>
   <div id="edit-customer">
-    <h3>Edit Customer</h3>
+    <h3>Edit Client</h3>
     <div class="row">
-      <form @submit.prevent="updateCustomer" class="col s12">
+      First Name
+      <form class="col s12">
         <div class="row">
           <div class="input-field col s 12">
-          <input disabled type="text" v-model="customer_id" required>
-          <label>Customer ID</label>
+            
+            <input type="text" v-model="first_name" required>
+            <label></label>
+          </div>
+        </div>Last Name
+        <div class="row">
+          <div class="input-field col s 12">
+            
+            <input type="text" v-model="last_name" required>
+            <label></label>
+          </div>
+        </div>Phone
+        <div class="row">
+          <div class="input-field col s 12">
+            
+            <input type="text" v-model="phone" required>
+            <label></label>
+          </div>
+        </div>Email
+        <div class="row">
+          <div class="input-field col s 12">
+            
+            <input type="text" v-model="email" required>
+            <label></label>
           </div>
         </div>
+        Lead Generation:
         <div class="row">
           <div class="input-field col s 12">
-          <input type="text" v-model="first_name" required>
-          <label>First Name</label>
+            <select v-model="social" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Google</option>
+              <option>The Knot</option>
+              <option>Wedding Wire</option>
+              <option>Wedding Pioneer</option>
+              <option>Wedding Chicks</option>
+              <option>Vendor Referral</option>
+              <option>Client Referral</option>
+              <option>Friend Referral</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
-        <div class="row">
+        <!-- <div class="row">
           <div class="input-field col s 12">
-          <input type="text" v-model="last_name" required>
-          <label>Last Name</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s 12">
-          <input type="text" v-model="phone" required>
-          <label>Phone</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s 12">
-          <input type="text" v-model="email" required>
-          <label>Email</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s 12">
-          <input type="text" v-model="social" required>
-          <label>Social</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s 12">
+            Returning Customer
           <input type="text" v-model="returning_customer" required>
-          <label>Returning Customer</label>
+          <label></label>
           </div>
-        </div>
+        </div>-->
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" @click="updateCustomer" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
+        <button onClick='alert("This page allows you to edit client info. Referral type & phone number are not required");' 
+  class='btn'>Help</button>
       </form>
     </div>
   </div>
@@ -71,20 +87,20 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("customers")
-      .where("customer_id", "==", to.params.customer_id)
+      .doc(to.params.customer_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          next(vm => {
-            vm.customer_id = doc.data().customer_id;
-            vm.first_name = doc.data().first_name;
-            vm.last_name = doc.data().last_name;
-            vm.phone = doc.data().phone;
-            vm.email = doc.data().email;
-            vm.social = doc.data().social;
-            vm.returning_customer = doc.data().returning_customer;
-          });
+      .then(doc => {
+        console.log(doc);
+        next(vm => {
+          vm.customer_id = doc.data().customer_id;
+          vm.first_name = doc.data().first_name;
+          vm.last_name = doc.data().last_name;
+          vm.phone = doc.data().phone;
+          vm.email = doc.data().email;
+          vm.social = doc.data().social;
+          vm.returning_customer = doc.data().returning_customer;
         });
+        //});
       });
   },
   watch: {
@@ -107,30 +123,32 @@ export default {
         });
     },
     updateCustomer() {
+      //console.log(this.first_name)
       db.collection("customers")
-        .where("customer_id", "==", this.$route.params.customer_id)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            doc.ref
-              .update({
-                customer_id: this.customer_id,
-                first_name: this.first_name,
-                last_name: this.last_name,
-                phone: this.phone,
-                email: this.email,
-                social: this.social,
-                returning_customer: this.returning_customer
-              })
-              .then(() => {
-                this.$router.push({
-                  name: "view-customer",
-                  params: { customer_id: this.customer_id }
-                });
-              });
+        .doc(this.$route.params.customer_id)
+        .set({
+          first_name: this.first_name,
+          last_name: this.last_name,
+          phone: this.phone,
+          email: this.email,
+          social: this.social,
+          returning_customer: this.returning_customer
+        })
+        .then(docRef => {
+          this.$router.push({
+            name: "view-customer",
+            params: { customer_id: this.$route.params.customer_id}
           });
+        }).catch((err)=>{
+          // console.log(err)
         });
+      //});
     }
   }
 };
 </script>
+<style>
+select {
+  display: block !important;
+}
+</style>
