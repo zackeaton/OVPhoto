@@ -20,6 +20,8 @@
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
+    <button onClick='alert("This page displays a list of invoices in the system. You can add new tasks by clicking the + in the bottom right corner. Invoices can be viewed by clicking the folder icon next to the invoice ID");' 
+  class='btn'>Help</button>
   </div>
 </template>
 
