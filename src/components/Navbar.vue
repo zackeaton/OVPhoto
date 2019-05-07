@@ -2,13 +2,13 @@
   <nav>
     <div class="nav-wrapper">
       <div class="container">
-        <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
+        <router-link to="/tasks" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
         <ul class="right hide-on-med-and-down">
           <li v-if="isLoggedIn">
             <span class="email black-text">{{currentUser}}</span>
           </li>
           <li v-if="isLoggedIn">
-            <router-link to="/">Tasks</router-link>
+            <router-link to="/tasks">Tasks</router-link>
           </li>
           <li v-if="isLoggedIn">
             <router-link to="/invoices">Invoices</router-link>
@@ -32,7 +32,7 @@
 
         <ul class="side-nav hide-on-large-only" id="mobile-demo">
           <li v-if="isLoggedIn">
-            <router-link to="/">
+            <router-link to="/tasks">
               <i class="fa fa-chart-line"></i>
             </router-link>
           </li>

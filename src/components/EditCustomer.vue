@@ -33,8 +33,8 @@
         </div>
         <div class="row">
           <div class="input-field col s 12">
-            Returning Customer
-            <input type="text" v-model="returning_customer" required>
+            Lead Generation
+            <input type="text" v-model="social" required>
             <label></label>
           </div>
         </div>
