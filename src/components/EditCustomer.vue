@@ -2,40 +2,54 @@
   <div id="edit-customer">
     <h3>Edit Client</h3>
     <div class="row">
+      First Name
       <form class="col s12">
         <div class="row">
           <div class="input-field col s 12">
-            First Name
+            
             <input type="text" v-model="first_name" required>
             <label></label>
           </div>
-        </div>
+        </div>Last Name
         <div class="row">
           <div class="input-field col s 12">
-            Last Name
+            
             <input type="text" v-model="last_name" required>
             <label></label>
           </div>
-        </div>
+        </div>Phone
         <div class="row">
           <div class="input-field col s 12">
-            Phone
+            
             <input type="text" v-model="phone" required>
             <label></label>
           </div>
-        </div>
+        </div>Email
         <div class="row">
           <div class="input-field col s 12">
-            Email
+            
             <input type="text" v-model="email" required>
             <label></label>
           </div>
         </div>
+        Lead Generation:
         <div class="row">
           <div class="input-field col s 12">
-            Lead Generation
-            <input type="text" v-model="social" required>
-            <label></label>
+            <select v-model="social" required>
+              >
+              <option disabled value>Please select one</option>
+              <option>Instagram</option>
+              <option>Facebook</option>
+              <option>Google</option>
+              <option>The Knot</option>
+              <option>Wedding Wire</option>
+              <option>Wedding Pioneer</option>
+              <option>Wedding Chicks</option>
+              <option>Vendor Referral</option>
+              <option>Client Referral</option>
+              <option>Friend Referral</option>
+              <option>Other</option>
+            </select>
           </div>
         </div>
         <!-- <div class="row">
@@ -133,3 +147,8 @@ export default {
   }
 };
 </script>
+<style>
+select {
+  display: block !important;
+}
+</style>

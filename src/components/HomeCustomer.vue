@@ -36,7 +36,7 @@ export default {
   },
   created() {
     db.collection("customers")
-      .orderBy("customer_id")
+      .orderBy("last_name")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
