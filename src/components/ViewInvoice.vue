@@ -64,7 +64,7 @@
         <tr>
           <td>Item</td>
           <td>Unit Cost</td>
-          <td>Quantity</td>
+          <td> </td>
           <td>Price</td>
         </tr>
       </thead>
