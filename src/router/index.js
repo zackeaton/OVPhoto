@@ -34,7 +34,7 @@ let router = new Router({
       name: 'Home',
       component: Home,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -42,7 +42,7 @@ let router = new Router({
       name: 'tasks',
       component: HomeTask,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -50,7 +50,7 @@ let router = new Router({
       name: 'view-task',
       component: ViewTask,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -58,7 +58,7 @@ let router = new Router({
       name: 'new-task',
       component: NewTask,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -66,7 +66,7 @@ let router = new Router({
       name: 'edit-tasks',
       component: EditTask,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -74,7 +74,7 @@ let router = new Router({
       name: 'home-invoice',
       component: HomeInvoice,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -82,7 +82,7 @@ let router = new Router({
       name: 'new-invoice',
       component: NewInvoice,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -90,7 +90,7 @@ let router = new Router({
       name: 'edit-invoice',
       component: EditInvoice,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -98,7 +98,7 @@ let router = new Router({
       name: 'view-invoice',
       component: ViewInvoice,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -106,7 +106,7 @@ let router = new Router({
       name: 'home-customer',
       component: HomeCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -114,7 +114,7 @@ let router = new Router({
       name: 'projects',
       component: HomeProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -138,7 +138,7 @@ let router = new Router({
       name: 'new-project',
       component: NewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -146,7 +146,7 @@ let router = new Router({
       name: 'view-project',
       component: ViewProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -154,7 +154,7 @@ let router = new Router({
       name: 'edit-project',
       component: EditProject,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -162,7 +162,7 @@ let router = new Router({
       name: 'new-customer',
       component: NewCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -170,7 +170,7 @@ let router = new Router({
       name: 'edit-customer',
       component: EditCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
@@ -178,7 +178,7 @@ let router = new Router({
       name: 'view-customer',
       component: ViewCustomer,
       meta: {
-        requiresAuth: true
+        requiresAuth: false
       }
     },
     {
