@@ -415,6 +415,7 @@ export default {
   },
   methods: {
     saveInvoice() {
+      
       //Validation first
       if (this.invoice_id == null) {
         alert("Invoice ID cannot be empty");
