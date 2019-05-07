@@ -14,7 +14,7 @@
 
     <div class="fixed-action-btn">
       <router-link
-        v-bind:to="{name: 'edit-tasks', params: {task_id: task_id}}"
+        v-bind:to="{name: 'edit-tasks', params: {task_id: this.tempTask}}"
         class="btn-floating btn-large red"
       >
         <i class="fa fa-pencil-alt"></i>
@@ -58,19 +58,22 @@ export default {
   watch: {
     $route: "fetchData"
   },
+  mounted(){
+    this.tempTask = this.$route.params.task_id
+console.log(this.$route)
+  },
   methods: {
     fetchData() {
       db.collection("tasks")
         .where("task_id", "==", this.$route.params.task_id)
         .get()
-        .then(querySnapshot => {
-          querySnapshot(doc => {
+        .then((doc) => {
             this.task_id = doc.data().task_id;
             this.task = doc.data().task;
             this.due = doc.data().due;
             this.project_id = doc.data().project_id;
           });
-        });
+        //});
     },
     deleteTask() {
       console.log(this.$route.params.task_id);

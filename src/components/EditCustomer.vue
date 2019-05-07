@@ -107,7 +107,7 @@ export default {
         });
     },
     updateCustomer() {
-      console.log(this.first_name)
+      //console.log(this.first_name)
       db.collection("customers")
         .doc(this.$route.params.customer_id)
         .set({

@@ -2,7 +2,7 @@
   <div id="edit-task">
     <h3>Edit Task</h3>
     <div class="row">
-      <form @submit.prevent="updateTask" class="col s12">
+      <form class="col s12">
         Task
         <div class="row">
           <div class="input-field col s 12">
@@ -24,7 +24,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" @click="updateTask" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
         <button onClick='alert("This page allows you to edit existing tasks. You can change the task name, the task due date, and the list of projects you can assign this task to");' 
   class='btn'>Help</button>
@@ -49,18 +49,18 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("tasks")
-      .where("task_id", "==", to.params.task_id)
+      .doc(to.params.task_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          next(vm => {
+      .then(doc => {
+        console.log(doc);
+        next(vm => {
             vm.task_id = doc.data().task_id;
             vm.task = doc.data().task;
             vm.due = doc.data().due;
             vm.project_id = doc.data().project_id;
           });
         });
-      });
+      //});
   },
   watch: {
     $route: "fetchData"
@@ -86,7 +86,7 @@ export default {
     fetchData() {
       db.collection("tasks")
         .where("task_id", "==", this.$route.params.task_id)
-        .get()
+       .get()
         .then(querySnapshot => {
           querySnapshot.forEach(doc => {
             this.task_id = doc.data().task_id;
@@ -98,29 +98,27 @@ export default {
     },
     updateTask() {
       db.collection("tasks")
-        .where("task_id", "==", this.$route.params.task_id)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            doc.ref
-              .update({
+         .doc(this.$route.params.task_id)
+        .set({
                 task_id: this.task_id,
                 task: this.task,
                 due: this.due,
                 project_id: this.project_id
               })
-              .then(() => {
-                this.$router.push({
-                  name: "view-task",
-                  params: { task_id: this.task_id }
-                });
-              });
+              .then(docRef => {
+          this.$router.push({
+            name: "view-task",
+            params: { task_id: this.$route.params.task_id}
           });
+        }).catch((err)=>{
+          // console.log(err)
         });
+      //});
     }
   }
 };
 </script>
+
 <style>
 select {
   display: block !important;

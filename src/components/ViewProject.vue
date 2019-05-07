@@ -22,20 +22,20 @@
 
     <div class="fixed-action-btn">
       <router-link
-        v-bind:to="{name: 'edit-project', params: {project_id: project_id}}"
+        v-bind:to="{name: 'edit-project', params: {project_id: this.tempCust}}"
         class="btn-floating btn-large red"
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>
     </div>
-    <div class="fixed-action-btn">
+    <!-- <div class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-project', params: {project_id: project_id}}"
         class="btn-floating btn-large red"
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -88,13 +88,16 @@ export default {
   watch: {
     $route: "fetchData"
   },
+  mounted(){
+    this.tempCust = this.$route.params.project_id
+console.log(this.$route)
+  },
   methods: {
     fetchData() {
       db.collection("projects")
         .where("project_id", "==", this.$route.params.project_id)
         .get()
-        .then(querySnapshot => {
-          querySnapshot(doc => {
+        .then((doc) => {
             this.project_id = doc.data().project_id;
             this.project_name = doc.data().project_name;
             this.consult_date = doc.data().consult_date;
@@ -109,7 +112,7 @@ export default {
             this.project_name = doc.data().project_name;
             this.cust_name = doc.data().cust_name;
           });
-        });
+        //});
     },
     deleteProject() {
       console.log(this.$route.params.project_id);

@@ -101,7 +101,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn">Submit</button>
+        <button type="submit" @click="updateProject" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
       </form>
     </div>
@@ -133,11 +133,11 @@ export default {
   },
   beforeRouteEnter(to, from, next) {
     db.collection("projects")
-      .where("project_id", "==", to.params.project_id)
+     .doc(to.params.project_id)
       .get()
-      .then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-          next(vm => {
+      .then(doc => {
+        console.log(doc);
+        next(vm => {
             vm.cust_name = doc.data().cust_name;
             vm.project_id = doc.data().project_id;
             vm.project_name = doc.data().project_name;
@@ -153,7 +153,7 @@ export default {
             vm.project_name = doc.data().project_name;
             //vm.cust_name = doc.data().cust_name;
           });
-        });
+        //});
       });
   },
   watch: {
@@ -202,12 +202,8 @@ export default {
     },
     updateProject() {
       db.collection("projects")
-        .where("project_id", "==", this.$route.params.project_id)
-        .get()
-        .then(querySnapshot => {
-          querySnapshot.forEach(doc => {
-            doc.ref
-              .update({
+        .doc(this.$route.params.project_id)
+        .set({
                 cust_name: this.cust_name,
                 project_id: this.project_id,
                 project_name: this.project_name,
@@ -222,18 +218,20 @@ export default {
                 notes: this.notes
                 //cust_name: this.cust_name
               })
-              .then(() => {
-                this.$router.push({
-                  name: "view-project",
-                  params: { project_id: this.project_id }
-                });
-              });
+              .then(docRef => {
+          this.$router.push({
+            name: "view-project",
+            params: { project_id: this.$route.params.project_id}
           });
+        }).catch((err)=>{
+          // console.log(err)
         });
+      //});
     }
   }
 };
 </script>
+
 
 
 <style>
