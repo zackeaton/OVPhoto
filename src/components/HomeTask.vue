@@ -43,7 +43,7 @@ export default {
   },
   created() {
     db.collection("tasks")
-      .orderBy("due")
+      .orderBy("project_id")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
