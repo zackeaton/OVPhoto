@@ -40,7 +40,7 @@ export default {
     return {
       tasks: []
     };
-  },
+  }, 
   created() {
     db.collection("tasks")
       .orderBy("project_id")
