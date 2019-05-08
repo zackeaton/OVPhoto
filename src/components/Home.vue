@@ -5,12 +5,12 @@
         <center><h4>Welcome</h4></center>
       </li>
       <center>
-      <div><h6>Welcome to the OV Photography Web Application.<br>To get started please click the "login" or "register" button below.</h6></div>
+      <div><h6>Welcome to the OV Photography Web Application.<br>To get started please click the "Log in" or "Register" button below.</h6></div>
     </center>
     </ul>
     <center>
+      <router-link to="/login" class="btn grey">Log in</router-link>
         <router-link to="/register" class="btn grey">Register</router-link>
-    <router-link to="/login" class="btn grey">Login</router-link>
     </center>
     <div class="fixed-action-btn">
       <router-link to="/new/task" class="btn-floating btn-large red">

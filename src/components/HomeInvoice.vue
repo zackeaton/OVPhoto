@@ -6,7 +6,7 @@
       </li>
       <li v-for="invoice in invoices" v-bind:key="invoice.id" class="collection-item">
         <div class="chip">{{invoice.fbase_id}}</div>
-        {{invoice.invoice_id}}
+        Due: {{invoice.due}}
         <router-link
           class="secondary-content"
           v-bind:to="{ name: 'view-invoice', params: { invoice_id: invoice.id }}"
@@ -36,7 +36,7 @@ export default {
   },
   created() {
     db.collection("invoices")
-      .orderBy("invoice_id")
+      .orderBy("due")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {
