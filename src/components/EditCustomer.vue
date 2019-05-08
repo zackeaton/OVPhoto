@@ -82,7 +82,7 @@ export default {
       phone: null,
       email: null,
       social: null,
-      returning_customer: null
+      //returning_customer: null
     };
   },
   beforeRouteEnter(to, from, next) {
@@ -98,7 +98,7 @@ export default {
           vm.phone = doc.data().phone;
           vm.email = doc.data().email;
           vm.social = doc.data().social;
-          vm.returning_customer = doc.data().returning_customer;
+         // vm.returning_customer = doc.data().returning_customer;
         });
         //});
       });
@@ -118,7 +118,7 @@ export default {
             this.last_name = doc.data().last_name;
             this.phone = doc.data().phone;
             this.social = doc.data().social;
-            this.returning_customer = doc.data().returning_customer;
+            //this.returning_customer = doc.data().returning_customer;
           });
         });
     },
@@ -132,7 +132,7 @@ export default {
           phone: this.phone,
           email: this.email,
           social: this.social,
-          returning_customer: this.returning_customer
+          //returning_customer: this.returning_customer
         })
         .then(docRef => {
           this.$router.push({

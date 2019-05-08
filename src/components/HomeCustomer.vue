@@ -48,7 +48,7 @@ export default {
             phone: doc.data().phone,
             email: doc.data().email,
             social: doc.data().social,
-            returning_customer: doc.data().returning_customer
+            //returning_customer: doc.data().returning_customer
           };
           this.customers.push(data);
         });

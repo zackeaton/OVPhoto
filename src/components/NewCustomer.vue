@@ -78,7 +78,7 @@ export default {
       phone: null,
       email: null,
       social: null,
-      returning_customer: null
+      //returning_customer: null
     };
   },
   methods: {
@@ -91,7 +91,7 @@ export default {
           phone: this.phone,
           email: this.email,
           social: this.social,
-          returning_customer: this.returning_customer
+          //returning_customer: this.returning_customer
         })
         .then(docRef => this.$router.push("/customers"))
         .catch(error => console.log(err));
