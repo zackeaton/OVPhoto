@@ -18,7 +18,7 @@
         </div>Phone Number:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="number" v-model="phone">
+            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" v-model="phone">
             <label></label>
           </div>
         </div>Email:
