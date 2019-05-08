@@ -24,7 +24,7 @@
         </div>Email:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="email" required>
+            <input type="email" v-model="email" required>
             <label></label>
           </div>
         </div>Lead Generation:
