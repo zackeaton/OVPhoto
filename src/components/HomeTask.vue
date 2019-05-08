@@ -7,7 +7,8 @@
       <li v-for="task in tasks" v-bind:key="task.id" class="collection-item">
         <!--  <div class="chip">Due: {{task.id}}</div> {{task.task_id}}  -->
         <div class="chip">Due: {{task.due}}</div>
-        {{task.task}}
+        {{task.task}} |
+        For: {{task.project_id}}
         <router-link
           class="secondary-content"
           v-bind:to="{ name: 'view-task', params: { task_id: task.id }}"

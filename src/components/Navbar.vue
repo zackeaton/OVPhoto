@@ -2,7 +2,7 @@
   <nav>
     <div class="nav-wrapper">
       <div class="container">
-        <router-link to="/tasks" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
+        <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
         <ul class="right hide-on-med-and-down">
           <li v-if="isLoggedIn">
             <span class="email black-text">{{currentUser}}</span>
@@ -20,13 +20,13 @@
             <router-link to="/projects">Projects</router-link>
           </li>
           <li v-if="!isLoggedIn">
-            <router-link to="/login">Login</router-link>
+            <router-link to="/login">Log in</router-link>
           </li>
           <li v-if="!isLoggedIn">
             <router-link to="/register">Register</router-link>
           </li>
           <li v-if="isLoggedIn">
-            <button v-on:click="logout" class="btn black">Logout</button>
+            <button v-on:click="logout" class="btn black">Log out</button>
           </li>
         </ul>
 
@@ -96,7 +96,7 @@ export default {
         .auth()
         .signOut()
         .then(() => {
-          this.$router.go({ path: this.$router.path });
+          this.$router.go({ path: this.$router.push('/')});
         });
     }
   }
