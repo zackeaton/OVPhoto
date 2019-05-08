@@ -16,7 +16,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/new/project" class="btn-floating btn-large red">
+      <router-link to="/new/project" class="btn-floating btn-large">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>

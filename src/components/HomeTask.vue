@@ -18,7 +18,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/new/task" class="btn-floating btn-large red">
+      <router-link to="/new/task" class="btn-floating btn-large">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>

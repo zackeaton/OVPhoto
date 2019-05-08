@@ -84,13 +84,13 @@
                 </td>
 
                 <td>
-                  Invoice #:
+                  <!-- Invoice #: *AUTOMATICALLY GENERATED*
                   <div class="row">
                     <div class="input-field col s 12">
                       <input type="text" v-model="invoice_id" required>
                       <label>Invoice ID</label>
                     </div>
-                  </div>
+                  </div> -->
                   <br>Created:
                   <input
                     type="date"

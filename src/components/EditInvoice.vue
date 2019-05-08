@@ -93,7 +93,7 @@
                 </td>
 
                 <td>
-                  Invoice #: {{invoice_id}}
+                  Invoice #: <!--{{tempInvoice}}-->
                   <br>Created:
                   <input
                     type="date"

@@ -6,6 +6,7 @@
       </li>
       <li v-for="invoice in invoices" v-bind:key="invoice.id" class="collection-item">
         <div class="chip">{{invoice.fbase_id}}</div>
+        <!--<div class="chip">{{invoice.id}}</div>-->
         Due: {{invoice.due}}
         <router-link
           class="secondary-content"
@@ -16,7 +17,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/new/invoice" class="btn-floating btn-large red">
+      <router-link to="/new/invoice" class="btn-floating btn-large">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
