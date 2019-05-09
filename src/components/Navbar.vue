@@ -9,7 +9,6 @@
                   src="https://images.squarespace-cdn.com/content/5982735ae6f2e1038a293da0/1555203288932-FV7FLB6AUVDBLVA70EO7/transparent+background+copy.png?content-type=image%2Fpng"
                   style="width:100%; max-width:80px;"
                 >
-
         <ul class="right hide-on-med-and-down">
           <li v-if="isLoggedIn">
             <span class="email black-text">{{currentUser}}</span>
