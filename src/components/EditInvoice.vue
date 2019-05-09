@@ -339,7 +339,7 @@
             <td>
               <div class="row">
                 <div class="input-field col s 12">
-                  Item 8:
+                  Discount:
                   <input type="text" v-model="item_8" required>
                   <label></label>
                 </div>
@@ -348,13 +348,13 @@
             <td>
               <div class="row">
                 <div class="input-field col s 12">
-                  Cost 8:
+                  Discount Amount:
                   <input type="number" v-model="cost_8" required>
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_8}}</td>
           </tr>
         </thead>

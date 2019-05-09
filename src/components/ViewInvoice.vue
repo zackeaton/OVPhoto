@@ -130,16 +130,10 @@
           <td></td>
           <td>{{cost_7}}</td>
         </tr>
-      </thead>
+      </thead>  
+      
 
-      <thead id="line8">
-        <tr>
-          <td>{{item_8}}</td>
-          <td>{{cost_8}}</td>
-          <td></td>
-          <td>{{cost_8}}</td>
-        </tr>
-      </thead>
+      
       <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
@@ -151,6 +145,25 @@
       <!--<ul>
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
       </ul>-->
+
+      <tr class="total">
+        <td colspan="3"></td>
+        <td>Subtotal: ${{ subtotal }}</td>
+      </tr>
+
+      <thead id="line8">
+        <tr>
+          <td>{{item_8}}</td>
+          <td>{{cost_8}}</td>
+          <td></td>
+          <td>{{cost_8}}</td>
+        </tr>
+      </thead>
+
+      <tr class="tax">
+        <td colspan="3"></td>
+        <td>Tax: ${{ tax }}</td>
+      </tr>
 
       <tr class="total">
         <td colspan="3"></td>
@@ -284,7 +297,7 @@ export default {
 console.log(this.$route)
   },
   computed: {
-    total() {
+    subtotal() {
       //Make sure it's never null
       if (this.cost_1 == null) {
         this.cost_1 = 0;
@@ -317,9 +330,39 @@ console.log(this.$route)
         parseInt(this.cost_4) +
         parseInt(this.cost_5) +
         parseInt(this.cost_6) +
-        parseInt(this.cost_7) +
-        parseInt(this.cost_8)
+        parseInt(this.cost_7)
       );
+    },
+    tax() {
+      return (
+        ((parseInt(this.cost_1) +
+        parseInt(this.cost_2) +
+        parseInt(this.cost_3) +
+        parseInt(this.cost_4) +
+        parseInt(this.cost_5) +
+        parseInt(this.cost_6) +
+        parseInt(this.cost_7) - 
+        parseInt(this.cost_8))) * .08863)
+    },
+    total() {
+      return ((
+        Math.round(parseInt(this.cost_1) +
+        parseInt(this.cost_2) +
+        parseInt(this.cost_3) +
+        parseInt(this.cost_4) +
+        parseInt(this.cost_5) +
+        parseInt(this.cost_6) +
+        parseInt(this.cost_7) -
+        parseInt(this.cost_8) +  
+        (parseInt(this.cost_1) +
+        parseInt(this.cost_2) +
+        parseInt(this.cost_3) +
+        parseInt(this.cost_4) +
+        parseInt(this.cost_5) +
+        parseInt(this.cost_6) +
+        parseInt(this.cost_7) - 
+        parseInt(this.cost_8)) * .08863)  * 100) / 100
+      )
     }
   },
   methods: {
