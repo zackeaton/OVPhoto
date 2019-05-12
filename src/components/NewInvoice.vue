@@ -342,7 +342,7 @@
         <!--<ul>
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
         </ul>-->
-        <hr><br><hr>
+        
         <thead>
           <tr>
             <td>
