@@ -118,8 +118,8 @@
               <tr>
                 <td>
                   OV Photography
-                  <br>1 University Blvd
-                  <br>St. Louis, MO 63121
+                  <br>7069 Middle Valley Walk
+                <br>St. Louis, MO 63123
                 </td>
 
                 <td>
@@ -150,8 +150,8 @@
         <thead>
           <tr>
             <td>Item</td>
-            <td>Unit Cost</td>
-            <td>Quantity</td>
+            <td> </td>
+            <td> </td>
             <td>Price</td>
           </tr>
         </thead>
@@ -176,7 +176,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_1}}</td>
           </tr>
         </thead>
@@ -201,7 +201,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_2}}</td>
           </tr>
         </thead>
@@ -226,7 +226,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_3}}</td>
           </tr>
         </thead>
@@ -251,7 +251,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_4}}</td>
           </tr>
         </thead>
@@ -276,7 +276,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_5}}</td>
           </tr>
         </thead>
@@ -301,7 +301,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_6}}</td>
           </tr>
         </thead>
@@ -326,7 +326,7 @@
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_7}}</td>
           </tr>
         </thead>
