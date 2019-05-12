@@ -32,8 +32,8 @@
             <tr>
               <td>
                 OV Photography
-                <br>1 University Blvd
-                <br>St. Louis, MO 63121
+                <br>7069 Middle Valley Walk
+                <br>St. Louis, MO 63123
               </td>
 
               <td>
