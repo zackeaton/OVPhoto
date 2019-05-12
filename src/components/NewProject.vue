@@ -60,7 +60,8 @@
             <input type="text" v-model="shoot_location" required>
             <label></label>
           </div>
-        </div>Invoice Cost:
+        </div>
+       <!--  Invoice Cost:
         <div class="row">
           <div class="input-field col s 12">
             <input type="number" v-model="invoice_cost">
@@ -72,7 +73,8 @@
             <input type="number" v-model="dept_cost">
             <label></label>
           </div>
-        </div>Deposit Status:
+        </div> -->
+        Deposit Status:
         <div class="row">
           <div class="input-field col s 12">
             <select v-model="dept_status" required>
