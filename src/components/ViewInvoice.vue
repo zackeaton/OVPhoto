@@ -154,16 +154,16 @@
       <thead id="line8">
         <tr>
           <td>{{item_8}}</td>
-          <td>{{cost_8}}</td>
+          <td>-{{cost_8}}</td>
           <td></td>
-          <td>{{cost_8}}</td>
+          <td>-{{cost_8}}</td>
         </tr>
       </thead>
 
-      <tr class="tax">
+   <!--   <tr class="tax">
         <td colspan="3"></td>
         <td>Tax: ${{ tax }}</td>
-      </tr>
+      </tr> -->
 
       <tr class="total">
         <td colspan="3"></td>
@@ -345,24 +345,16 @@ console.log(this.$route)
         parseInt(this.cost_8))) * .08863)
     },
     total() {
-      return ((
-        Math.round(parseInt(this.cost_1) +
+      return (
+        parseInt(this.cost_1) +
         parseInt(this.cost_2) +
         parseInt(this.cost_3) +
         parseInt(this.cost_4) +
         parseInt(this.cost_5) +
         parseInt(this.cost_6) +
         parseInt(this.cost_7) -
-        parseInt(this.cost_8) +  
-        (parseInt(this.cost_1) +
-        parseInt(this.cost_2) +
-        parseInt(this.cost_3) +
-        parseInt(this.cost_4) +
-        parseInt(this.cost_5) +
-        parseInt(this.cost_6) +
-        parseInt(this.cost_7) - 
-        parseInt(this.cost_8)) * .08863)  * 100) / 100
-      )
+        parseInt(this.cost_8)
+      );
     }
   },
   methods: {
