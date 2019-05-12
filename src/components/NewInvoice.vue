@@ -162,7 +162,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Item 1:
-                  <input type="text" v-model="item_1" required>
+                  <input type="text" v-model="item_1" required >
                   <label></label>
                 </div>
               </div>
@@ -331,30 +331,6 @@
           </tr>
         </thead>
 
-        <thead>
-          <tr>
-            <td>
-              <div class="row">
-                <div class="input-field col s 12">
-                  Item 8:
-                  <input type="text" v-model="item_8" required>
-                  <label></label>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="row">
-                <div class="input-field col s 12">
-                  Cost 8:
-                  <input type="number" v-model="cost_8" required>
-                  <label></label>
-                </div>
-              </div>
-            </td>
-            <td>1</td>
-            <td>{{cost_8}}</td>
-          </tr>
-        </thead>
         <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
@@ -366,6 +342,31 @@
         <!--<ul>
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
         </ul>-->
+        <hr><br><hr>
+        <thead>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="input-field col s 12">
+                  Discount:
+                  <input type="text" v-model="item_8" required>
+                  <label></label>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="row">
+                <div class="input-field col s 12">
+                  Discount Amount:
+                  <input type="number" v-model="cost_8" required>
+                  <label></label>
+                </div>
+              </div>
+            </td>
+            <td> </td>
+            <td>{{cost_8}}</td>
+          </tr>
+        </thead>
 
         <tr>
           <td colspan="4">

@@ -146,7 +146,7 @@
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
       </ul>-->
 
-      <tr class="total">
+      <tr id="subtotal">
         <td colspan="3"></td>
         <td>Subtotal: ${{ subtotal }}</td>
       </tr>
@@ -284,6 +284,9 @@ export default {
           if (vm.item_8 == null || vm.item_8 == "") {
             line8.style.display = "none";
             vm.cost_8 = 0;
+          }
+          if (this.subtotal == this.total){
+            subtotal.style.display = "none";
           }
         });
       });
