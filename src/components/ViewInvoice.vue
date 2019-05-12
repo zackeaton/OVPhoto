@@ -150,7 +150,7 @@
         <td colspan="3"></td>
         <td>Subtotal: ${{ subtotal }}</td>
       </tr>
-
+      
       <thead id="line8">
         <tr>
           <td>{{item_8}}</td>
@@ -187,7 +187,7 @@
     <div id="edit_button" class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-invoice', params: {invoice_id: this.tempInvoice}}"
-        class="btn-floating btn-large red"
+        class="btn-floating btn-large"
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>
