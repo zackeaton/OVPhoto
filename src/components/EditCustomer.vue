@@ -123,8 +123,10 @@ export default {
         });
     },
     updateCustomer() {
-      //console.log(this.first_name)
-      db.collection("customers")
+
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))
+      {
+        db.collection("customers")
         .doc(this.$route.params.customer_id)
         .set({
           first_name: this.first_name,
@@ -143,6 +145,12 @@ export default {
           // console.log(err)
         });
       //});
+       return (true)
+      }
+      alert("You have entered an invalid email address!")
+      return (false)
+       //console.log(this.first_name)
+      
     }
   }
 };

@@ -83,7 +83,11 @@ export default {
   },
   methods: {
     saveCustomer() {
-      db.collection("customers")
+
+      {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))
+      {
+         db.collection("customers")
         .add({
           customer_id: this.customer_id,
           first_name: this.first_name,
@@ -95,6 +99,13 @@ export default {
         })
         .then(docRef => this.$router.push("/customers"))
         .catch(error => console.log(err));
+        return (true)
+       }
+        alert("You have entered an invalid email address!")
+        return (false)
+      }
+
+     
     }
   }
 };
