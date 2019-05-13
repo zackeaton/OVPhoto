@@ -20,7 +20,7 @@
     <div class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-customer', params: {customer_id: this.tempId}}"
-        class="btn-floating btn-large red"
+        class="btn-floating btn-large"
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>

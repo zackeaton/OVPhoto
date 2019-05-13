@@ -9,13 +9,13 @@
             <tr>
               <td class="title">
                 <img
-                  src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w"
+                  src="https://images.squarespace-cdn.com/content/5982735ae6f2e1038a293da0/1555203288932-FV7FLB6AUVDBLVA70EO7/transparent+background+copy.png?content-type=image%2Fpng"
                   style="width:100%; max-width:300px;"
                 >
               </td>
 
               <td>
-                Invoice #: {{invoice_id}}
+                Invoice #: {{tempInvoice}}
                 <br>
                 Created: {{created}}
                 <br>
@@ -32,8 +32,8 @@
             <tr>
               <td>
                 OV Photography
-                <br>1 University Blvd
-                <br>St. Louis, MO 63121
+                <br>7069 Middle Valley Walk
+                <br>St. Louis, MO 63123
               </td>
 
               <td>
@@ -64,7 +64,7 @@
         <tr>
           <td>Item</td>
           <td>Unit Cost</td>
-          <td>Quantity</td>
+          <td> </td>
           <td>Price</td>
         </tr>
       </thead>
@@ -130,16 +130,10 @@
           <td></td>
           <td>{{cost_7}}</td>
         </tr>
-      </thead>
+      </thead>  
+      
 
-      <thead id="line8">
-        <tr>
-          <td>{{item_8}}</td>
-          <td>{{cost_8}}</td>
-          <td></td>
-          <td>{{cost_8}}</td>
-        </tr>
-      </thead>
+      
       <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
@@ -151,6 +145,25 @@
       <!--<ul>
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
       </ul>-->
+
+      <tr id="subtotal">
+        <td colspan="3"></td>
+        <td>Subtotal: ${{ subtotal }}</td>
+      </tr>
+      
+      <thead id="line8">
+        <tr>
+          <td>{{item_8}}</td>
+          <td>-{{cost_8}}</td>
+          <td></td>
+          <td>-{{cost_8}}</td>
+        </tr>
+      </thead>
+
+   <!--   <tr class="tax">
+        <td colspan="3"></td>
+        <td>Tax: ${{ tax }}</td>
+      </tr> -->
 
       <tr class="total">
         <td colspan="3"></td>
@@ -174,7 +187,7 @@
     <div id="edit_button" class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-invoice', params: {invoice_id: this.tempInvoice}}"
-        class="btn-floating btn-large red"
+        class="btn-floating btn-large"
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>
@@ -272,6 +285,9 @@ export default {
             line8.style.display = "none";
             vm.cost_8 = 0;
           }
+          if (this.subtotal == this.total){
+            subtotal.style.display = "none";
+          }
         });
       });
     //});
@@ -284,7 +300,7 @@ export default {
 console.log(this.$route)
   },
   computed: {
-    total() {
+    subtotal() {
       //Make sure it's never null
       if (this.cost_1 == null) {
         this.cost_1 = 0;
@@ -317,7 +333,29 @@ console.log(this.$route)
         parseInt(this.cost_4) +
         parseInt(this.cost_5) +
         parseInt(this.cost_6) +
-        parseInt(this.cost_7) +
+        parseInt(this.cost_7)
+      );
+    },
+    tax() {
+      return (
+        ((parseInt(this.cost_1) +
+        parseInt(this.cost_2) +
+        parseInt(this.cost_3) +
+        parseInt(this.cost_4) +
+        parseInt(this.cost_5) +
+        parseInt(this.cost_6) +
+        parseInt(this.cost_7) - 
+        parseInt(this.cost_8))) * .08863)
+    },
+    total() {
+      return (
+        parseInt(this.cost_1) +
+        parseInt(this.cost_2) +
+        parseInt(this.cost_3) +
+        parseInt(this.cost_4) +
+        parseInt(this.cost_5) +
+        parseInt(this.cost_6) +
+        parseInt(this.cost_7) -
         parseInt(this.cost_8)
       );
     }

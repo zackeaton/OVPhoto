@@ -18,13 +18,13 @@
         </div>Phone Number:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="number" v-model="phone">
+            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" v-model="phone">
             <label></label>
           </div>
         </div>Email:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="text" v-model="email" required>
+            <input type="email" v-model="email" required>
             <label></label>
           </div>
         </div>Lead Generation:
@@ -78,12 +78,16 @@ export default {
       phone: null,
       email: null,
       social: null,
-      returning_customer: null
+      //returning_customer: null
     };
   },
   methods: {
     saveCustomer() {
-      db.collection("customers")
+
+      {
+        if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))
+      {
+         db.collection("customers")
         .add({
           customer_id: this.customer_id,
           first_name: this.first_name,
@@ -91,10 +95,17 @@ export default {
           phone: this.phone,
           email: this.email,
           social: this.social,
-          returning_customer: this.returning_customer
+          //returning_customer: this.returning_customer
         })
         .then(docRef => this.$router.push("/customers"))
         .catch(error => console.log(err));
+        return (true)
+       }
+        alert("You have entered an invalid email address!")
+        return (false)
+      }
+
+     
     }
   }
 };

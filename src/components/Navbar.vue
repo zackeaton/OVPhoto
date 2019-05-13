@@ -1,12 +1,19 @@
  <template>
   <nav>
+    <!-- <div class="nav-wrapper soft red"> -->
     <div class="nav-wrapper">
       <div class="container">
-        <router-link to="/tasks" class="brand-logo left hide-on-med-and-down">OV Photography</router-link>
-        <ul class="right hide-on-med-and-down">
-          <li v-if="isLoggedIn">
+        <!-- <router-link to="/" class="brand-logo left hide-on-med-and-down">OV Photography</router-link> -->
+
+        <img
+                  src="https://images.squarespace-cdn.com/content/5982735ae6f2e1038a293da0/1555203288932-FV7FLB6AUVDBLVA70EO7/transparent+background+copy.png?content-type=image%2Fpng"
+                  style="width:100%; max-width:80px;"
+                >
+                <!-- <ul class="right hide-on-med-and-down"> -->
+        <ul class="right">
+          <!-- <li v-if="isLoggedIn">
             <span class="email black-text">{{currentUser}}</span>
-          </li>
+          </li> -->
           <li v-if="isLoggedIn">
             <router-link to="/tasks">Tasks</router-link>
           </li>
@@ -20,17 +27,17 @@
             <router-link to="/projects">Projects</router-link>
           </li>
           <li v-if="!isLoggedIn">
-            <router-link to="/login">Login</router-link>
+            <router-link to="/login">Log in</router-link>
           </li>
           <li v-if="!isLoggedIn">
             <router-link to="/register">Register</router-link>
           </li>
           <li v-if="isLoggedIn">
-            <button v-on:click="logout" class="btn black">Logout</button>
+            <button v-on:click="logout" class="btn black">Log out</button>
           </li>
         </ul>
 
-        <ul class="side-nav hide-on-large-only" id="mobile-demo">
+        <!-- <ul class="side-nav hide-on-large-only" id="mobile-demo">
           <li v-if="isLoggedIn">
             <router-link to="/tasks">
               <i class="fa fa-chart-line"></i>
@@ -67,7 +74,7 @@
           <li v-if="isLoggedIn">
             <button v-on:click="logout" class="btn black">Log Out</button>
           </li>
-        </ul>
+        </ul> -->
       </div>
     </div>
   </nav>
@@ -96,7 +103,7 @@ export default {
         .auth()
         .signOut()
         .then(() => {
-          this.$router.go({ path: this.$router.path });
+          this.$router.go({ path: this.$router.push('/')});
         });
     }
   }

@@ -80,7 +80,7 @@ export default {
               user => {
                 console.log(user);
                 alert(`Account Created for ${user}`);
-                this.$router.go({ path: this.$router.path });
+                this.$router.go({ path: this.$router.push('tasks')});
               },
               err => {
                 alert(err.message);

@@ -54,7 +54,7 @@ export default {
         .then(
           user => {
             alert(`You are logged in as ${this.email}`);
-            this.$router.go({ path: this.$router.path });
+            this.$router.go({ path: this.$router.push('tasks')});
           },
           err => {
             alert(err.message);

@@ -11,9 +11,9 @@
       <li class="collection-item">Shoot Date: {{shoot_date}}</li>
       <li class="collection-item">Shoot Type: {{shoot_type}}</li>
       <li class="collection-item">Location: {{shoot_location}}</li>
-      <li class="collection-item">Invoice Cost: {{invoice_cost}}</li>
-      <li class="collection-item">Deposit Cost: {{dept_cost}}</li>
-      <li class="collection-item">Deposite Status: {{dept_status}}</li>
+      <!-- <li class="collection-item">Invoice Cost: {{invoice_cost}}</li>
+      <li class="collection-item">Deposit Cost: {{dept_cost}}</li> -->
+      <li class="collection-item">Deposit Status: {{dept_status}}</li>
       <li class="collection-item">Invoice Status: {{invoice_status}}</li>
       <li class="collection-item">Notes: <textarea v-model="notes" readonly></textarea></li>
     </ul>
@@ -25,7 +25,7 @@
     <div class="fixed-action-btn">
       <router-link
         v-bind:to="{name: 'edit-project', params: {project_id: this.tempCust}}"
-        class="btn-floating btn-large red"
+        class="btn-floating btn-large"
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>

@@ -16,7 +16,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/new/customer" class="btn-floating btn-large red">
+      <router-link to="/new/customer" class="btn-floating btn-large">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
@@ -48,7 +48,7 @@ export default {
             phone: doc.data().phone,
             email: doc.data().email,
             social: doc.data().social,
-            returning_customer: doc.data().returning_customer
+            //returning_customer: doc.data().returning_customer
           };
           this.customers.push(data);
         });

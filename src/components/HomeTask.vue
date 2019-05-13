@@ -7,7 +7,8 @@
       <li v-for="task in tasks" v-bind:key="task.id" class="collection-item">
         <!--  <div class="chip">Due: {{task.id}}</div> {{task.task_id}}  -->
         <div class="chip">Due: {{task.due}}</div>
-        {{task.task}}
+        {{task.task}} |
+        For: {{task.project_id}}
         <router-link
           class="secondary-content"
           v-bind:to="{ name: 'view-task', params: { task_id: task.id }}"
@@ -17,7 +18,7 @@
       </li>
     </ul>
     <div class="fixed-action-btn">
-      <router-link to="/new/task" class="btn-floating btn-large red">
+      <router-link to="/new/task" class="btn-floating btn-large">
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
@@ -39,10 +40,10 @@ export default {
     return {
       tasks: []
     };
-  },
+  }, 
   created() {
     db.collection("tasks")
-      .orderBy("due")
+      .orderBy("project_id")
       .get()
       .then(querySnapshot => {
         querySnapshot.forEach(doc => {

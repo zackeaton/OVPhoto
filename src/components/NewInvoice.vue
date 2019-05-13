@@ -77,20 +77,20 @@
             <table>
               <tr>
                 <td class="title">
-                  <img
-                    src="http://static1.squarespace.com/static/5982735ae6f2e1038a293da0/t/5a47f502e4966b19e3e6d4e3/1514665395643/ov1.jpg?format=1000w"
-                    style="width:100%; max-width:300px;"
-                  >
+                 <img
+                  src="https://images.squarespace-cdn.com/content/5982735ae6f2e1038a293da0/1555203288932-FV7FLB6AUVDBLVA70EO7/transparent+background+copy.png?content-type=image%2Fpng"
+                  style="width:100%; max-width:300px;"
+                >
                 </td>
 
                 <td>
-                  Invoice #:
+                  <!-- Invoice #: *AUTOMATICALLY GENERATED*
                   <div class="row">
                     <div class="input-field col s 12">
                       <input type="text" v-model="invoice_id" required>
                       <label>Invoice ID</label>
                     </div>
-                  </div>
+                  </div> -->
                   <br>Created:
                   <input
                     type="date"
@@ -118,8 +118,8 @@
               <tr>
                 <td>
                   OV Photography
-                  <br>1 University Blvd
-                  <br>St. Louis, MO 63121
+                  <br>7069 Middle Valley Walk
+                <br>St. Louis, MO 63123
                 </td>
 
                 <td>
@@ -150,8 +150,8 @@
         <thead>
           <tr>
             <td>Item</td>
-            <td>Unit Cost</td>
-            <td>Quantity</td>
+            <td> </td>
+            <td> </td>
             <td>Price</td>
           </tr>
         </thead>
@@ -162,7 +162,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Item 1:
-                  <input type="text" v-model="item_1" required>
+                  <input type="text" v-model="item_1" required >
                   <label></label>
                 </div>
               </div>
@@ -171,12 +171,12 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 1:
-                  <input type="number" v-model="cost_1" required>
+                  <input type="number" v-model="cost_1" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_1}}</td>
           </tr>
         </thead>
@@ -196,12 +196,12 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 2:
-                  <input type="number" v-model="cost_2" required>
+                  <input type="number" v-model="cost_2" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_2}}</td>
           </tr>
         </thead>
@@ -221,12 +221,12 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 3:
-                  <input type="number" v-model="cost_3" required>
+                  <input type="number" v-model="cost_3" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_3}}</td>
           </tr>
         </thead>
@@ -246,12 +246,12 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 4:
-                  <input type="number" v-model="cost_4" required>
+                  <input type="number" v-model="cost_4" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_4}}</td>
           </tr>
         </thead>
@@ -271,12 +271,12 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 5:
-                  <input type="number" v-model="cost_5" required>
+                  <input type="number" v-model="cost_5" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_5}}</td>
           </tr>
         </thead>
@@ -296,12 +296,12 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 6:
-                  <input type="number" v-model="cost_6" required>
+                  <input type="number" v-model="cost_6" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_6}}</td>
           </tr>
         </thead>
@@ -321,40 +321,16 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 7:
-                  <input type="number" v-model="cost_7" required>
+                  <input type="number" v-model="cost_7" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
             </td>
-            <td>1</td>
+            <td> </td>
             <td>{{cost_7}}</td>
           </tr>
         </thead>
 
-        <thead>
-          <tr>
-            <td>
-              <div class="row">
-                <div class="input-field col s 12">
-                  Item 8:
-                  <input type="text" v-model="item_8" required>
-                  <label></label>
-                </div>
-              </div>
-            </td>
-            <td>
-              <div class="row">
-                <div class="input-field col s 12">
-                  Cost 8:
-                  <input type="number" v-model="cost_8" required>
-                  <label></label>
-                </div>
-              </div>
-            </td>
-            <td>1</td>
-            <td>{{cost_8}}</td>
-          </tr>
-        </thead>
         <!-- <tr class="item" v-bind:key="item" v-for="item in items">
       <td><input v-model="item.description" /></td>
       <td><input type="number" v-model="item.price" /></td>
@@ -366,6 +342,31 @@
         <!--<ul>
       <li :key='item.id' v-for='item in items'>{{item.price}}</li>
         </ul>-->
+        
+        <thead>
+          <tr>
+            <td>
+              <div class="row">
+                <div class="input-field col s 12">
+                  Discount:
+                  <input type="text" v-model="item_8" required>
+                  <label></label>
+                </div>
+              </div>
+            </td>
+            <td>
+              <div class="row">
+                <div class="input-field col s 12">
+                  Discount Amount:
+                  <input type="number" v-model="cost_8" required>
+                  <label></label>
+                </div>
+              </div>
+            </td>
+            <td> </td>
+            <td>{{cost_8}}</td>
+          </tr>
+        </thead>
 
         <tr>
           <td colspan="4">
@@ -417,9 +418,7 @@ export default {
     saveInvoice() {
       
       //Validation first
-      if (this.invoice_id == null) {
-        alert("Invoice ID cannot be empty");
-      } else if (this.fbase_id == null) {
+      if (this.fbase_id == null) {
         alert("You must choose a client");
       } else if (this.item_1 == null) {
         alert("Item 1 cannot be empty");
