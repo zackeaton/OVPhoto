@@ -171,7 +171,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 1:
-                  <input type="number" v-model="cost_1" required>
+                  <input type="number" v-model="cost_1" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
@@ -196,7 +196,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 2:
-                  <input type="number" v-model="cost_2" required>
+                  <input type="number" v-model="cost_2" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
@@ -221,7 +221,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 3:
-                  <input type="number" v-model="cost_3" required>
+                  <input type="number" v-model="cost_3" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
@@ -246,7 +246,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 4:
-                  <input type="number" v-model="cost_4" required>
+                  <input type="number" v-model="cost_4" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
@@ -271,7 +271,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 5:
-                  <input type="number" v-model="cost_5" required>
+                  <input type="number" v-model="cost_5" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
@@ -296,7 +296,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 6:
-                  <input type="number" v-model="cost_6" required>
+                  <input type="number" v-model="cost_6" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
@@ -321,7 +321,7 @@
               <div class="row">
                 <div class="input-field col s 12">
                   Cost 7:
-                  <input type="number" v-model="cost_7" required>
+                  <input type="number" v-model="cost_7" required onkeypress="return (event.charCode == 8 || event.charCode == 0 || event.charCode == 13) ? null : event.charCode >= 48 && event.charCode <= 57">
                   <label></label>
                 </div>
               </div>
