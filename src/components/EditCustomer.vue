@@ -60,7 +60,7 @@
           </div>
         </div>-->
 
-        <button type="submit" onClick='this.form.submit();' class="btn">Submit</button>
+        <button type="submit" @click='updateCustomer' onClick='this.form.submit();' class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
         <button onClick='alert("This page allows you to edit client info. Referral type & phone number are not required");' 
   class='btn'>Help</button>
