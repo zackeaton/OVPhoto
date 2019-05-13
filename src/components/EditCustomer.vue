@@ -3,7 +3,7 @@
     <h3>Edit Client</h3>
     <div class="row">
       First Name
-      <form class="col s12">
+      <form class="col s12" onSubmit='updateCustomer();'>
         <div class="row">
           <div class="input-field col s 12">
             
@@ -21,7 +21,7 @@
         <div class="row">
           <div class="input-field col s 12">
             
-            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" v-model="phone">
+            <input type="tel" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" v-model="phone">
             <label></label>
           </div>
         </div>Email
@@ -60,7 +60,7 @@
           </div>
         </div>-->
 
-        <button type="submit" @click="updateCustomer" class="btn">Submit</button>
+        <button type="submit" onClick='this.form.submit();' class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
         <button onClick='alert("This page allows you to edit client info. Referral type & phone number are not required");' 
   class='btn'>Help</button>
