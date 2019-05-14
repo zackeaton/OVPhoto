@@ -62,7 +62,16 @@
 
         <button type="submit" @click="updateCustomer" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
-        <button onClick='alert("This page allows you to edit client info. Referral type & phone number are not required");' 
+        <button onClick='alert("How to Edit Client Information
+From the homepage of site (tasks), click on Clients in the upper right hand corner 
+Click the folder icon to the right of the client name, note that names are sorted alphabetically by last name
+You will then see all of the client information
+Click the blue button with a pencil icon in the lower right hand corner
+The client form will appear with all inputted information
+From there you can change any fields or fill out blank fields
+Press Submit in the bottom left hand corner to save changes
+To return to to the client information press Cancel
+");' 
   class='btn'>Help</button>
       </form>
     </div>
