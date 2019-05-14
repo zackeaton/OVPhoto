@@ -3,36 +3,31 @@
     <h3>Edit Client</h3>
     <div class="row">
       First Name
-      <form class="col s12">
+      <form class="col s12" onSubmit="updateCustomer();">
         <div class="row">
           <div class="input-field col s 12">
-            
             <input type="text" v-model="first_name" required>
             <label></label>
           </div>
         </div>Last Name
         <div class="row">
           <div class="input-field col s 12">
-            
             <input type="text" v-model="last_name" required>
             <label></label>
           </div>
         </div>Phone
         <div class="row">
           <div class="input-field col s 12">
-            
-            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" v-model="phone">
+            <input type="tel" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" v-model="phone">
             <label></label>
           </div>
         </div>Email
         <div class="row">
           <div class="input-field col s 12">
-            
             <input type="email" v-model="email" required>
             <label></label>
           </div>
-        </div>
-        Lead Generation:
+        </div>Lead Generation:
         <div class="row">
           <div class="input-field col s 12">
             <select v-model="social" required>
@@ -60,19 +55,18 @@
           </div>
         </div>-->
 
-        <button type="submit" @click="updateCustomer" class="btn">Submit</button>
+        <button
+          type="submit"
+          @click="updateCustomer"
+          onClick="this.form.submit();"
+          class="btn"
+        >Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
-        <button onClick='alert("How to Edit Client Information
-From the homepage of site (tasks), click on Clients in the upper right hand corner 
-Click the folder icon to the right of the client name, note that names are sorted alphabetically by last name
-You will then see all of the client information
-Click the blue button with a pencil icon in the lower right hand corner
-The client form will appear with all inputted information
-From there you can change any fields or fill out blank fields
-Press Submit in the bottom left hand corner to save changes
-To return to to the client information press Cancel
-");' 
-  class='btn'>Help</button>
+        <a
+          href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.oq286iwfv6l4"
+          target="_blank"
+          class="btn"
+        >Help</a>
       </form>
     </div>
   </div>
@@ -90,7 +84,7 @@ export default {
       last_name: null,
       phone: null,
       email: null,
-      social: null,
+      social: null
       //returning_customer: null
     };
   },
@@ -107,7 +101,7 @@ export default {
           vm.phone = doc.data().phone;
           vm.email = doc.data().email;
           vm.social = doc.data().social;
-         // vm.returning_customer = doc.data().returning_customer;
+          // vm.returning_customer = doc.data().returning_customer;
         });
         //});
       });
@@ -132,34 +126,32 @@ export default {
         });
     },
     updateCustomer() {
-
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email))
-      {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(this.email)) {
         db.collection("customers")
-        .doc(this.$route.params.customer_id)
-        .set({
-          first_name: this.first_name,
-          last_name: this.last_name,
-          phone: this.phone,
-          email: this.email,
-          social: this.social,
-          //returning_customer: this.returning_customer
-        })
-        .then(docRef => {
-          this.$router.push({
-            name: "view-customer",
-            params: { customer_id: this.$route.params.customer_id}
+          .doc(this.$route.params.customer_id)
+          .set({
+            first_name: this.first_name,
+            last_name: this.last_name,
+            phone: this.phone,
+            email: this.email,
+            social: this.social
+            //returning_customer: this.returning_customer
+          })
+          .then(docRef => {
+            this.$router.push({
+              name: "view-customer",
+              params: { customer_id: this.$route.params.customer_id }
+            });
+          })
+          .catch(err => {
+            // console.log(err)
           });
-        }).catch((err)=>{
-          // console.log(err)
-        });
-      //});
-       return (true)
+        //});
+        return true;
       }
-      alert("You have entered an invalid email address!")
-      return (false)
-       //console.log(this.first_name)
-      
+      alert("You have entered an invalid email address!");
+      return false;
+      //console.log(this.first_name)
     }
   }
 };

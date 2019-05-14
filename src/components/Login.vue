@@ -28,6 +28,7 @@
                 v-on:click="login"
                 class="btn btn-large btn-extended grey lighten-4 black-text"
               >Login</button>
+              <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.6mm3s88par2v" target="_blank" class="btn btn-large btn-extended grey lighten-4 black-text">Help</a>
             </form>
           </div>
         </div>

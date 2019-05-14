@@ -18,7 +18,8 @@
         </div>Phone Number:
         <div class="row">
           <div class="input-field col s 12">
-            <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" v-model="phone">
+           <!-- <input type="tel" pattern="[0-9]{3}[0-9]{3}[0-9]{4}" v-model="phone"> -->
+           <input type="tel" pattern="^(?:\(\d{3}\)|\d{3})[- ]?\d{3}[- ]?\d{4}$" v-model="phone">
             <label></label>
           </div>
         </div>Email:
@@ -60,6 +61,7 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
+        <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.og839lf41i67" target="_blank" class="btn">Help</a>
       </form>
     </div>
   </div>

@@ -374,6 +374,7 @@
           <td colspan="4">
             <button @click="updateInvoice" class="btn">Submit</button>
             <router-link to="/invoices" class="btn grey">Cancel</router-link>
+            <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.pi7704ml3nfc" target="_blank" class="btn">Help</a>
             <!-- <button class="btn" @click="addRow">Add row</button> -->
             <!-- <button class="btn red" @click="delRow">Delete row</button> -->
           </td>

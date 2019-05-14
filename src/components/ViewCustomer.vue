@@ -14,8 +14,9 @@
 
     <router-link to="/customers" class="btn grey">Back</router-link>
     <button @click="deleteCustomer" class="btn red">Delete</button>
-    <button onClick='alert("This page is a more detailed view of a client. To edit a clients info, click the pencil icon. Client info can also be deleted by pressing the red delete button");' 
-  class='btn'>Help</button>
+  <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.rf23btbpjged" target="_blank"
+        class="btn"
+      >Help</a>
 
     <div class="fixed-action-btn">
       <router-link
@@ -24,6 +25,7 @@
       >
         <i class="fa fa-pencil-alt"></i>
       </router-link>
+
     </div>
   </div>
 </template>
@@ -47,7 +49,7 @@ export default {
     };
   },
   beforeRouteEnter(to, from, next) {
-    console.log(to.params.customer_id)
+    console.log(to.params.customer_id);
 
     db.collection("customers")
       .doc(to.params.customer_id)
@@ -55,7 +57,7 @@ export default {
       .then(doc => {
         next(vm => {
           console.log(vm);
-          console.log(doc.data())
+          console.log(doc.data());
           vm.customer_id = doc.data().customer_id;
           vm.first_name = doc.data().first_name;
           vm.last_name = doc.data().last_name;
@@ -69,22 +71,22 @@ export default {
   watch: {
     $route: "fetchData"
   },
-  mounted(){
-    this.tempId = this.$route.params.customer_id
-console.log(this.$route)
+  mounted() {
+    this.tempId = this.$route.params.customer_id;
+    console.log(this.$route);
   },
   methods: {
     fetchData() {
       db.collection("customers")
         .where("customer_id", "==", this.$route.params.customer_id)
         .get()
-        .then((doc) => {
-            this.customer_id = doc.data().customer_id;
-            this.first_name = doc.data().first_name;
-            this.last_name = doc.data().last_name;
-            this.phone = doc.data().phone;
-            this.social = doc.data().social;
-            this.returning_customer = doc.data().returning_customer;
+        .then(doc => {
+          this.customer_id = doc.data().customer_id;
+          this.first_name = doc.data().first_name;
+          this.last_name = doc.data().last_name;
+          this.phone = doc.data().phone;
+          this.social = doc.data().social;
+          this.returning_customer = doc.data().returning_customer;
           //});
         });
     },

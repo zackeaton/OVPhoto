@@ -20,8 +20,8 @@
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
-    <button onClick='alert("From this page you can view a list of all clients entered into the system. New clients can be created by clicking the + in the bottom right corner. To view more information about a client, click the folder icon next to the clients name.");' 
-  class='btn'>Help</button>
+  
+  <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.rf23btbpjged" target="_blank" class="btn">Help</a>
   </div>
 </template>
 
