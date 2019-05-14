@@ -20,8 +20,7 @@
         <i class="fa fa-plus"></i>
       </router-link>
     </div>
-    <button onClick='alert("This page displays a list of all projects in the system. To create a new project, click the + in the bottom right corner. To view more info about the project, click the folder icon next to the customer name");' 
-  class='btn'>Help</button>
+    <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.qx3jtt8nhc9v" target="_blank" class="btn">Help</a>
   </div>
 </template>
 

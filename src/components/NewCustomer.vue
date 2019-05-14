@@ -61,6 +61,7 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/customers" class="btn grey">Cancel</router-link>
+        <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.og839lf41i67" target="_blank" class="btn">Help</a>
       </form>
     </div>
   </div>

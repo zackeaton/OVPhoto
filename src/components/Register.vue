@@ -41,10 +41,12 @@
                 v-on:click="validate"
                 class="btn btn-large btn-extended grey lighten-4 black-text"
               >Register</button>
+              <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.eie2hiuj9z4" target="_blank" class="btn btn-large btn-extended grey lighten-4 black-text">Help</a>
             </form>
           </div>
         </div>
       </div>
+      
     </div>
   </div>
 </template>

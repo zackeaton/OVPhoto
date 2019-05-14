@@ -25,8 +25,7 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/tasks" class="btn grey">Cancel</router-link>
-        <button onClick='alert("This is the page to create a new task. It includes the task name, due date, and the name of the project the task is assigned to");' 
-  class='btn'>Help</button>
+        <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.bqemnag05ws6" target="_blank" class="btn">Help</a>
       </form>
     </div>
   </div>

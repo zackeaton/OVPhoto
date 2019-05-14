@@ -106,8 +106,7 @@
 
         <button type="submit" class="btn">Submit</button>
         <router-link to="/projects" class="btn grey">Cancel</router-link>
-        <button onClick='alert("This page allows you to create a new project. All fields are required except a consult date and any notes. ");' 
-  class='btn'>Help</button>
+        <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.woub296n8kxd" target="_blank" class="btn">Help</a>
       </form>
     </div>
   </div>

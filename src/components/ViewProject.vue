@@ -19,8 +19,7 @@
     </ul>
     <router-link to="/projects" class="btn grey">Back</router-link>
     <button @click="deleteProject" class="btn red">Delete</button>
-    <button onClick='alert("With this page you can view more info about a project. To edit the info on this page, click the pencil icon in the bottomr right corner. To delete this project, click the red delete button.");' 
-  class='btn'>Help</button>
+    <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.p5gz53af258n" target="_blank" class="btn">Help</a>
 
     <div class="fixed-action-btn">
       <router-link

@@ -114,5 +114,11 @@ export default {
 .email {
   padding-right: 10px;
 }
+.li {
+  color: black !important;
+}
+nav ul a {
+  color: black !important;
+}
 </style>
 

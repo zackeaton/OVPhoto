@@ -21,8 +21,7 @@
       </router-link>
     </div>
 
-    <button onClick='alert("This page is an expanded view of a task. It includes the task name, its due date, and the project name. Tasks can be deleted or edited on this page as well. To edit a task, click the pencil icon in the bottom right corner");' 
-  class='btn'>Help</button>
+    <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.x9gx9atf1hr9" target="_blank" class="btn">Help</a>
   </div>
 </template>
 
