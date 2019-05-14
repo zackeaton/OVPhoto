@@ -512,9 +512,9 @@ export default {
     },
     updateInvoice() {
       //Validation first
-      if (this.invoice_id == null) {
+      /* if (this.invoice_id == null) {
         alert("Invoice ID cannot be empty");
-      } else if (this.fbase_id == null) {
+      } else  */if (this.fbase_id == null) {
         alert("You must choose a client");
       } else if (this.item_1 == null || this.item_1 == "") {
         alert("Item 1 cannot be empty");
