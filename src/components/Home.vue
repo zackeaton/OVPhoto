@@ -11,6 +11,7 @@
     <center>
       <router-link to="/login" class="btn grey">Log in</router-link>
         <router-link to="/register" class="btn grey">Register</router-link>
+        <a href="https://docs.google.com/document/d/1vn1T689zCBsyKEUx4AkhEnkbf2BtCFxATj-nHKCH4RQ/edit#bookmark=id.bl6lrpod9bjb" target="_blank" class="btn">Help</a>
     </center>
     <div class="fixed-action-btn">
       <router-link to="/new/task" class="btn-floating btn-large red">
