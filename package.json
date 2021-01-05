@@ -10,7 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "firebase": "^5.8.6",
     "materialize-css": "^1.0.0-rc.2",
     "uuid": "^3.3.2",
